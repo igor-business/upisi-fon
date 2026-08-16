@@ -1,0 +1,17 @@
+{
+  "appName": "Moja Aplikacija",
+  "language": "Srpski",
+  "tagline": "Dobrodošli na naš sajt.",
+  "nav": {
+    "home": "Početna",
+    "about": "O nama"
+  },
+  "home": {
+    "title": "Početna",
+    "description": "Ovo je početna stranica. Ovdje možete pronaći sve informacije."
+  },
+  "about": {
+    "title": "O nama",
+    "description": "Ova stranica opisuje našu kompaniju i njene ciljeve."
+  }
+}

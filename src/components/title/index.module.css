@@ -1,0 +1,13 @@
+.title {
+  color: var(--color-text);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0;
+  font-size: var(--font-size-3xl);
+}
+
+@media (min-width: 62em) {
+  .title {
+    font-size: 3.5rem;
+  }
+}
