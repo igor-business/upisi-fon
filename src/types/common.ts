@@ -49,6 +49,28 @@ export interface LandingSectionProps {
   className?: string;
 }
 
+/** A single card of the ProblemSection component. */
+export interface ProblemCard {
+  /** Card title (translated text passed from the page). */
+  title: ReactNode;
+  /** Card description (translated text passed from the page). */
+  description: ReactNode;
+}
+
+/** Props for the ProblemSection component. */
+export interface ProblemSectionProps {
+  /** Element id used as anchor for header navigation and active-state tracking. */
+  id: string;
+  /** Section title (translated text passed from the page). */
+  title: ReactNode;
+  /** Section description (translated text passed from the page). */
+  description: ReactNode;
+  /** Cards describing the problems students face. */
+  cards: readonly ProblemCard[];
+  /** Optional extra class name. */
+  className?: string;
+}
+
 /** Props for the Hero component. */
 export interface HeroProps {
   /** Small uppercase label above the main title. */

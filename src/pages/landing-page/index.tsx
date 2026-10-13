@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { Hero, LandingSection, ScrollToTop } from '@components';
+import { Hero, LandingSection, ProblemSection, ScrollToTop } from '@components';
 import { AppConstants } from '@constants';
 import styles from './index.module.css';
 
@@ -15,7 +15,16 @@ export function LandingPage() {
         secondaryAction={t('hero.secondaryAction')}
         imageAlt={t('hero.imageAlt')}
       />
-      {AppConstants.LANDING_SECTIONS.map((section) => (
+      <ProblemSection
+        id="section-1"
+        title={t('problem.title')}
+        description={t('problem.description')}
+        cards={[1, 2, 3].map((n) => ({
+          title: t(`problem.cards.${n}.title`),
+          description: t(`problem.cards.${n}.description`),
+        }))}
+      />
+      {AppConstants.LANDING_SECTIONS.filter((section) => section.index > 1).map((section) => (
         <LandingSection
           key={section.id}
           id={section.id}

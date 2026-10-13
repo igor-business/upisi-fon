@@ -6,5 +6,6 @@ export { LandingSection } from './landing-section';
 export { Layout } from './layout';
 
 export { PageContainer } from './page-container';
+export { ProblemSection } from './problem-section';
 export { ScrollToTop } from './scroll-to-top';
 export { Title } from './title';
