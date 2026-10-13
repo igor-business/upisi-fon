@@ -9,7 +9,7 @@ import { scrollToSection } from '@/utils/scroll';
 import clsx from 'clsx';
 import styles from './index.module.css';
 
-/** Viewport width (mirrors --breakpoint-lg) from which the full navigation is shown. */
+/** Viewport width (Mantine "lg" breakpoint, 75em) from which the full navigation is shown. */
 const DESKTOP_QUERY = '(min-width: 75em)';
 
 export function Layout() {

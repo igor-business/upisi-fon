@@ -22,7 +22,6 @@
     "imageAlt": "Platforma UpišiFON na laptopu i telefonu: lekcije, zadaci i praćenje napretka u pripremi za prijemni ispit"
   },
   "auth": {
-    "login": "Prijava",
     "logout": "Odjava"
   },
   "app": {
@@ -36,14 +35,7 @@
       "4": "Kako funkcioniše",
       "5": "Lekcije",
       "6": "O nama",
-      "7": "FAQ",
-      "8": "Klipovi"
-    },
-    "section": {
-      "7": {
-        "title": "Kontakt",
-        "description": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus. Lorem ipsum dolor sit amet, consectetur."
-      }
+      "7": "FAQ"
     }
   },
   "footer": {
@@ -265,5 +257,115 @@
     },
     "play": "Pusti video: {{title}}",
     "close": "Zatvori video"
+  },
+  "about": {
+    "eyebrow": "O nama",
+    "title": "Iza UpišiFON-a stoji tim koji razume tvoj cilj.",
+    "description": "Udružili smo iskustvo u nastavi, tehnologiji i radu sa mladima kako bismo napravili pripremu koja zaista daje rezultate.",
+    "action": "Upoznaj naš tim",
+    "partnerLogoAlt": "Binary Bioskop",
+    "stats": {
+      "1": {
+        "value": "X+",
+        "label": "kurseva"
+      },
+      "2": {
+        "value": "XXXX",
+        "label": "od kada postojimo"
+      },
+      "3": {
+        "value": "X+",
+        "label": "korisnika platforme"
+      }
+    }
+  },
+  "mentor": {
+    "eyebrow": "Mentorska podrška",
+    "title": "Ne spremaš se sam.",
+    "description": "Naši mentori su tu da ti pomognu kada ti je teško, da razjasne nedoumice i prate tvoj napredak.",
+    "items": {
+      "1": {
+        "title": "Pomoć oko zadataka",
+        "description": "Kada zapneš na zadatku ili lekciji."
+      },
+      "2": {
+        "title": "Smernice za dalje učenje",
+        "description": "Mentor ti pomaže da znaš šta i kako dalje."
+      },
+      "3": {
+        "title": "Praćenje napretka",
+        "description": "Mentor prati tvoj napredak tokom cele pripreme."
+      }
+    },
+    "action": "Saznaj više o mentorstvu"
+  },
+  "pricing": {
+    "eyebrow": "Cenovnik",
+    "title": "Izaberi način prijave.",
+    "badge": "Najpopularnije",
+    "features": {
+      "1": "Kompletan program",
+      "2": "Video lekcije",
+      "3": "Probni prijemni",
+      "4": "Mentorska podrška",
+      "5": "Summer School"
+    },
+    "plans": {
+      "1": {
+        "name": "Individualna prijava",
+        "description": "Prijavljuje se samo jedna osoba",
+        "price": "33.000 RSD",
+        "priceNote": "Kompletna priprema",
+        "action": "Započni pripremu"
+      },
+      "2": {
+        "name": "3+ osobe",
+        "description": "Grupna prijava od najmanje 3 osobe",
+        "price": "29.500 RSD",
+        "priceNote": "po osobi",
+        "saving": "Ušteda 3.500 RSD po osobi",
+        "action": "Prijavite grupu"
+      },
+      "3": {
+        "name": "5+ osoba",
+        "description": "Grupna prijava od najmanje 5 osoba",
+        "price": "26.000 RSD",
+        "priceNote": "po osobi",
+        "saving": "Ušteda 7.000 RSD po osobi",
+        "action": "Prijavite grupu"
+      }
+    },
+    "note": "Paket probnih prijemnih ispita uključen je u sve opcije."
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "Često postavljana pitanja",
+    "items": {
+      "1": {
+        "question": "Kada mogu da počnem sa pripremom?",
+        "answer": "Pripremu možeš da započneš odmah nakon prijave. Pristup platformi dobijaš čim se prijava potvrdi."
+      },
+      "2": {
+        "question": "Koliko dugo imam pristup materijalima?",
+        "answer": "Pristup materijalima traje do završetka prijemnog ispita, pa možeš da se vraćaš lekcijama i zadacima koliko god ti je potrebno."
+      },
+      "3": {
+        "question": "Da li je priprema potpuno online?",
+        "answer": "Da. Lekcije, zadaci i probni prijemni ispiti dostupni su online, a mentorsku podršku dobijaš preko platforme."
+      },
+      "4": {
+        "question": "Kako funkcioniše mentorska podrška?",
+        "answer": "Kada zapneš na zadatku ili lekciji, postaviš pitanje mentoru, koji ti objašnjava rešenje i usmerava te šta da radiš dalje."
+      },
+      "5": {
+        "question": "Da li postoje probni prijemni ispiti?",
+        "answer": "Da. Probni prijemni ispiti uključeni su u sve opcije prijave i rade se u uslovima koji liče na pravi ispit."
+      }
+    }
+  },
+  "cta": {
+    "title": "Sledeći korak ka FON-u počinje ovde.",
+    "description": "Ne moraš sam da organizuješ pripremu. Imaš program, materijal, probne prijemne i podršku ljudi koji su tu da ti pomognu.",
+    "action": "Započni pripremu"
   }
 }

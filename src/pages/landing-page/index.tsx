@@ -1,6 +1,21 @@
+import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { FeaturesSection, Hero, LandingSection, LessonsSection, ProblemSection, ProcessSection, ProgramSection, ScrollToTop, TestimonialsSection } from '@components';
-import { AppConstants } from '@constants';
+import {
+  AboutSection,
+  CtaSection,
+  FaqSection,
+  FeaturesSection,
+  Hero,
+  LessonsSection,
+  MentorSection,
+  PricingSection,
+  ProblemSection,
+  ProcessSection,
+  ProgramSection,
+  ScrollToTop,
+  TestimonialsSection,
+} from '@components';
+import { AppConstants, RouteConstants } from '@constants';
 import { scrollToSection } from '@/utils/scroll';
 import styles from './index.module.css';
 
@@ -9,6 +24,8 @@ const range = (count: number) => Array.from({ length: count }, (_, i) => i + 1);
 
 export function LandingPage() {
   const { t } = useTranslation();
+  const navigate = useNavigate();
+  const goToApp = () => navigate(RouteConstants.ROUTES.APP);
 
   return (
     <div className={styles.page}>
@@ -93,14 +110,75 @@ export function LandingPage() {
         getPlayLabel={(title) => t('lessons.play', { title })}
         closeLabel={t('lessons.close')}
       />
-      {AppConstants.LANDING_SECTIONS.filter((section) => ![1, 2, 3, 4, 5, 6].includes(section.index)).map((section) => (
-        <LandingSection
-          key={section.id}
-          id={section.id}
-          title={t(`landing.section.${section.index}.title`)}
-          description={t(`landing.section.${section.index}.description`)}
-        />
-      ))}
+      <AboutSection
+        id="section-7"
+        eyebrow={t('about.eyebrow')}
+        title={t('about.title')}
+        description={t('about.description')}
+        actionLabel={t('about.action')}
+        onAction={() => scrollToSection('section-7')}
+        partnerLogo={
+          <img
+            src={AppConstants.IMAGES.binaryBioskop}
+            alt={t('about.partnerLogoAlt')}
+            width={AppConstants.BINARY_BIOSKOP_LOGO_SIZE.width}
+            height={AppConstants.BINARY_BIOSKOP_LOGO_SIZE.height}
+            loading="lazy"
+          />
+        }
+        stats={range(AppConstants.ABOUT_STATS_COUNT).map((n) => ({
+          value: t(`about.stats.${n}.value`),
+          label: t(`about.stats.${n}.label`),
+        }))}
+      />
+      <MentorSection
+        id="section-8"
+        eyebrow={t('mentor.eyebrow')}
+        title={t('mentor.title')}
+        description={t('mentor.description')}
+        items={range(AppConstants.MENTOR_ITEMS_COUNT).map((n) => ({
+          title: t(`mentor.items.${n}.title`),
+          description: t(`mentor.items.${n}.description`),
+        }))}
+        actionLabel={t('mentor.action')}
+        onAction={() => scrollToSection('section-10')}
+      />
+      <PricingSection
+        id="section-9"
+        eyebrow={t('pricing.eyebrow')}
+        title={t('pricing.title')}
+        badge={t('pricing.badge')}
+        plans={AppConstants.PRICING_PLANS.map((plan) => ({
+          name: t(`pricing.plans.${plan.index}.name`),
+          description: t(`pricing.plans.${plan.index}.description`),
+          price: t(`pricing.plans.${plan.index}.price`),
+          priceNote: t(`pricing.plans.${plan.index}.priceNote`),
+          saving: plan.hasSaving ? t(`pricing.plans.${plan.index}.saving`) : undefined,
+          highlighted: plan.highlighted,
+          features: range(AppConstants.PRICING_FEATURES_COUNT).map((n) =>
+            t(`pricing.features.${n}`),
+          ),
+          actionLabel: t(`pricing.plans.${plan.index}.action`),
+          onAction: goToApp,
+        }))}
+        note={t('pricing.note')}
+      />
+      <FaqSection
+        id="section-10"
+        eyebrow={t('faq.eyebrow')}
+        title={t('faq.title')}
+        items={range(AppConstants.FAQ_ITEMS_COUNT).map((n) => ({
+          question: t(`faq.items.${n}.question`),
+          answer: t(`faq.items.${n}.answer`),
+        }))}
+      />
+      <CtaSection
+        id="section-11"
+        title={t('cta.title')}
+        description={t('cta.description')}
+        actionLabel={t('cta.action')}
+        onAction={goToApp}
+      />
       <ScrollToTop />
     </div>
   );

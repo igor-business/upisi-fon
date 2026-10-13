@@ -29,7 +29,7 @@ design/            # Referentni dizajn (nije deo builda)
 public/            # Statički fajlovi (logo, favicon, images/*.webp)
 src/
 ├── assets/fonts/  # Outfit variable font
-├── components/    # Layout (header + meni), Footer, Hero, LandingSection, ...
+├── components/    # Layout (header + meni), Footer, Hero i sekcije landing stranice
 ├── config/localization/  # i18n podešavanje i prevodi (language/sr/common.json)
 ├── constants/     # Rute, slike, sekcije landing stranice, footer linkovi
 ├── pages/         # LandingPage, AppPage
@@ -44,5 +44,5 @@ Path aliasi: `@`, `@components`, `@config`, `@constants`, `@pages`, `@styles`, `
 
 - Svi tekstovi dolaze iz `src/config/localization/language/sr/common.json` preko `t()` / `<Trans>`; u komponentama nema hardkodovanih tekstova.
 - Slike se koriste u WebP formatu i uvek imaju `alt` iz prevoda.
-- Sekcije landing stranice se definišu u `constants/app.ts` (`LANDING_SECTIONS`), a tekstovi su pod ključevima `landing.nav.N` i `landing.section.N.*`.
+- Sekcije landing stranice su zasebne komponente u `components/` i sklapaju se u `pages/landing-page`. Stavke navigacije su u `constants/app.ts` (`NAV_ITEMS`), a nazivi pod ključevima `landing.nav.N`.
 - Originalne (PNG) slike čuvaj u `assets-src/` (ignorisano u Git-u).

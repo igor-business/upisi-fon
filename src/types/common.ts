@@ -1,16 +1,5 @@
 import type { ReactNode } from 'react';
 
-/** Supported application languages. */
-export type Language = 'sr';
-
-/** i18next namespace used across the app. */
-export type TranslationNamespace = 'common';
-
-/** Generic props shared by presentational components. */
-export interface BaseComponentProps {
-  className?: string;
-}
-
 /** Props for the Title component. */
 export interface TitleProps {
   /** Title content (translated text passed from the page). */
@@ -33,18 +22,6 @@ export interface DescriptionProps {
 export interface PageContainerProps {
   /** Page content. */
   children: ReactNode;
-  /** Optional extra class name. */
-  className?: string;
-}
-
-/** Props for the LandingSection component. */
-export interface LandingSectionProps {
-  /** Element id used as anchor for header navigation and active-state tracking. */
-  id: string;
-  /** Section title (translated text passed from the page). */
-  title: ReactNode;
-  /** Section description (translated text passed from the page). */
-  description: ReactNode;
   /** Optional extra class name. */
   className?: string;
 }
@@ -185,6 +162,130 @@ export interface LessonsSectionProps {
   getPlayLabel: (title: string) => string;
   /** Accessible label of the close button in the video dialog. */
   closeLabel: string;
+  /** Optional extra class name. */
+  className?: string;
+}
+
+/** Props for the AboutSection component. */
+export interface AboutSectionProps {
+  /** Element id used as anchor for header navigation and active-state tracking. */
+  id: string;
+  /** Small label above the title. */
+  eyebrow: ReactNode;
+  /** Section title (translated text passed from the page). */
+  title: ReactNode;
+  /** Section description (translated text passed from the page). */
+  description: ReactNode;
+  /** Label of the button below the description. */
+  actionLabel: ReactNode;
+  /** Called when the button is clicked. */
+  onAction: () => void;
+  /** Content of the right-hand slot (team image). An empty placeholder is shown when omitted. */
+  media?: ReactNode;
+  /** Partner logo shown in the bottom row. */
+  partnerLogo: ReactNode;
+  /** Statistics shown next to the partner logo. */
+  stats: readonly TestimonialStat[];
+  /** Optional extra class name. */
+  className?: string;
+}
+
+/** Props for the MentorSection component. */
+export interface MentorSectionProps {
+  /** Element id used as anchor for header navigation and active-state tracking. */
+  id: string;
+  /** Small label above the title. */
+  eyebrow: ReactNode;
+  /** Section title (translated text passed from the page). */
+  title: ReactNode;
+  /** Section description (translated text passed from the page). */
+  description: ReactNode;
+  /** Ways the mentors help (same shape as the problem cards). */
+  items: readonly ProblemCard[];
+  /** Label of the button below the card. */
+  actionLabel: ReactNode;
+  /** Called when the button is clicked. */
+  onAction: () => void;
+  /** Content of the right-hand slot (image). An empty placeholder is shown when omitted. */
+  media?: ReactNode;
+  /** Optional extra class name. */
+  className?: string;
+}
+
+/** A single pricing plan. */
+export interface PricingPlan {
+  /** Plan name. */
+  name: ReactNode;
+  /** Short plan description. */
+  description: ReactNode;
+  /** Price including currency, e.g. "33.000 RSD". */
+  price: ReactNode;
+  /** Text below the price, e.g. "po osobi". */
+  priceNote: ReactNode;
+  /** Optional saving line, e.g. "Ušteda 3.500 RSD po osobi". */
+  saving?: ReactNode;
+  /** Highlights the plan and shows the badge. */
+  highlighted?: boolean;
+  /** Features included in the plan. */
+  features: readonly ReactNode[];
+  /** Label of the plan button. */
+  actionLabel: ReactNode;
+  /** Called when the plan button is clicked. */
+  onAction: () => void;
+}
+
+/** Props for the PricingSection component. */
+export interface PricingSectionProps {
+  /** Element id used as anchor for header navigation and active-state tracking. */
+  id: string;
+  /** Small label above the title. */
+  eyebrow: ReactNode;
+  /** Section title (translated text passed from the page). */
+  title: ReactNode;
+  /** Label of the badge on the highlighted plan. */
+  badge: ReactNode;
+  /** Pricing plans in display order. */
+  plans: readonly PricingPlan[];
+  /** Note shown below the plans. */
+  note: ReactNode;
+  /** Optional extra class name. */
+  className?: string;
+}
+
+/** A single FAQ entry. */
+export interface FaqItem {
+  /** Question (accordion label). */
+  question: ReactNode;
+  /** Answer (accordion content). */
+  answer: ReactNode;
+}
+
+/** Props for the FaqSection component. */
+export interface FaqSectionProps {
+  /** Element id used as anchor for header navigation and active-state tracking. */
+  id: string;
+  /** Small label above the title. */
+  eyebrow: ReactNode;
+  /** Section title (translated text passed from the page). */
+  title: ReactNode;
+  /** Questions and answers. */
+  items: readonly FaqItem[];
+  /** Optional extra class name. */
+  className?: string;
+}
+
+/** Props for the CtaSection component. */
+export interface CtaSectionProps {
+  /** Element id used as anchor for header navigation and active-state tracking. */
+  id: string;
+  /** Section title (translated text passed from the page). */
+  title: ReactNode;
+  /** Section description (translated text passed from the page). */
+  description: ReactNode;
+  /** Label of the call-to-action button. */
+  actionLabel: ReactNode;
+  /** Called when the button is clicked. */
+  onAction: () => void;
   /** Optional extra class name. */
   className?: string;
 }

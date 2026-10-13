@@ -1,17 +1,12 @@
-/** Application version. */
-export const APP_VERSION = '0.1.0';
-
 /** Default language used on first load. */
 export const DEFAULT_LANGUAGE = 'sr' as const;
-
-/** All supported languages. */
-export const SUPPORTED_LANGUAGES = ['sr'] as const;
 
 /** Paths to static images (files served from the public folder). */
 export const IMAGES = {
   logo: '/logo.svg',
   hero: '/images/hero.webp',
   programSystem: '/images/complete-system-fon.webp',
+  binaryBioskop: '/images/binary-bioskop.webp',
 } as const;
 
 /** Intrinsic size of the hero image (prevents layout shift while loading). */
@@ -19,20 +14,6 @@ export const HERO_IMAGE_SIZE = { width: 1536, height: 1024 } as const;
 
 /** Intrinsic size of the program section image (prevents layout shift while loading). */
 export const PROGRAM_IMAGE_SIZE = { width: 1536, height: 1024 } as const;
-
-/** A single landing page section definition. */
-export interface LandingSection {
-  /** Element id used for smooth scrolling and active-state tracking. */
-  id: string;
-  /** Section number, used to build translation keys (landing.nav.N, landing.section.N.*). */
-  index: number;
-}
-
-/** Landing page sections rendered in order. */
-export const LANDING_SECTIONS: readonly LandingSection[] = Array.from({ length: 7 }, (_, i) => ({
-  id: `section-${i + 1}`,
-  index: i + 1,
-}));
 
 /** A header navigation item. */
 export interface NavItem {
@@ -49,9 +30,8 @@ export const NAV_ITEMS: readonly NavItem[] = [
   { index: 3, target: 'section-4' }, // Rezultati
   { index: 4, target: 'section-5' }, // Kako funkcioniše
   { index: 5, target: 'section-6' }, // Lekcije
-  { index: 6, target: 'section-7' }, // O nama (placeholder)
-  { index: 7 }, // FAQ (section not built yet)
-  { index: 8 }, // Klipovi (section not built yet)
+  { index: 6, target: 'section-7' }, // O nama
+  { index: 7, target: 'section-10' }, // FAQ
 ];
 
 /** Contact details shown in the footer (placeholders until real data is provided). */
@@ -106,8 +86,8 @@ export const FOOTER_COLUMNS: readonly FooterColumn[] = [
   {
     key: 'support',
     links: [
-      { key: '1', target: 'section-7' },
-      { key: '2', target: 'section-7' },
+      { key: '1', target: 'section-10' },
+      { key: '2', target: 'section-11' },
     ],
   },
 ];
@@ -139,3 +119,35 @@ export const PROCESS_STEPS_COUNT = 6;
 
 /** YouTube video ids of the free lessons (titles are in lessons.items.N.title). */
 export const LESSON_VIDEO_IDS = ['yKSV0r1mNYI', 'cWvbm5iTFyw', '1CBCjGYlBJI'] as const;
+
+/** Intrinsic size of the Binary Bioskop logo (prevents layout shift while loading). */
+export const BINARY_BIOSKOP_LOGO_SIZE = { width: 250, height: 288 } as const;
+
+/** Number of statistics shown in the about section (about.stats.N). */
+export const ABOUT_STATS_COUNT = 3;
+
+/** Number of items in the mentor section (mentor.items.N). */
+export const MENTOR_ITEMS_COUNT = 3;
+
+/** Number of features listed in every pricing plan (pricing.features.N). */
+export const PRICING_FEATURES_COUNT = 5;
+
+/** A pricing plan definition (texts are in pricing.plans.N.*). */
+export interface PricingPlanConfig {
+  /** Plan number, used to build translation keys. */
+  index: number;
+  /** Whether the plan is highlighted as the most popular one. */
+  highlighted: boolean;
+  /** Whether the plan shows a saving line. */
+  hasSaving: boolean;
+}
+
+/** Pricing plans in display order. */
+export const PRICING_PLANS: readonly PricingPlanConfig[] = [
+  { index: 1, highlighted: false, hasSaving: false },
+  { index: 2, highlighted: true, hasSaving: true },
+  { index: 3, highlighted: false, hasSaving: true },
+];
+
+/** Number of questions in the FAQ section (faq.items.N). */
+export const FAQ_ITEMS_COUNT = 5;
