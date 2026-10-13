@@ -48,9 +48,10 @@ export const NAV_ITEMS: readonly NavItem[] = [
   { index: 2, target: 'section-2' }, // Program
   { index: 3, target: 'section-4' }, // Rezultati
   { index: 4, target: 'section-5' }, // Kako funkcioniše
-  { index: 5, target: 'section-6' }, // O nama (placeholder)
-  { index: 6, target: 'section-7' }, // FAQ (placeholder)
-  { index: 7 }, // Klipovi (section not built yet)
+  { index: 5, target: 'section-6' }, // Lekcije
+  { index: 6, target: 'section-7' }, // O nama (placeholder)
+  { index: 7 }, // FAQ (section not built yet)
+  { index: 8 }, // Klipovi (section not built yet)
 ];
 
 /** Contact details shown in the footer (placeholders until real data is provided). */
@@ -88,24 +89,24 @@ export const FOOTER_COLUMNS: readonly FooterColumn[] = [
   {
     key: 'program',
     links: [
-      { key: '1', target: 'section-2' },
-      { key: '2', target: 'section-2' },
-      { key: '3', target: 'section-2' },
-      { key: '4', target: 'section-7' },
+      { key: '1', target: 'section-3' },
+      { key: '2', target: 'section-3' },
+      { key: '3', target: 'section-3' },
+      { key: '4', target: 'section-6' },
     ],
   },
   {
     key: 'about',
     links: [
-      { key: '1', target: 'section-5' },
-      { key: '2', target: 'section-5' },
-      { key: '3', target: 'section-5' },
+      { key: '1', target: 'section-7' },
+      { key: '2', target: 'section-7' },
+      { key: '3', target: 'section-7' },
     ],
   },
   {
     key: 'support',
     links: [
-      { key: '1', target: 'section-6' },
+      { key: '1', target: 'section-7' },
       { key: '2', target: 'section-7' },
     ],
   },
@@ -135,3 +136,6 @@ export const PROGRAM_ITEMS_COUNT = 6;
 
 /** Number of steps in the process section (process.steps.N). */
 export const PROCESS_STEPS_COUNT = 6;
+
+/** YouTube video ids of the free lessons (titles are in lessons.items.N.title). */
+export const LESSON_VIDEO_IDS = ['yKSV0r1mNYI', 'cWvbm5iTFyw', '1CBCjGYlBJI'] as const;

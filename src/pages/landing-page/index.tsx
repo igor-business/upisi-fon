@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { FeaturesSection, Hero, LandingSection, ProblemSection, ProcessSection, ProgramSection, ScrollToTop, TestimonialsSection } from '@components';
+import { FeaturesSection, Hero, LandingSection, LessonsSection, ProblemSection, ProcessSection, ProgramSection, ScrollToTop, TestimonialsSection } from '@components';
 import { AppConstants } from '@constants';
 import { scrollToSection } from '@/utils/scroll';
 import styles from './index.module.css';
@@ -80,7 +80,20 @@ export function LandingPage() {
           description: t(`process.steps.${n}.description`),
         }))}
       />
-      {AppConstants.LANDING_SECTIONS.filter((section) => ![1, 2, 3, 4, 5].includes(section.index)).map((section) => (
+      <LessonsSection
+        id="section-6"
+        eyebrow={t('lessons.eyebrow')}
+        title={t('lessons.title')}
+        description={t('lessons.description')}
+        lessons={AppConstants.LESSON_VIDEO_IDS.map((videoId, i) => ({
+          videoId,
+          title: t(`lessons.items.${i + 1}.title`),
+          duration: t(`lessons.items.${i + 1}.duration`),
+        }))}
+        getPlayLabel={(title) => t('lessons.play', { title })}
+        closeLabel={t('lessons.close')}
+      />
+      {AppConstants.LANDING_SECTIONS.filter((section) => ![1, 2, 3, 4, 5, 6].includes(section.index)).map((section) => (
         <LandingSection
           key={section.id}
           id={section.id}

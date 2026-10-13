@@ -159,6 +159,36 @@ export interface ProcessSectionProps {
   className?: string;
 }
 
+/** A single free lesson (YouTube video). */
+export interface Lesson {
+  /** YouTube video id. */
+  videoId: string;
+  /** Lesson title (translated text passed from the page). */
+  title: string;
+  /** Video length, e.g. "07:56". */
+  duration: string;
+}
+
+/** Props for the LessonsSection component. */
+export interface LessonsSectionProps {
+  /** Element id used as anchor for header navigation and active-state tracking. */
+  id: string;
+  /** Small label above the title. */
+  eyebrow: ReactNode;
+  /** Section title (translated text passed from the page). */
+  title: ReactNode;
+  /** Short text below the title. */
+  description: ReactNode;
+  /** Lessons shown as video cards. */
+  lessons: readonly Lesson[];
+  /** Builds the accessible label of a card's play button. */
+  getPlayLabel: (title: string) => string;
+  /** Accessible label of the close button in the video dialog. */
+  closeLabel: string;
+  /** Optional extra class name. */
+  className?: string;
+}
+
 /** Props for the Hero component. */
 export interface HeroProps {
   /** Small uppercase label above the main title. */

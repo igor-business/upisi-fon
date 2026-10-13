@@ -2,6 +2,7 @@ export { Description } from './description';
 
 export { FeaturesSection } from './features-section';
 export { Footer } from './footer';
+export { LessonsSection } from './lessons-section';
 export { Hero } from './hero';
 export { LandingSection } from './landing-section';
 export { Layout } from './layout';
