@@ -39,10 +39,6 @@
       "7": "Klipovi"
     },
     "section": {
-      "2": {
-        "title": "Usluge",
-        "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem."
-      },
       "3": {
         "title": "Proces",
         "description": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus."
@@ -126,5 +122,27 @@
         "description": "Kada zapneš, nemaš podršku da nastaviš dalje."
       }
     }
+  },
+  "features": {
+    "title": "Sve što ti treba za pripremu. Na jednom mestu.",
+    "cards": {
+      "1": {
+        "title": "Kompletan program",
+        "description": "Sve oblasti potrebne za prijemni, organizovane po jasnom planu."
+      },
+      "2": {
+        "title": "Video lekcije",
+        "description": "Uči svojim tempom i vrati se na bilo koju lekciju kada ti je potrebna."
+      },
+      "3": {
+        "title": "Probni prijemni",
+        "description": "Testiraj znanje u uslovima koji se približavaju pravom prijemnom ispitu."
+      },
+      "4": {
+        "title": "Mentorska podrška",
+        "description": "Kada ti je potrebna pomoć, imaš mentora koji je tu za tebe."
+      }
+    },
+    "action": "Pogledaj program"
   }
 }

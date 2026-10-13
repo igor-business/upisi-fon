@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
-import { Hero, LandingSection, ProblemSection, ScrollToTop } from '@components';
+import { FeaturesSection, Hero, LandingSection, ProblemSection, ScrollToTop } from '@components';
 import { AppConstants } from '@constants';
+import { scrollToSection } from '@/utils/scroll';
 import styles from './index.module.css';
 
 export function LandingPage() {
@@ -24,7 +25,17 @@ export function LandingPage() {
           description: t(`problem.cards.${n}.description`),
         }))}
       />
-      {AppConstants.LANDING_SECTIONS.filter((section) => section.index > 1).map((section) => (
+      <FeaturesSection
+        id="section-2"
+        title={t('features.title')}
+        cards={[1, 2, 3, 4].map((n) => ({
+          title: t(`features.cards.${n}.title`),
+          description: t(`features.cards.${n}.description`),
+        }))}
+        actionLabel={t('features.action')}
+        onAction={() => scrollToSection('section-3')}
+      />
+      {AppConstants.LANDING_SECTIONS.filter((section) => section.index > 2).map((section) => (
         <LandingSection
           key={section.id}
           id={section.id}

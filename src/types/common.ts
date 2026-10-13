@@ -71,6 +71,22 @@ export interface ProblemSectionProps {
   className?: string;
 }
 
+/** Props for the FeaturesSection component. */
+export interface FeaturesSectionProps {
+  /** Element id used as anchor for header navigation and active-state tracking. */
+  id: string;
+  /** Section title (translated text passed from the page). */
+  title: ReactNode;
+  /** Feature cards (same shape as the problem cards). */
+  cards: readonly ProblemCard[];
+  /** Label of the button below the cards. */
+  actionLabel: ReactNode;
+  /** Called when the button is clicked. */
+  onAction: () => void;
+  /** Optional extra class name. */
+  className?: string;
+}
+
 /** Props for the Hero component. */
 export interface HeroProps {
   /** Small uppercase label above the main title. */

@@ -1,5 +1,6 @@
 export { Description } from './description';
 
+export { FeaturesSection } from './features-section';
 export { Footer } from './footer';
 export { Hero } from './hero';
 export { LandingSection } from './landing-section';
