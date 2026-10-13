@@ -9,4 +9,5 @@ export { Layout } from './layout';
 export { PageContainer } from './page-container';
 export { ProblemSection } from './problem-section';
 export { ScrollToTop } from './scroll-to-top';
+export { TestimonialsSection } from './testimonials-section';
 export { Title } from './title';

@@ -94,3 +94,15 @@ export const LEGAL_LINKS = [
   { key: 'terms', href: '#' },
   { key: 'cookies', href: '#' },
 ] as const;
+
+/** Number of testimonials defined in the translations (testimonials.items.N). */
+export const TESTIMONIALS_COUNT = 9;
+
+/** Number of testimonials visible at once. */
+export const TESTIMONIALS_PER_PAGE = 3;
+
+/** Time (ms) after which the testimonials carousel moves to the next page. */
+export const TESTIMONIALS_INTERVAL = 10_000;
+
+/** Number of statistics shown next to the testimonials (testimonials.stats.N). */
+export const TESTIMONIALS_STATS_COUNT = 4;

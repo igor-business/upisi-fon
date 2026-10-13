@@ -1,8 +1,11 @@
 import { useTranslation } from 'react-i18next';
-import { FeaturesSection, Hero, LandingSection, ProblemSection, ScrollToTop } from '@components';
+import { FeaturesSection, Hero, LandingSection, ProblemSection, ScrollToTop, TestimonialsSection } from '@components';
 import { AppConstants } from '@constants';
 import { scrollToSection } from '@/utils/scroll';
 import styles from './index.module.css';
+
+/** Returns [1, 2, ..., count] (used to build numbered translation keys). */
+const range = (count: number) => Array.from({ length: count }, (_, i) => i + 1);
 
 export function LandingPage() {
   const { t } = useTranslation();
@@ -35,7 +38,22 @@ export function LandingPage() {
         actionLabel={t('features.action')}
         onAction={() => scrollToSection('section-3')}
       />
-      {AppConstants.LANDING_SECTIONS.filter((section) => section.index > 2).map((section) => (
+      <TestimonialsSection
+        id="section-4"
+        title={t('testimonials.title')}
+        stats={range(AppConstants.TESTIMONIALS_STATS_COUNT).map((n) => ({
+          value: t(`testimonials.stats.${n}.value`),
+          label: t(`testimonials.stats.${n}.label`),
+        }))}
+        testimonials={range(AppConstants.TESTIMONIALS_COUNT).map((n) => ({
+          quote: t(`testimonials.items.${n}.quote`),
+          name: t(`testimonials.items.${n}.name`),
+          meta: t(`testimonials.items.${n}.meta`),
+        }))}
+        paginationLabel={t('testimonials.pagination')}
+        getPageLabel={(page) => t('testimonials.page', { page })}
+      />
+      {AppConstants.LANDING_SECTIONS.filter((section) => ![1, 2, 4].includes(section.index)).map((section) => (
         <LandingSection
           key={section.id}
           id={section.id}

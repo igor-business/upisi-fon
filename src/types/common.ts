@@ -87,6 +87,42 @@ export interface FeaturesSectionProps {
   className?: string;
 }
 
+/** A single statistic shown next to the testimonials. */
+export interface TestimonialStat {
+  /** Statistic value, e.g. "15.000+". */
+  value: ReactNode;
+  /** Short label below the value. */
+  label: ReactNode;
+}
+
+/** A single testimonial. */
+export interface Testimonial {
+  /** Testimonial text. */
+  quote: ReactNode;
+  /** Author name. */
+  name: ReactNode;
+  /** Author details, e.g. "FON, 2025.". */
+  meta: ReactNode;
+}
+
+/** Props for the TestimonialsSection component. */
+export interface TestimonialsSectionProps {
+  /** Element id used as anchor for header navigation and active-state tracking. */
+  id: string;
+  /** Section title (translated text passed from the page). */
+  title: ReactNode;
+  /** Statistics shown under the title. */
+  stats: readonly TestimonialStat[];
+  /** All testimonials; they are shown in pages of three. */
+  testimonials: readonly Testimonial[];
+  /** Accessible label of the carousel pagination. */
+  paginationLabel: string;
+  /** Builds the accessible label of a pagination dot (1-based page number). */
+  getPageLabel: (page: number) => string;
+  /** Optional extra class name. */
+  className?: string;
+}
+
 /** Props for the Hero component. */
 export interface HeroProps {
   /** Small uppercase label above the main title. */

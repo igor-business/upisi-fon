@@ -43,10 +43,6 @@
         "title": "Proces",
         "description": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus."
       },
-      "4": {
-        "title": "Tehnologija",
-        "description": "Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip."
-      },
       "5": {
         "title": "Tim",
         "description": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Lorem ipsum dolor sit amet, consectetur."
@@ -144,5 +140,75 @@
       }
     },
     "action": "Pogledaj program"
+  },
+  "testimonials": {
+    "title": "Rezultati govore više od obećanja.",
+    "stats": {
+      "1": {
+        "value": "X+",
+        "label": "polaznika"
+      },
+      "2": {
+        "value": "X+",
+        "label": "upisanih na FON"
+      },
+      "3": {
+        "value": "X%",
+        "label": "ostvarilo cilj"
+      },
+      "4": {
+        "value": "X+",
+        "label": "godina iskustva"
+      }
+    },
+    "items": {
+      "1": {
+        "quote": "Uz UpišiFON sam prvi put imala jasan plan i znala šta da radim. Sa 48 poena došla sam do 82 na probnim prijemnim.",
+        "name": "Ana Petrović",
+        "meta": "FON, 2025."
+      },
+      "2": {
+        "quote": "Mentor mi je mnogo pomogao kada sam zapela na zadacima. Nisam bila sama u pripremi i to mi je dalo ogromnu samopouzdanost.",
+        "name": "Marko Jovanović",
+        "meta": "FON, 2024."
+      },
+      "3": {
+        "quote": "Probni prijemni su mi otvorili oči gde grešim. Na pravom ispitu sam bila mnogo mirnija jer sam znala šta me čeka.",
+        "name": "Jovana Stanković",
+        "meta": "FON, 2025."
+      },
+      "4": {
+        "quote": "Video lekcije sam gledao uveče posle škole i vraćao se na ono što mi nije bilo jasno. Gradivo mi je napokon sjelo na mesto.",
+        "name": "Nikola Ilić",
+        "meta": "FON, 2024."
+      },
+      "5": {
+        "quote": "Najviše mi je značilo to što sam tačno znala šta učim svake nedelje. Nije bilo haosa, samo plan i rezultati.",
+        "name": "Milica Đorđević",
+        "meta": "FON, 2025."
+      },
+      "6": {
+        "quote": "Zadaci su bili slični onima sa pravog prijemnog, pa me ništa nije iznenadilo. Preporučio bih ih svakome ko ne zna odakle da krene.",
+        "name": "Stefan Pavlović",
+        "meta": "FON, 2023."
+      },
+      "7": {
+        "quote": "Matematika mi nikad nije bila omiljena, ali uz objašnjenja korak po korak postala je razumljiva. Upisala sam željeni smer.",
+        "name": "Teodora Nikolić",
+        "meta": "FON, 2025."
+      },
+      "8": {
+        "quote": "Analiza rezultata posle svakog probnog testa pokazala mi je tačno koje oblasti da ponovim. Uštedelo mi je mnogo vremena.",
+        "name": "Luka Marković",
+        "meta": "FON, 2024."
+      },
+      "9": {
+        "quote": "Brz odgovor na svako pitanje i podrška kada sam bila pod stresom. Bez toga ne bih ostala dosledna do kraja.",
+        "name": "Katarina Simić",
+        "meta": "FON, 2023."
+      }
+    },
+    "pagination": "Stranice utisaka",
+    "page": "Prikaži utiske {{page}}"
   }
 }
