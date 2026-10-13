@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { FeaturesSection, Hero, LandingSection, ProblemSection, ScrollToTop, TestimonialsSection } from '@components';
+import { FeaturesSection, Hero, LandingSection, ProblemSection, ProgramSection, ScrollToTop, TestimonialsSection } from '@components';
 import { AppConstants } from '@constants';
 import { scrollToSection } from '@/utils/scroll';
 import styles from './index.module.css';
@@ -53,7 +53,25 @@ export function LandingPage() {
         paginationLabel={t('testimonials.pagination')}
         getPageLabel={(page) => t('testimonials.page', { page })}
       />
-      {AppConstants.LANDING_SECTIONS.filter((section) => ![1, 2, 4].includes(section.index)).map((section) => (
+      <ProgramSection
+        id="section-3"
+        eyebrow={t('program.eyebrow')}
+        title={t('program.title')}
+        description={t('program.description')}
+        items={range(AppConstants.PROGRAM_ITEMS_COUNT).map((n) => t(`program.items.${n}`))}
+        actionLabel={t('program.action')}
+        onAction={() => scrollToSection('section-5')}
+        media={
+          <img
+            src={AppConstants.IMAGES.programSystem}
+            alt={t('program.imageAlt')}
+            width={AppConstants.PROGRAM_IMAGE_SIZE.width}
+            height={AppConstants.PROGRAM_IMAGE_SIZE.height}
+            loading="lazy"
+          />
+        }
+      />
+      {AppConstants.LANDING_SECTIONS.filter((section) => ![1, 2, 3, 4].includes(section.index)).map((section) => (
         <LandingSection
           key={section.id}
           id={section.id}

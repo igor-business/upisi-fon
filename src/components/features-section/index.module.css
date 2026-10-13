@@ -14,7 +14,7 @@
   gap: var(--spacing-2xl);
 }
 
-.title {
+.content .title {
   font-size: var(--font-size-3xl);
   line-height: 1.15;
   text-align: center;
@@ -76,7 +76,7 @@
     gap: var(--spacing-xl);
   }
 
-  .title {
+  .title.title {
     font-size: var(--font-size-2xl);
   }
 

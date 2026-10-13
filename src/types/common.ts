@@ -123,6 +123,28 @@ export interface TestimonialsSectionProps {
   className?: string;
 }
 
+/** Props for the ProgramSection component. */
+export interface ProgramSectionProps {
+  /** Element id used as anchor for header navigation and active-state tracking. */
+  id: string;
+  /** Small label above the title. */
+  eyebrow: ReactNode;
+  /** Section title (translated text passed from the page). */
+  title: ReactNode;
+  /** Section description (translated text passed from the page). */
+  description: ReactNode;
+  /** Checklist items. */
+  items: readonly ReactNode[];
+  /** Label of the button below the checklist. */
+  actionLabel: ReactNode;
+  /** Called when the button is clicked. */
+  onAction: () => void;
+  /** Content of the right-hand slot (image). An empty placeholder is shown when omitted. */
+  media?: ReactNode;
+  /** Optional extra class name. */
+  className?: string;
+}
+
 /** Props for the Hero component. */
 export interface HeroProps {
   /** Small uppercase label above the main title. */

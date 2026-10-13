@@ -21,7 +21,7 @@
   max-width: 26rem;
 }
 
-.title {
+.intro .title {
   font-size: var(--font-size-3xl);
   line-height: 1.15;
 }
@@ -80,7 +80,7 @@
     padding-block: var(--spacing-2xl);
   }
 
-  .title {
+  .title.title {
     font-size: var(--font-size-2xl);
   }
 

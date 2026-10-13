@@ -11,10 +11,14 @@ export const SUPPORTED_LANGUAGES = ['sr'] as const;
 export const IMAGES = {
   logo: '/logo.svg',
   hero: '/images/hero.webp',
+  programSystem: '/images/complete-system-fon.webp',
 } as const;
 
 /** Intrinsic size of the hero image (prevents layout shift while loading). */
 export const HERO_IMAGE_SIZE = { width: 1536, height: 1024 } as const;
+
+/** Intrinsic size of the program section image (prevents layout shift while loading). */
+export const PROGRAM_IMAGE_SIZE = { width: 1536, height: 1024 } as const;
 
 /** A single landing page section definition. */
 export interface LandingSection {
@@ -106,3 +110,6 @@ export const TESTIMONIALS_INTERVAL = 10_000;
 
 /** Number of statistics shown next to the testimonials (testimonials.stats.N). */
 export const TESTIMONIALS_STATS_COUNT = 4;
+
+/** Number of checklist items in the program section (program.items.N). */
+export const PROGRAM_ITEMS_COUNT = 6;
