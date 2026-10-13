@@ -34,6 +34,25 @@ export const LANDING_SECTIONS: readonly LandingSection[] = Array.from({ length: 
   index: i + 1,
 }));
 
+/** A header navigation item. */
+export interface NavItem {
+  /** Item number, used to build the translation key landing.nav.N. */
+  index: number;
+  /** Id of the section the item scrolls to (undefined while the section does not exist yet). */
+  target?: string;
+}
+
+/** Header navigation items in display order (targets follow the order of sections on the page). */
+export const NAV_ITEMS: readonly NavItem[] = [
+  { index: 1, target: 'section-1' }, // Početna
+  { index: 2, target: 'section-2' }, // Program
+  { index: 3, target: 'section-4' }, // Rezultati
+  { index: 4, target: 'section-5' }, // Kako funkcioniše
+  { index: 5, target: 'section-6' }, // O nama (placeholder)
+  { index: 6, target: 'section-7' }, // FAQ (placeholder)
+  { index: 7 }, // Klipovi (section not built yet)
+];
+
 /** Contact details shown in the footer (placeholders until real data is provided). */
 export const CONTACT = {
   phone: '+381 66 00 11 00',
@@ -113,3 +132,6 @@ export const TESTIMONIALS_STATS_COUNT = 4;
 
 /** Number of checklist items in the program section (program.items.N). */
 export const PROGRAM_ITEMS_COUNT = 6;
+
+/** Number of steps in the process section (process.steps.N). */
+export const PROCESS_STEPS_COUNT = 6;

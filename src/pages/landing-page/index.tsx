@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { FeaturesSection, Hero, LandingSection, ProblemSection, ProgramSection, ScrollToTop, TestimonialsSection } from '@components';
+import { FeaturesSection, Hero, LandingSection, ProblemSection, ProcessSection, ProgramSection, ScrollToTop, TestimonialsSection } from '@components';
 import { AppConstants } from '@constants';
 import { scrollToSection } from '@/utils/scroll';
 import styles from './index.module.css';
@@ -71,7 +71,16 @@ export function LandingPage() {
           />
         }
       />
-      {AppConstants.LANDING_SECTIONS.filter((section) => ![1, 2, 3, 4].includes(section.index)).map((section) => (
+      <ProcessSection
+        id="section-5"
+        eyebrow={t('process.eyebrow')}
+        title={t('process.title')}
+        steps={range(AppConstants.PROCESS_STEPS_COUNT).map((n) => ({
+          title: t(`process.steps.${n}.title`),
+          description: t(`process.steps.${n}.description`),
+        }))}
+      />
+      {AppConstants.LANDING_SECTIONS.filter((section) => ![1, 2, 3, 4, 5].includes(section.index)).map((section) => (
         <LandingSection
           key={section.id}
           id={section.id}

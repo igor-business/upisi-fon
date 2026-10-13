@@ -1,0 +1,166 @@
+.section {
+  background-color: var(--color-background);
+}
+
+.content {
+  width: 100%;
+  max-width: var(--content-max-width);
+  margin-inline: auto;
+  padding-inline: var(--content-padding-x);
+  padding-block: var(--spacing-3xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2xl);
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.eyebrow {
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.content .title {
+  font-size: var(--font-size-3xl);
+  line-height: 1.15;
+  max-width: 28rem;
+}
+
+.steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: var(--spacing-lg) 0;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding-inline: var(--spacing-sm);
+  text-align: center;
+}
+
+/* Circle with half-lines on both sides that join the neighbouring steps. */
+.marker {
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  justify-content: center;
+}
+
+.marker::before,
+.marker::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  height: 2px;
+  width: calc(50% - 1.5rem + var(--spacing-sm));
+  background-color: #ffc3de;
+  transform: translateY(-50%);
+}
+
+.marker::before {
+  left: calc(-1 * var(--spacing-sm));
+}
+
+.marker::after {
+  right: calc(-1 * var(--spacing-sm));
+}
+
+.step:first-child .marker::before,
+.step:last-child .marker::after {
+  display: none;
+}
+
+.number {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: 2px solid var(--color-primary);
+  background-color: var(--color-white);
+  color: var(--color-text);
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.stepTitle {
+  font-size: var(--font-size-md);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.stepDescription {
+  font-size: var(--font-size-sm);
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
+/* ---------- Tablet: two rows of three steps ---------- */
+@media (max-width: 62em) {
+  .steps {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--spacing-xl) 0;
+  }
+
+  .step:nth-child(3n + 1) .marker::before,
+  .step:nth-child(3n) .marker::after {
+    display: none;
+  }
+
+  .step:last-child .marker::after {
+    display: none;
+  }
+}
+
+/* ---------- Mobile: vertical list ---------- */
+@media (max-width: 47.99em) {
+  .content {
+    padding-block: var(--spacing-2xl);
+  }
+
+  .content .title.title {
+    font-size: var(--font-size-2xl);
+  }
+
+  .steps {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  .step {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+    padding-inline: 0;
+  }
+
+  .marker {
+    align-self: auto;
+    flex-shrink: 0;
+  }
+
+  .marker::before,
+  .marker::after {
+    display: none;
+  }
+}

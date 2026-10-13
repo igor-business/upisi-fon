@@ -8,6 +8,7 @@ export { Layout } from './layout';
 
 export { PageContainer } from './page-container';
 export { ProgramSection } from './program-section';
+export { ProcessSection } from './process-section';
 export { ProblemSection } from './problem-section';
 export { ScrollToTop } from './scroll-to-top';
 export { TestimonialsSection } from './testimonials-section';

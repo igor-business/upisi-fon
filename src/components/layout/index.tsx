@@ -23,8 +23,8 @@ export function Layout() {
     const header = document.querySelector('header');
     const headerHeight = header ? header.offsetHeight : 0;
 
-    const sections = AppConstants.LANDING_SECTIONS.map((section) =>
-      document.getElementById(section.id),
+    const sections = AppConstants.NAV_ITEMS.map((item) =>
+      item.target ? document.getElementById(item.target) : null,
     ).filter((element): element is HTMLElement => element !== null);
 
     if (sections.length === 0) {
@@ -65,20 +65,25 @@ export function Layout() {
   };
 
   const renderLinks = (linkClassName: string) =>
-    AppConstants.LANDING_SECTIONS.map((section) => (
-      <a
-        key={section.id}
-        href={`#${section.id}`}
-        className={clsx(linkClassName, activeSection === section.id && styles.active)}
-        aria-current={activeSection === section.id ? 'true' : undefined}
-        onClick={(event) => {
-          event.preventDefault();
-          goToSection(section.id);
-        }}
-      >
-        {t(`landing.nav.${section.index}`)}
-      </a>
-    ));
+    AppConstants.NAV_ITEMS.map((item) => {
+      const isActive = item.target !== undefined && activeSection === item.target;
+      return (
+        <a
+          key={item.index}
+          href={item.target ? `#${item.target}` : '#'}
+          className={clsx(linkClassName, isActive && styles.active)}
+          aria-current={isActive ? 'true' : undefined}
+          onClick={(event) => {
+            event.preventDefault();
+            if (item.target) {
+              goToSection(item.target);
+            }
+          }}
+        >
+          {t(`landing.nav.${item.index}`)}
+        </a>
+      );
+    });
 
   return (
     <div className={styles.layout}>

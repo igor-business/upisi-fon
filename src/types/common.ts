@@ -145,6 +145,20 @@ export interface ProgramSectionProps {
   className?: string;
 }
 
+/** Props for the ProcessSection component. */
+export interface ProcessSectionProps {
+  /** Element id used as anchor for header navigation and active-state tracking. */
+  id: string;
+  /** Small label above the title. */
+  eyebrow: ReactNode;
+  /** Section title (translated text passed from the page). */
+  title: ReactNode;
+  /** Steps shown in order (same shape as the problem cards). */
+  steps: readonly ProblemCard[];
+  /** Optional extra class name. */
+  className?: string;
+}
+
 /** Props for the Hero component. */
 export interface HeroProps {
   /** Small uppercase label above the main title. */
