@@ -10,7 +10,21 @@ export function App() {
         theme={{
           fontFamily: 'Outfit Variable, Outfit, system-ui, sans-serif',
           headings: { fontFamily: 'Outfit Variable, Outfit, system-ui, sans-serif' },
-          primaryColor: 'violet',
+          primaryColor: 'pink',
+          colors: {
+            pink: [
+              '#fff4f9',
+              '#ffe3f0',
+              '#ffc3de',
+              '#ff8bc2',
+              '#f9459e',
+              '#df0275',
+              '#c40263',
+              '#a30051',
+              '#7d003e',
+              '#57002b',
+            ],
+          },
         }}
         defaultColorScheme="light"
       >

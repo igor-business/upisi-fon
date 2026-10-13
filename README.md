@@ -1,122 +1,48 @@
-# React Boilerplate
+# UpišiFON
 
-A production-ready React + TypeScript boilerplate designed to serve as the standardized foundation for new projects.
+Prezentacioni sajt firme koja priprema buduće studente za prijemni ispit iz matematike na Fakultetu organizacionih nauka (FON) u Beogradu. Sajt predstavlja čime se firma bavi i kako pomaže studentima da savladaju gradivo.
 
-This repository contains the preferred project structure, libraries, configuration, reusable components, internationalization setup, development conventions, and coding patterns used as the baseline for future React applications.
+## Tehnologije
 
-The goal is to avoid repeating the same initial setup for every project and to provide a consistent, maintainable, and scalable starting point.
-
-## What's Included
-
-- React + TypeScript
+- React 19 + TypeScript
 - Vite
-- Internationalization (i18n)
-- Reusable UI components
-- Centralized project configuration
-- Standardized folder structure
-- ESLint / Oxlint configuration
-- TypeScript configuration
-- Common utility functions and helpers
-- Consistent naming and coding conventions
-- Recommended patterns for components, hooks, services, and state management
-- Preconfigured development dependencies
+- Mantine (UI komponente)
+- react-router-dom (rutiranje)
+- i18next / react-i18next (svi tekstovi su u JSON fajlu)
+- CSS moduli + dizajn tokeni u `src/styles/global.css`
+- Outfit font (hostovan lokalno u `src/assets/fonts`)
 
-## Project Structure
-
-The project structure is intentionally standardized to provide consistency across applications.
-
-```text
-src/
-├── components/       # Reusable UI components
-├── hooks/            # Custom React hooks
-├── layouts/          # Application layouts
-├── pages/            # Application pages
-├── services/         # API and external services
-├── types/            # Shared TypeScript types
-├── utils/            # Utility functions
-├── i18n/             # Internationalization configuration
-├── assets/           # Static assets
-└── ...
-```
-
-The exact structure may evolve over time as new patterns and requirements are introduced.
-
-## Development Principles
-
-New projects based on this boilerplate should follow the conventions established here.
-
-Key principles include:
-
-- Prefer reusable and composable components.
-- Keep components focused and maintainable.
-- Use TypeScript consistently and avoid unnecessary `any`.
-- Follow the established project and folder structure.
-- Keep business logic separate from presentation logic where appropriate.
-- Reuse existing utilities and components instead of creating duplicates.
-- Follow the existing naming conventions.
-- Keep translations centralized through the established i18n setup.
-- Prefer simple, readable, and maintainable solutions over unnecessary abstraction.
-
-## Using This Boilerplate
-
-This repository is intended to be used as the starting point for new React projects.
-
-When creating a new project, use this repository as the reference for:
-
-- Project architecture
-- Folder structure
-- Dependencies
-- Component patterns
-- Coding conventions
-- Styling approach
-- Internationalization
-- Configuration
-- General development practices
-
-New features should follow the patterns already established in this boilerplate unless there is a clear reason to introduce a different approach.
-
-## Development
-
-Install dependencies:
+## Pokretanje
 
 ```bash
 npm install
+npm run dev      # razvojni server
+npm run build    # provera tipova + produkcioni build u dist/
+npm run preview  # pregled produkcionog builda
+npm run lint     # oxlint
 ```
 
-Start the development server:
+## Struktura
 
-```bash
-npm run dev
+```text
+design/            # Referentni dizajn (nije deo builda)
+public/            # Statički fajlovi (logo, favicon, images/*.webp)
+src/
+├── assets/fonts/  # Outfit variable font
+├── components/    # Layout (header + meni), Footer, Hero, LandingSection, ...
+├── config/localization/  # i18n podešavanje i prevodi (language/sr/common.json)
+├── constants/     # Rute, slike, sekcije landing stranice, footer linkovi
+├── pages/         # LandingPage, AppPage
+├── styles/        # Globalni stilovi i dizajn tokeni
+├── types/         # Zajednički TypeScript tipovi
+└── utils/         # Pomoćne funkcije (npr. scrollToSection)
 ```
 
-Build the application:
+Path aliasi: `@`, `@components`, `@config`, `@constants`, `@pages`, `@styles`, `@types`, `@assets`.
 
-```bash
-npm run build
-```
+## Konvencije
 
-Run linting:
-
-```bash
-npm run lint
-```
-
-## Keeping the Boilerplate Updated
-
-This repository is continuously improved as new projects introduce better patterns, reusable solutions, and updated dependencies.
-
-Changes made here should be considered carefully because they may become the standard for future projects.
-
-When adding a new dependency, component pattern, or architectural approach, prefer solutions that are broadly reusable across different applications rather than project-specific implementations.
-
-## AI Development Reference
-
-This repository can also be used as a reference when working with AI coding agents.
-
-When starting a new project from this boilerplate, the existing architecture, conventions, components, dependencies, and implementation patterns should be treated as the project's development standard.
-
-AI agents should first inspect the existing structure and follow the established patterns before introducing new approaches or dependencies.
-
-## License
-
-Private repository. For personal development use.
+- Svi tekstovi dolaze iz `src/config/localization/language/sr/common.json` preko `t()` / `<Trans>`; u komponentama nema hardkodovanih tekstova.
+- Slike se koriste u WebP formatu i uvek imaju `alt` iz prevoda.
+- Sekcije landing stranice se definišu u `constants/app.ts` (`LANDING_SECTIONS`), a tekstovi su pod ključevima `landing.nav.N` i `landing.section.N.*`.
+- Originalne (PNG) slike čuvaj u `assets-src/` (ignorisano u Git-u).

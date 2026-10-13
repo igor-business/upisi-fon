@@ -1,3 +1,3 @@
-export { AboutPage } from './about-page';
+export { LandingPage } from './landing-page';
 
-export { HomePage } from './home-page';
+export { AppPage } from './app-page';

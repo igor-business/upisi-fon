@@ -1,41 +1,137 @@
+import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { NavLink, Outlet } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
+import { Burger, Drawer } from '@mantine/core';
+import { useDisclosure, useMediaQuery } from '@mantine/hooks';
 import { AppConstants, RouteConstants } from '@constants';
-import { LanguageSwitcher } from '../language-switcher';
+import { Footer } from '@components';
+import { scrollToSection } from '@/utils/scroll';
 import clsx from 'clsx';
 import styles from './index.module.css';
 
+/** Viewport width (mirrors --breakpoint-lg) from which the full navigation is shown. */
+const DESKTOP_QUERY = '(min-width: 75em)';
+
 export function Layout() {
   const { t } = useTranslation();
+  const navigate = useNavigate();
+  const [activeSection, setActiveSection] = useState<string | null>(null);
+  const [menuOpened, { toggle: toggleMenu, close: closeMenu }] = useDisclosure(false);
+  const isDesktop = useMediaQuery(DESKTOP_QUERY);
 
-  const linkClass = ({ isActive }: { isActive: boolean }) =>
-    clsx(styles.link, isActive && styles.active);
+  useEffect(() => {
+    const header = document.querySelector('header');
+    const headerHeight = header ? header.offsetHeight : 0;
+
+    const sections = AppConstants.LANDING_SECTIONS.map((section) =>
+      document.getElementById(section.id),
+    ).filter((element): element is HTMLElement => element !== null);
+
+    if (sections.length === 0) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        }
+      },
+      {
+        rootMargin: `-${headerHeight}px 0px -70% 0px`,
+      },
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (isDesktop) {
+      closeMenu();
+    }
+  }, [isDesktop, closeMenu]);
+
+  const goToSection = (id: string) => {
+    closeMenu();
+    scrollToSection(id);
+  };
+
+  const goToApp = () => {
+    closeMenu();
+    navigate(RouteConstants.ROUTES.APP);
+  };
+
+  const renderLinks = (linkClassName: string) =>
+    AppConstants.LANDING_SECTIONS.map((section) => (
+      <a
+        key={section.id}
+        href={`#${section.id}`}
+        className={clsx(linkClassName, activeSection === section.id && styles.active)}
+        aria-current={activeSection === section.id ? 'true' : undefined}
+        onClick={(event) => {
+          event.preventDefault();
+          goToSection(section.id);
+        }}
+      >
+        {t(`landing.nav.${section.index}`)}
+      </a>
+    ));
 
   return (
     <div className={styles.layout}>
       <header className={styles.header}>
         <div className={styles.headerInner}>
-          <div className={styles.left}>
-            <img
-              src={AppConstants.IMAGES.logo}
-              alt={AppConstants.APP_NAME}
-              className={styles.logo}
+          <img
+            src={AppConstants.IMAGES.logo}
+            alt={t('appName')}
+            className={styles.logo}
+          />
+          <nav className={styles.nav} aria-label={t('a11y.mainNavigation')}>
+            {renderLinks(styles.link)}
+          </nav>
+          <div className={styles.right}>
+            <button type="button" className={styles.cta} onClick={goToApp}>
+              {t('header.cta')}
+            </button>
+            <Burger
+              opened={menuOpened}
+              onClick={toggleMenu}
+              className={styles.burger}
+              aria-label={menuOpened ? t('a11y.closeMenu') : t('a11y.openMenu')}
+              size="md"
             />
-            <nav className={styles.nav}>
-              <NavLink to={RouteConstants.ROUTES.HOME} end className={linkClass}>
-                {t('nav.home')}
-              </NavLink>
-              <NavLink to={RouteConstants.ROUTES.ABOUT} className={linkClass}>
-                {t('nav.about')}
-              </NavLink>
-            </nav>
           </div>
-          <LanguageSwitcher />
         </div>
       </header>
+
+      <Drawer
+        opened={menuOpened}
+        onClose={closeMenu}
+        position="right"
+        size="min(20rem, 100%)"
+        title={t('header.menuTitle')}
+        closeButtonProps={{ 'aria-label': t('a11y.closeMenu') }}
+        classNames={{ title: styles.drawerTitle }}
+      >
+        <nav className={styles.drawerNav} aria-label={t('a11y.mainNavigation')}>
+          {renderLinks(styles.drawerLink)}
+        </nav>
+        <button
+          type="button"
+          className={clsx(styles.cta, styles.drawerCta)}
+          onClick={goToApp}
+        >
+          {t('header.cta')}
+        </button>
+      </Drawer>
+
       <main className={styles.main}>
         <Outlet />
       </main>
+      <Footer />
     </div>
   );
 }

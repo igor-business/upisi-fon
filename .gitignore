@@ -22,3 +22,34 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# macOS
+.DS_Store
+**/.DS_Store
+__MACOSX
+._*
+
+# Archives and exports
+*.zip
+*.rar
+*.7z
+*.tar.gz
+
+# Source images / working files (originals, not shipped)
+assets-src/
+
+# Env files
+.env
+.env.*
+!.env.example
+
+# Tool caches and build info
+.vite
+.cache
+coverage
+*.tsbuildinfo
+.oxlintcache
+
+# AI tooling / OS
+.claude/
+Thumbs.db

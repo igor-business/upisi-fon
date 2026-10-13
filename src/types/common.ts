@@ -1,20 +1,10 @@
 import type { ReactNode } from 'react';
 
 /** Supported application languages. */
-export type Language = 'sr' | 'en';
+export type Language = 'sr';
 
 /** i18next namespace used across the app. */
 export type TranslationNamespace = 'common';
-
-/** Translation keys for navigation labels. */
-export type NavKey = 'nav.home' | 'nav.about';
-
-/** Translation keys grouped by page (root-level page objects). */
-export type PageKey =
-  | 'home.title'
-  | 'home.description'
-  | 'about.title'
-  | 'about.description';
 
 /** Generic props shared by presentational components. */
 export interface BaseComponentProps {
@@ -25,6 +15,8 @@ export interface BaseComponentProps {
 export interface TitleProps {
   /** Title content (translated text passed from the page). */
   children: ReactNode;
+  /** Heading level (h1-h3). Defaults to 2; the hero owns the page h1. */
+  order?: 1 | 2 | 3;
   /** Optional extra class name. */
   className?: string;
 }
@@ -41,6 +33,34 @@ export interface DescriptionProps {
 export interface PageContainerProps {
   /** Page content. */
   children: ReactNode;
+  /** Optional extra class name. */
+  className?: string;
+}
+
+/** Props for the LandingSection component. */
+export interface LandingSectionProps {
+  /** Element id used as anchor for header navigation and active-state tracking. */
+  id: string;
+  /** Section title (translated text passed from the page). */
+  title: ReactNode;
+  /** Section description (translated text passed from the page). */
+  description: ReactNode;
+  /** Optional extra class name. */
+  className?: string;
+}
+
+/** Props for the Hero component. */
+export interface HeroProps {
+  /** Small uppercase label above the main title. */
+  eyebrow: ReactNode;
+  /** Hero description (translated text passed from the page). */
+  description: ReactNode;
+  /** Label of the primary call-to-action button. */
+  primaryAction: ReactNode;
+  /** Label of the secondary call-to-action button. */
+  secondaryAction: ReactNode;
+  /** Alternative text of the hero image. */
+  imageAlt: string;
   /** Optional extra class name. */
   className?: string;
 }

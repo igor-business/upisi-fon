@@ -3,9 +3,9 @@ import { TitleProps } from '@/types/common';
 import clsx from 'clsx';
 import styles from './index.module.css';
 
-export function Title({ children, className }: TitleProps) {
+export function Title({ children, order = 2, className }: TitleProps) {
   return (
-    <MantineTitle order={1} className={clsx(styles.title, className)}>
+    <MantineTitle order={order} className={clsx(styles.title, className)}>
       {children}
     </MantineTitle>
   );
