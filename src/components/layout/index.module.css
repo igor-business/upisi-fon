@@ -34,6 +34,12 @@
   flex-shrink: 0;
 }
 
+.logoLink {
+  display: flex;
+  flex-shrink: 0;
+  border-radius: var(--radius-md);
+}
+
 .right {
   display: flex;
   align-items: center;

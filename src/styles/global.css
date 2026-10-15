@@ -146,6 +146,7 @@ button {
 }
 
 /* Keep anchored landing sections visible below the sticky header. */
-[id^="section-"] {
+section[id],
+footer[id] {
   scroll-margin-top: var(--header-height);
 }

@@ -27,6 +27,11 @@
   max-width: 20rem;
 }
 
+.logoLink {
+  align-self: flex-start;
+  display: inline-flex;
+}
+
 .logo {
   height: 2.25rem;
   width: auto;
@@ -67,7 +72,7 @@
 
 .columns {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr)) auto;
   gap: var(--spacing-xl);
 }
 
@@ -119,25 +124,6 @@
 .copyright {
   font-size: var(--font-size-xs);
   color: var(--color-text-muted);
-}
-
-.legal {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--spacing-xs) var(--spacing-lg);
-}
-
-.legalLink {
-  font-size: var(--font-size-xs);
-  color: var(--color-text-muted);
-  transition: color 150ms ease;
-}
-
-.legalLink:hover {
-  color: var(--color-primary);
 }
 
 /* ---------- Tablet ---------- */

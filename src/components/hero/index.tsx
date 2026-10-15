@@ -1,23 +1,23 @@
-import { useNavigate } from 'react-router-dom';
 import { Trans } from 'react-i18next';
 import { Button } from '@mantine/core';
 import { HeroProps } from '@/types/common';
-import { AppConstants, RouteConstants } from '@constants';
-import { scrollToSection } from '@/utils/scroll';
+import { AppConstants } from '@constants';
+import clsx from 'clsx';
 import styles from './index.module.css';
 
 export function Hero({
   eyebrow,
   description,
   primaryAction,
+  onPrimaryAction,
   secondaryAction,
+  onSecondaryAction,
+  stats,
   imageAlt,
   className,
 }: HeroProps) {
-  const navigate = useNavigate();
-
   return (
-    <section className={className}>
+    <section className={clsx(styles.section, className)}>
       <div className={styles.content}>
         <div className={styles.copy}>
           <p className={styles.eyebrow}>{eyebrow}</p>
@@ -29,18 +29,14 @@ export function Hero({
           </h1>
           <p className={styles.description}>{description}</p>
           <div className={styles.actions}>
-            <Button
-              size="lg"
-              className={styles.primaryButton}
-              onClick={() => navigate(RouteConstants.ROUTES.APP)}
-            >
+            <Button size="lg" className={styles.primaryButton} onClick={onPrimaryAction}>
               {primaryAction}
             </Button>
             <Button
               size="lg"
               variant="default"
               className={styles.secondaryButton}
-              onClick={() => scrollToSection('section-1')}
+              onClick={onSecondaryAction}
             >
               {secondaryAction}
             </Button>
@@ -56,6 +52,14 @@ export function Hero({
             className={styles.heroImage}
           />
         </div>
+        <dl className={styles.stats}>
+          {stats.map((stat, index) => (
+            <div key={index} className={styles.stat}>
+              <dt className={styles.statValue}>{stat.value}</dt>
+              <dd className={styles.statLabel}>{stat.label}</dd>
+            </div>
+          ))}
+        </dl>
       </div>
     </section>
   );

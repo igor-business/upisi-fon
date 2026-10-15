@@ -1,9 +1,18 @@
+import { Button } from '@mantine/core';
 import { Title } from '@components';
 import { ProcessSectionProps } from '@/types/common';
 import clsx from 'clsx';
 import styles from './index.module.css';
 
-export function ProcessSection({ id, eyebrow, title, steps, className }: ProcessSectionProps) {
+export function ProcessSection({
+  id,
+  eyebrow,
+  title,
+  steps,
+  actionLabel,
+  onAction,
+  className,
+}: ProcessSectionProps) {
   return (
     <section id={id} className={clsx(styles.section, className)}>
       <div className={styles.content}>
@@ -24,6 +33,9 @@ export function ProcessSection({ id, eyebrow, title, steps, className }: Process
             </li>
           ))}
         </ol>
+        <Button size="lg" className={styles.action} onClick={onAction}>
+          {actionLabel}
+        </Button>
       </div>
     </section>
   );

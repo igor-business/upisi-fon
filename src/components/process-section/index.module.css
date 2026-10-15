@@ -164,3 +164,18 @@
     display: none;
   }
 }
+
+.action {
+  align-self: center;
+  background-color: var(--color-primary);
+}
+
+.action:hover {
+  background-color: var(--color-primary-hover);
+}
+
+@media (max-width: 47.99em) {
+  .action {
+    align-self: stretch;
+  }
+}

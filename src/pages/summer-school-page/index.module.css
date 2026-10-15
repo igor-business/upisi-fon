@@ -1,0 +1,255 @@
+.page {
+  display: flex;
+  flex-direction: column;
+}
+
+.intro {
+  background-color: var(--color-background-alt);
+}
+
+.introContent,
+.aboutContent,
+.offerContent,
+.ctaContent,
+.questions {
+  width: 100%;
+  max-width: var(--content-max-width);
+  margin-inline: auto;
+  padding-inline: var(--content-padding-x);
+}
+
+.introContent {
+  padding-block: var(--spacing-2xl) var(--spacing-3xl);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  transition: color 150ms ease;
+}
+
+.back:hover {
+  color: var(--color-primary);
+}
+
+.introContent .title {
+  font-size: var(--font-size-3xl);
+  line-height: 1.15;
+}
+
+.subtitle {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-primary);
+}
+
+.description {
+  max-width: 40rem;
+  font-size: var(--font-size-lg);
+}
+
+.about {
+  background-color: var(--color-background);
+}
+
+.aboutContent {
+  padding-block: var(--spacing-3xl);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  gap: var(--spacing-2xl);
+}
+
+.heading {
+  font-size: var(--font-size-2xl);
+  line-height: 1.2;
+}
+
+.aboutText {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  font-size: var(--font-size-lg);
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
+.offer {
+  background-color: var(--color-background-alt);
+}
+
+.offerContent {
+  padding-block: var(--spacing-3xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.groups {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-md);
+}
+
+.groupTitle {
+  font-size: var(--font-size-lg);
+}
+
+.items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+  line-height: 1.5;
+}
+
+.item svg {
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+  color: var(--color-primary);
+}
+
+.cta {
+  background-color: var(--color-dark);
+  color: var(--color-white);
+}
+
+.ctaContent {
+  padding-block: var(--spacing-3xl) var(--spacing-xl);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-xl);
+}
+
+.ctaText {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.priceLabel {
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+.price {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.currency {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+}
+
+.priceNote {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.ctaContent .ctaAction {
+  flex-shrink: 0;
+  background-color: var(--color-accent) !important;
+  color: var(--color-accent-text) !important;
+  font-weight: 700;
+}
+
+.ctaContent .ctaAction:hover {
+  background-color: var(--color-accent-hover) !important;
+}
+
+.questions {
+  padding-block: 0 var(--spacing-3xl);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.questionsLink {
+  padding: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  font-weight: 700;
+  color: var(--color-white);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+@media (max-width: 62em) {
+  .aboutContent {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  .groups {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 47.99em) {
+  .introContent {
+    padding-block: var(--spacing-xl) var(--spacing-2xl);
+  }
+
+  .introContent .title {
+    font-size: var(--font-size-2xl);
+  }
+
+  .subtitle {
+    font-size: var(--font-size-lg);
+  }
+
+  .aboutContent,
+  .offerContent {
+    padding-block: var(--spacing-2xl);
+  }
+
+  .ctaContent {
+    padding-block: var(--spacing-2xl) var(--spacing-lg);
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .ctaContent .ctaAction {
+    width: 100%;
+  }
+
+  .questions {
+    padding-block: 0 var(--spacing-2xl);
+    flex-wrap: wrap;
+  }
+}
