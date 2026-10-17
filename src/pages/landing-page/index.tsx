@@ -87,7 +87,6 @@ export function LandingPage() {
       />
       <ProcessSection
         id={SECTION_IDS.process}
-        eyebrow={t('process.eyebrow')}
         title={t('process.title')}
         steps={range(AppConstants.PROCESS_STEPS_COUNT).map((n) => ({
           title: t(`process.steps.${n}.title`),
@@ -160,7 +159,6 @@ export function LandingPage() {
       />
       <FaqSection
         id={SECTION_IDS.faq}
-        eyebrow={t('faq.eyebrow')}
         title={t('faq.title')}
         items={range(AppConstants.FAQ_ITEMS_COUNT).map((n) => ({
           question: t(`faq.items.${n}.question`),

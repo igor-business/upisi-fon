@@ -96,8 +96,6 @@ export interface ProgramSectionProps {
 export interface ProcessSectionProps {
   /** Element id used as anchor for header navigation and active-state tracking. */
   id: string;
-  /** Small label above the title. */
-  eyebrow: ReactNode;
   /** Section title (translated text passed from the page). */
   title: ReactNode;
   /** Steps shown in order (title and description cards). */
@@ -254,8 +252,6 @@ export interface FaqItem {
 export interface FaqSectionProps {
   /** Element id used as anchor for header navigation and active-state tracking. */
   id: string;
-  /** Small label above the title. */
-  eyebrow: ReactNode;
   /** Section title (translated text passed from the page). */
   title: ReactNode;
   /** Questions and answers. */

@@ -7,7 +7,7 @@
   max-width: var(--content-max-width);
   margin-inline: auto;
   padding-inline: var(--content-padding-x);
-  padding-block: var(--spacing-3xl);
+  padding-block: var(--section-padding-y);
   display: flex;
   flex-direction: column;
   gap: var(--spacing-2xl);
@@ -19,16 +19,10 @@
   gap: var(--spacing-md);
 }
 
-.eyebrow {
-  font-size: var(--font-size-sm);
-  font-weight: 700;
-  color: var(--color-primary);
-}
-
 .content .title {
   font-size: var(--font-size-3xl);
   line-height: 1.15;
-  max-width: 28rem;
+  max-width: 30rem;
 }
 
 .steps {
@@ -166,7 +160,7 @@
 }
 
 .action {
-  align-self: center;
+  align-self: flex-start;
   background-color: var(--color-primary);
 }
 

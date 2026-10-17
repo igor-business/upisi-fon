@@ -41,7 +41,7 @@
 }
 
 .introContent .title {
-  font-size: var(--font-size-3xl);
+  font-size: var(--font-size-4xl);
   line-height: 1.15;
 }
 
@@ -62,7 +62,7 @@
 }
 
 .aboutContent {
-  padding-block: var(--spacing-3xl);
+  padding-block: var(--section-padding-y);
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
   gap: var(--spacing-2xl);
@@ -87,7 +87,7 @@
 }
 
 .offerContent {
-  padding-block: var(--spacing-3xl);
+  padding-block: var(--section-padding-y);
   display: flex;
   flex-direction: column;
   gap: var(--spacing-xl);
@@ -109,7 +109,6 @@
   padding: var(--spacing-xl);
   border-radius: var(--radius-lg);
   background-color: var(--color-white);
-  box-shadow: var(--shadow-md);
 }
 
 .groupTitle {
@@ -144,7 +143,7 @@
 }
 
 .ctaContent {
-  padding-block: var(--spacing-3xl) var(--spacing-xl);
+  padding-block: var(--section-padding-y) var(--spacing-xl);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -160,7 +159,7 @@
 .priceLabel {
   font-size: var(--font-size-sm);
   font-weight: 700;
-  color: var(--color-accent);
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .price {
@@ -181,13 +180,13 @@
 
 .ctaContent .ctaAction {
   flex-shrink: 0;
-  background-color: var(--color-accent) !important;
-  color: var(--color-accent-text) !important;
+  background-color: var(--color-white) !important;
+  color: var(--color-dark) !important;
   font-weight: 700;
 }
 
 .ctaContent .ctaAction:hover {
-  background-color: var(--color-accent-hover) !important;
+  background-color: var(--color-background-alt) !important;
 }
 
 .questions {

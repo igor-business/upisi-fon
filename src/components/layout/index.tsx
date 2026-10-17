@@ -147,6 +147,7 @@ export function Layout() {
               className={styles.burger}
               aria-label={menuOpened ? t('a11y.closeMenu') : t('a11y.openMenu')}
               size="md"
+              color="var(--color-text)"
             />
           </div>
         </div>

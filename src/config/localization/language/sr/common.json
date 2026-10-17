@@ -16,7 +16,7 @@
   },
   "hero": {
     "eyebrow": "Prijemni iz matematike",
-    "title": "Tvoj put do FON-a <1>počinje ovde.</1>",
+    "title": "Tvoj put do FON-⁠a <1>počinje ovde.</1>",
     "description": "Kompletna online priprema: video lekcije 24/7, zadaci sa rešenjima, probni prijemni ispiti i mentor koji prati tvoj napredak.",
     "primaryAction": "Pošalji zahtev",
     "secondaryAction": "Isprobaj besplatno",
@@ -148,7 +148,6 @@
     }
   },
   "process": {
-    "eyebrow": "Kako funkcioniše",
     "title": "Od prvog koraka do prijemnog ispita.",
     "steps": {
       "1": {
@@ -261,7 +260,6 @@
     }
   },
   "pricing": {
-    "eyebrow": "Cenovnik",
     "title": "Izaberi svoj put do FON-a.",
     "description": "Pošalji zahtev sam ili sa društvom – u grupi je cena po osobi niža.",
     "currency": "RSD",
@@ -327,7 +325,6 @@
     "standalonePrice": "(samostalno {{amount}} RSD)"
   },
   "faq": {
-    "eyebrow": "FAQ",
     "title": "Često postavljana pitanja",
     "items": {
       "1": {

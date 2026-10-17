@@ -25,7 +25,7 @@ export function LessonsSection({
 
         <LessonList lessons={lessons} getPlayLabel={getPlayLabel} closeLabel={closeLabel} />
 
-        <Button size="lg" className={styles.action} onClick={onAction}>
+        <Button size="lg" variant="default" className={styles.action} onClick={onAction}>
           {actionLabel}
         </Button>
       </div>

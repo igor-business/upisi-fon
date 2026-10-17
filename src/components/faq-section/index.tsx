@@ -4,12 +4,11 @@ import { FaqSectionProps } from '@/types/common';
 import clsx from 'clsx';
 import styles from './index.module.css';
 
-export function FaqSection({ id, eyebrow, title, items, className }: FaqSectionProps) {
+export function FaqSection({ id, title, items, className }: FaqSectionProps) {
   return (
     <section id={id} className={clsx(styles.section, className)}>
       <div className={styles.content}>
         <div className={styles.intro}>
-          <p className={styles.eyebrow}>{eyebrow}</p>
           <Title className={styles.title}>{title}</Title>
         </div>
         <Accordion

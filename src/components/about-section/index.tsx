@@ -69,7 +69,7 @@ export function AboutSection({
             target="_blank"
             rel="noopener noreferrer"
             size="lg"
-            variant="outline"
+            variant="default"
             className={styles.partnerAction}
           >
             {partner.actionLabel}

@@ -36,7 +36,6 @@ export function PricingSection({ id, onSelect, onSummerSchool, className }: Pric
     <section id={id} className={clsx(styles.section, className)}>
       <div className={styles.content}>
         <div className={styles.intro}>
-          <p className={styles.eyebrow}>{t('pricing.eyebrow')}</p>
           <Title className={styles.title}>{t('pricing.title')}</Title>
           <p className={styles.description}>{t('pricing.description')}</p>
         </div>

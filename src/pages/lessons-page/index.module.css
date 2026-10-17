@@ -34,7 +34,7 @@
 }
 
 .introContent .title {
-  font-size: var(--font-size-3xl);
+  font-size: var(--font-size-4xl);
   line-height: 1.15;
 }
 
@@ -67,7 +67,7 @@
 }
 
 .cta {
-  background-color: var(--color-primary);
+  background-color: var(--color-dark);
   color: var(--color-white);
 }
 
@@ -76,7 +76,7 @@
   max-width: var(--content-max-width);
   margin-inline: auto;
   padding-inline: var(--content-padding-x);
-  padding-block: var(--spacing-3xl);
+  padding-block: var(--section-padding-y);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -94,24 +94,18 @@
   max-width: 40rem;
   font-size: var(--font-size-lg);
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .ctaContent .ctaAction {
   margin-top: var(--spacing-md);
   background-color: var(--color-white) !important;
-  color: var(--color-primary) !important;
+  color: var(--color-dark) !important;
   font-weight: 700;
 }
 
 .ctaContent .ctaAction:hover {
   background-color: var(--color-background-alt) !important;
-}
-
-@media (min-width: 62em) {
-  .introContent .title {
-    font-size: 3.5rem;
-  }
 }
 
 @media (max-width: 47.99em) {

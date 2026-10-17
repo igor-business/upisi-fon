@@ -24,13 +24,6 @@
   overflow: hidden;
   background-color: var(--color-dark);
   cursor: pointer;
-  box-shadow: var(--shadow-md);
-  transition: transform 150ms ease, box-shadow 150ms ease;
-}
-
-.thumbnailButton:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-lg);
 }
 
 .thumbnailButton:focus-visible {
@@ -58,7 +51,6 @@
   color: var(--color-white);
   background-color: var(--color-primary);
   border: 3px solid var(--color-white);
-  box-shadow: var(--shadow-md);
   transition: background-color 150ms ease, transform 150ms ease;
 }
 

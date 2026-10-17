@@ -5,6 +5,7 @@
 
 .highlight {
   background: none;
-  color: var(--color-primary);
+  color: inherit;
   padding: 0;
+  white-space: nowrap;
 }

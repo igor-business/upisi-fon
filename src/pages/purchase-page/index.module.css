@@ -163,7 +163,7 @@
 }
 
 .productOption:has(.radio:focus-visible) {
-  outline: 2px solid var(--color-accent);
+  outline: 2px solid var(--color-white);
   outline-offset: 2px;
 }
 
@@ -190,8 +190,8 @@
 .recommendedTag {
   padding: 0 var(--spacing-sm);
   border-radius: 999px;
-  background-color: var(--color-accent);
-  color: var(--color-accent-text);
+  background-color: var(--color-primary);
+  color: var(--color-white);
   font-size: 0.6875rem;
   font-weight: 800;
   letter-spacing: 0.04em;
@@ -297,7 +297,7 @@
 
 .totalRow dd {
   font-size: var(--font-size-2xl);
-  color: var(--color-accent);
+  color: var(--color-white);
 }
 
 /* ---------- Form ---------- */

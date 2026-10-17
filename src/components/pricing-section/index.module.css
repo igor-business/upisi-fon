@@ -1,5 +1,5 @@
 .section {
-  background: linear-gradient(180deg, var(--color-background) 0%, var(--color-background-alt) 100%);
+  background-color: var(--color-background-alt);
 }
 
 .content {
@@ -7,26 +7,18 @@
   max-width: var(--content-max-width);
   margin-inline: auto;
   padding-inline: var(--content-padding-x);
-  padding-block: var(--spacing-3xl);
+  padding-block: var(--section-padding-y);
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: var(--spacing-2xl);
 }
 
 .intro {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: var(--spacing-md);
-  text-align: center;
-  max-width: 40rem;
-}
-
-.eyebrow {
-  font-size: var(--font-size-sm);
-  font-weight: 700;
-  color: var(--color-primary);
+  max-width: var(--measure);
 }
 
 .intro .title {
@@ -43,12 +35,10 @@
 .cards {
   list-style: none;
   margin: 0;
-  padding: var(--spacing-lg) 0 0;
+  padding: 0;
   width: 100%;
   display: grid;
-  max-width: 58rem;
-  margin-inline: auto;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.12fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: var(--spacing-lg);
   align-items: stretch;
 }
@@ -62,7 +52,6 @@
   background-color: var(--color-white);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
 }
 
 .cardHeader {
@@ -244,10 +233,9 @@
 
 /* ---------- Recommended card (Celokupna priprema) ---------- */
 .recommended {
-  background: linear-gradient(160deg, #3a1048 0%, var(--color-dark) 60%);
-  border: 2px solid var(--color-primary);
+  background-color: var(--color-dark);
+  border-color: var(--color-dark);
   color: var(--color-white);
-  box-shadow: 0 24px 48px rgba(223, 2, 117, 0.25);
 }
 
 .recommended .name {
@@ -293,35 +281,30 @@
 }
 
 .recommended .action {
-  background-color: var(--color-accent);
-  color: var(--color-accent-text);
+  background-color: var(--color-white);
+  color: var(--color-dark);
   font-weight: 700;
 }
 
 .recommended .action:hover {
-  background-color: var(--color-accent-hover);
+  background-color: var(--color-background-alt);
 }
 
 .badge {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: var(--spacing-xs) var(--spacing-md);
+  align-self: flex-start;
+  padding: 0.125rem var(--spacing-sm);
   border-radius: var(--radius-md);
-  background-color: var(--color-accent);
-  color: var(--color-accent-text);
+  background-color: var(--color-primary);
+  color: var(--color-white);
   font-size: var(--font-size-xs);
-  font-weight: 800;
-  letter-spacing: 0.08em;
+  font-weight: 700;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   white-space: nowrap;
-  box-shadow: var(--shadow-md);
 }
 
 .summer {
   width: 100%;
-  max-width: 58rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -353,14 +336,6 @@
   flex-shrink: 0;
   color: var(--color-primary);
   border-color: var(--color-primary);
-}
-
-/* ---------- Desktop: lift the recommended card ---------- */
-@media (min-width: 62em) {
-  .recommended {
-    margin-block: calc(-1 * var(--spacing-lg));
-    padding-block: calc(var(--spacing-xl) + var(--spacing-lg));
-  }
 }
 
 /* ---------- Tablet / mobile: one column, recommended first ---------- */

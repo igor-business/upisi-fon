@@ -7,26 +7,18 @@
   max-width: var(--content-max-width);
   margin-inline: auto;
   padding-inline: var(--content-padding-x);
-  padding-block: var(--spacing-3xl);
+  padding-block: var(--section-padding-y);
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: var(--spacing-2xl);
 }
 
 .intro {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: var(--spacing-md);
-  max-width: 44rem;
-  text-align: center;
-}
-
-.intro .title {
-  font-size: var(--font-size-3xl);
-  line-height: 1.15;
-  text-wrap: balance;
+  max-width: var(--measure);
 }
 
 .description {
@@ -48,19 +40,16 @@
 .card {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: var(--spacing-sm);
+  align-items: flex-start;
+  gap: var(--spacing-md);
   padding: var(--spacing-xl);
   background-color: var(--color-white);
-  border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
 }
 
 .illustration {
-  width: 8rem;
-  height: 8rem;
-  margin: calc(var(--spacing-sm) * -1) 0 var(--spacing-xs);
+  width: 5.5rem;
+  height: 5.5rem;
 }
 
 .illustration img {
@@ -70,11 +59,9 @@
 }
 
 .cardTitle {
-  font-size: var(--font-size-2xl);
+  font-size: var(--font-size-xl);
   font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: var(--spacing-sm);
-  text-align: center;
+  line-height: 1.25;
 }
 
 .items {
@@ -97,42 +84,42 @@
 .check {
   flex-shrink: 0;
   display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 1.375rem;
-  height: 1.375rem;
-  margin-top: 0.125rem;
-  border-radius: 50%;
-  color: var(--color-white);
-  background-color: var(--color-primary);
-}
-
-.action {
-  background-color: var(--color-primary);
-}
-
-.action:hover {
-  background-color: var(--color-primary-hover);
+  margin-top: 0.3rem;
+  color: var(--color-primary);
 }
 
 @media (max-width: 62em) {
   .cards {
     grid-template-columns: 1fr;
   }
+
+  .card {
+    display: grid;
+    grid-template-columns: 5.5rem minmax(0, 1fr);
+    column-gap: var(--spacing-lg);
+    row-gap: var(--spacing-sm);
+    align-items: start;
+  }
+
+  .illustration {
+    grid-row: 1 / span 2;
+  }
 }
 
 @media (max-width: 47.99em) {
   .content {
-    padding-block: var(--spacing-2xl);
     gap: var(--spacing-xl);
-  }
-
-  .intro .title.title {
-    font-size: var(--font-size-2xl);
   }
 
   .card {
     padding: var(--spacing-lg);
+    grid-template-columns: 1fr;
+  }
+
+  .illustration {
+    grid-row: auto;
+    width: 4.5rem;
+    height: 4.5rem;
   }
 
   .action {

@@ -6,7 +6,7 @@ import styles from './index.module.css';
 
 function CheckIcon() {
   return (
-    <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       <path d="m5 12.5 4.5 4.5L19 7.5" />
     </svg>
   );
@@ -48,7 +48,7 @@ export function ProgramSection({
           ))}
         </ul>
 
-        <Button size="lg" className={styles.action} onClick={onAction}>
+        <Button size="lg" variant="default" className={styles.action} onClick={onAction}>
           {actionLabel}
         </Button>
       </div>

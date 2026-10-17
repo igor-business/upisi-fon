@@ -6,7 +6,6 @@ import styles from './index.module.css';
 
 export function ProcessSection({
   id,
-  eyebrow,
   title,
   steps,
   actionLabel,
@@ -17,7 +16,6 @@ export function ProcessSection({
     <section id={id} className={clsx(styles.section, className)}>
       <div className={styles.content}>
         <div className={styles.intro}>
-          <p className={styles.eyebrow}>{eyebrow}</p>
           <Title className={styles.title}>{title}</Title>
         </div>
         <ol className={styles.steps}>
