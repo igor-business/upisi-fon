@@ -19,18 +19,10 @@
     "paths": {
       "@/*": ["./src/*"],
       "@components": ["./src/components/index.ts"],
-      "@components/*": ["./src/components/*"],
-      "@config": ["./src/config/index.ts"],
       "@config/*": ["./src/config/*"],
       "@constants": ["./src/constants/index.ts"],
-      "@constants/*": ["./src/constants/*"],
       "@pages": ["./src/pages/index.ts"],
-      "@pages/*": ["./src/pages/*"],
-      "@styles": ["./src/styles"],
       "@styles/*": ["./src/styles/*"],
-      "@types": ["./src/types/index.ts"],
-      "@types/*": ["./src/types/*"],
-      "@assets": ["./src/assets"],
       "@assets/*": ["./src/assets/*"]
     },
 

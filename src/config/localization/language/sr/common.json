@@ -10,34 +10,48 @@
     "socials": "Društvene mreže",
     "home": "UpišiFON – na vrh stranice"
   },
+  "nav": {
+    "program": "Šta dobijaš",
+    "process": "Kako funkcioniše",
+    "lessons": "Lekcije",
+    "about": "O nama",
+    "results": "Utisci",
+    "pricing": "Cenovnik",
+    "faq": "FAQ"
+  },
   "header": {
     "menuTitle": "Meni",
-    "cta": "Pošalji zahtev"
+    "cta": "Upiši pripremu"
   },
   "hero": {
-    "eyebrow": "Prijemni iz matematike",
     "title": "Tvoj put do FON-⁠a <1>počinje ovde.</1>",
-    "description": "Kompletna online priprema: video lekcije 24/7, zadaci sa rešenjima, probni prijemni ispiti i mentor koji prati tvoj napredak.",
-    "primaryAction": "Pošalji zahtev",
+    "description": "Kompletna online priprema za prijemni iz matematike, od prve lekcije do probnog ispita, uz mentora koji te prati korak po korak.",
+    "primaryAction": "Upiši pripremu",
     "secondaryAction": "Isprobaj besplatno",
     "imageAlt": "Studentkinja uči za prijemni ispit uz video lekciju na laptopu, okružena beleškama i matematičkim skicama",
     "stats": {
-      "1": {
-        "value": "15.000+",
-        "label": "posetilaca Binary Bioskopa"
+      "experience": {
+        "value_one": "{{count}} godina",
+        "value_few": "{{count}} godine",
+        "value_other": "{{count}} godina",
+        "label": "iskustva u edukaciji"
       },
-      "2": {
-        "value": "30+",
-        "label": "kurseva"
+      "students": {
+        "value": "2.500+",
+        "label": "polaznika priprema i kurseva"
       },
-      "3": {
-        "value": "2018.",
-        "label": "godina osnivanja"
+      "enrolled": {
+        "value": "94%",
+        "label": "polaznika upiše FON"
       },
-      "4": {
-        "value": "1.200+",
-        "label": "studenata koji nam se vraćaju"
+      "budget": {
+        "value": "83%",
+        "label": "polaznika ostvari budžet"
       }
+    },
+    "partner": {
+      "caption": "Priprema edukativnog centra",
+      "name": "Binary Bioskop"
     }
   },
   "auth": {
@@ -46,50 +60,33 @@
   "app": {
     "title": "Aplikativni deo"
   },
-  "landing": {
-    "nav": {
-      "1": "Šta dobijaš",
-      "2": "Kako funkcioniše",
-      "3": "Lekcije",
-      "4": "O nama",
-      "5": "Utisci",
-      "6": "Cenovnik",
-      "7": "FAQ",
-      "8": "Kontakt"
-    }
-  },
   "footer": {
     "description": "Kompletna online priprema: video lekcije 24/7, zadaci sa rešenjima, probni prijemni ispiti i mentor koji prati tvoj napredak.",
     "columns": {
       "preparation": {
-        "title": "Priprema",
-        "items": {
-          "1": "Šta dobijaš",
-          "2": "Kako funkcioniše",
-          "3": "Lekcije",
-          "4": "Cenovnik",
-          "5": "Summer School"
-        }
+        "title": "Priprema"
       },
       "about": {
-        "title": "O nama",
-        "items": {
-          "1": "Ko stoji iza pripreme",
-          "2": "Utisci",
-          "3": "Binary Bioskop"
-        }
+        "title": "O nama"
       },
       "support": {
-        "title": "Podrška",
-        "items": {
-          "1": "FAQ",
-          "2": "Kontakt",
-          "3": "Pošalji zahtev"
-        }
+        "title": "Podrška"
       },
       "contact": {
         "title": "Kontakt"
       }
+    },
+    "links": {
+      "program": "Šta dobijaš",
+      "process": "Kako funkcioniše",
+      "lessons": "Lekcije",
+      "pricing": "Cenovnik",
+      "summerSchool": "Summer School",
+      "team": "Ko stoji iza pripreme",
+      "testimonials": "Utisci",
+      "binaryBioskop": "Binary Bioskop",
+      "faq": "FAQ",
+      "apply": "Upiši pripremu"
     },
     "socials": {
       "instagram": "Instagram"
@@ -98,89 +95,89 @@
   },
   "testimonials": {
     "title": "Šta kažu studenti koji su prošli našu pripremu.",
-    "items": {
-      "1": {
+    "items": [
+      {
         "quote": "Profesorka je lekcije i zadatke objašnjavala sporo i detaljno. Pokazivala nam je dosta trikova koji bi nam mogli pomoći u rešavanju zadataka.",
         "name": "Ana Ranković",
         "meta": "Student FON-a"
       },
-      "2": {
+      {
         "quote": "Odlično objašnjena teorija i sve je postupno odrađeno kod zadataka i primera. Platforma je radila savršeno i u svako doba.",
         "name": "Aleksa Stojanović",
         "meta": "Student FON-a"
       },
-      "3": {
+      {
         "quote": "Lepo organizovan nastavni materijal, sadrži sve što je potrebno za pripremu pa čak i više. Platforma je takođe odlična.",
         "name": "Petar Pavlović",
         "meta": "Student FON-a"
       }
-    }
+    ]
   },
   "program": {
     "title": "Ne znaš odakle da počneš? <1>Mi te vodimo.</1>",
-    "description": "Prijemni iz matematike su 20 pitanja koja odlučuju o indeksu na FON-u. Evo tri stvari na kojima se učenici najčešće zaglave i šta radimo povodom njih.",
+    "description": "20 matematičkih pitanja odlučuje o tvom indeksu na FON-u. Zato je važno da ti pomognemo oko svakog problema na koji možeš da naiđeš tokom pripreme.",
     "action": "Pogledaj kako funkcioniše",
     "cards": {
-      "1": {
+      "lessons": {
         "title": "Jasan program",
-        "items": {
-          "1": "Video lekcije dostupne 24/7",
-          "2": "Zadaci sa rešenjima",
-          "3": "Materijali za preuzimanje"
-        }
+        "items": [
+          "Video lekcije dostupne 24/7",
+          "Zadaci sa rešenjima",
+          "Materijali za preuzimanje"
+        ]
       },
-      "2": {
+      "exams": {
         "title": "Probni prijemni ispiti",
-        "items": {
-          "1": "3 simulacije pravog ispita",
-          "2": "Evaluacija posle svakog probnog",
-          "3": "Video objašnjenja zadataka"
-        }
+        "items": [
+          "3 simulacije pravog ispita",
+          "Evaluacija posle svakog probnog",
+          "Video objašnjenja zadataka"
+        ]
       },
-      "3": {
+      "mentor": {
         "title": "Mentorska podrška",
-        "items": {
-          "1": "Pomoć kad zapneš na zadatku ili lekciji",
-          "2": "Praćenje napretka tokom cele pripreme",
-          "3": "Profesorka i asistent na raspolaganju"
-        }
+        "items": [
+          "Pomoć prilikom rešavanja zadataka",
+          "Praćenje napretka tokom pripreme",
+          "Profesorka uvek na raspolaganju"
+        ]
       }
     }
   },
   "process": {
-    "title": "Od prvog koraka do prijemnog ispita.",
+    "title": "Od prvog koraka do prijemnog ispita<1>.</1>",
+    "description": "Jasno definisani koraci su sve što ti je potrebno za uspešnu pripremu.",
     "steps": {
-      "1": {
-        "title": "Pošalješ zahtev",
-        "description": "Izabereš paket i ostaviš kontakt."
+      "apply": {
+        "title": "Odaberi paket",
+        "description": "Izaberi pripreme koje odgovaraju tvojim potrebama i ostavi kontakt podatke."
       },
-      "2": {
-        "title": "Javljamo ti se",
-        "description": "Neko iz našeg tima te kontaktira i dogovorite detalje i način plaćanja."
+      "agree": {
+        "title": "Dogovaramo detalje",
+        "description": "Član našeg tima kontaktira te kako biste dogovorili detalje pripreme i način plaćanja."
       },
-      "3": {
-        "title": "Dobijaš materijale",
-        "description": "Pristup video lekcijama, zadacima i materijalima za preuzimanje."
+      "access": {
+        "title": "Dobijaš pristup materijalima",
+        "description": "Pristupi video-lekcijama, zadacima i dodatnim materijalima za učenje."
       },
-      "4": {
+      "learn": {
         "title": "Učiš svojim tempom",
-        "description": "Gledaš lekcije i rešavaš zadatke kad ti odgovara."
+        "description": "Gledaš lekcije i rešavaš zadatke tempom koji tebi odgovara."
       },
-      "5": {
-        "title": "Radiš probne prijemne",
-        "description": "Proveravaš znanje i dobijaš evaluaciju i objašnjenja zadataka."
+      "practice": {
+        "title": "Proveravaš svoje znanje",
+        "description": "Odradi probne prijemne ispite i utvrdi na kojim oblastima treba dodatno da poradiš."
       },
-      "6": {
-        "title": "Na prijemni dolaziš spreman",
-        "description": "Uz podršku mentora sve do ispita."
+      "ready": {
+        "title": "Spreman dočekuješ prijemni",
+        "description": "Uz sistematičnu pripremu i podršku mentora približavaš se uspešnom upisu na FON-u."
       }
-    },
-    "action": "Pošalji zahtev"
+    }
   },
   "lessons": {
     "title": "Pogledaj kako izgleda naša priprema.",
-    "description": "11 lekcija, potpuno besplatno i bez prijave.",
-    "action": "Pogledaj sve lekcije",
+    "description": "{{count}} lekcija, potpuno besplatno i bez prijave.",
+    "action": "Pogledaj svih {{count}} lekcija",
     "play": "Pusti video: {{title}}",
     "close": "Zatvori video",
     "groups": {
@@ -188,67 +185,34 @@
       "numbers": "Brojevi",
       "polynomials": "Polinomi"
     },
-    "items": {
-      "1": {
-        "title": "Uvodni klip FON",
-        "duration": "06:49"
-      },
-      "2": {
-        "title": "01 Brojevi teorija",
-        "duration": "18:29"
-      },
-      "3": {
-        "title": "02 Kompleksni brojevi teorija",
-        "duration": "33:15"
-      },
-      "4": {
-        "title": "03 Brojevi primeri 1",
-        "duration": "41:25"
-      },
-      "5": {
-        "title": "04 Brojevi primeri 2",
-        "duration": "1:05:41"
-      },
-      "6": {
-        "title": "05 Brojevi rešeni zadaci",
-        "duration": "49:48"
-      },
-      "7": {
-        "title": "06 Brojevi samostalan rad",
-        "duration": "33:23"
-      },
-      "8": {
-        "title": "07 Polinomi teorija",
-        "duration": "29:56"
-      },
-      "9": {
-        "title": "08 Polinomi primeri",
-        "duration": "42:39"
-      },
-      "10": {
-        "title": "09 Polinomi rešeni zadaci",
-        "duration": "37:48"
-      },
-      "11": {
-        "title": "10 Polinomi samostalan rad",
-        "duration": "32:24"
-      }
+    "titles": {
+      "yKSV0r1mNYI": "Uvodni klip FON",
+      "cWvbm5iTFyw": "01 Brojevi teorija",
+      "w-Plfi1zNpg": "02 Kompleksni brojevi teorija",
+      "SIS2u48d1mM": "03 Brojevi primeri 1",
+      "d69k8H9iAKg": "04 Brojevi primeri 2",
+      "vUQYsHMWS0k": "05 Brojevi rešeni zadaci",
+      "gF_HtNvA83c": "06 Brojevi samostalan rad",
+      "1CBCjGYlBJI": "07 Polinomi teorija",
+      "Zy6iGVHvRis": "08 Polinomi primeri",
+      "K7MsUQu6NNo": "09 Polinomi rešeni zadaci",
+      "uzwmXrOOho0": "10 Polinomi samostalan rad"
     }
   },
   "about": {
-    "title": "Ko stoji iza pripreme.",
+    "title": "Ko stoji iza pripreme<1>.</1>",
     "description": "Pripremu vodi profesorka sa iskustvom u radu sa srednjoškolcima, a pokreće je Binary Bioskop.",
     "members": {
       "teacher": {
         "name": "Daliborka Vujić",
         "role": "Predavač i mentor",
-        "description": "Predavač na pripremama i profesorka matematike u Četrnaestoj beogradskoj gimnaziji, sa višegodišnjim iskustvom u radu sa srednjoškolcima i pripremi učenika za prijemni ispit iz matematike.\n\nKroz pristupačan i postepen pristup, profesorka složene matematičke oblasti i koncepte objašnjava na jasan i razumljiv način, pomažući učenicima da steknu sigurnost u svoje znanje i uspešno savladaju gradivo. Otvorena i neposredna komunikacija omogućava učenicima da tokom čitave pripreme dobiju podršku, postave pitanja i razjasne sve nedoumice.\n\nNapredak svakog učenika pratiće se kroz zadatke za samostalni rad i probne prijemne ispite, koji će pomoći u proceni znanja, prepoznavanju oblasti za dodatno usavršavanje i praćenju ostvarenih rezultata. Cilj je da svaki učenik razvije svoj puni potencijal i spremno dočeka prijemni ispit, uz što bolje rezultate.",
+        "description": "Predavač na pripremama i profesorka matematike u Četrnaestoj beogradskoj gimnaziji, sa višegodišnjim iskustvom u radu sa srednjoškolcima i pripremi učenika za prijemni ispit iz matematike.\n\nKroz pristupačan i postepen pristup, profesorka složene matematičke oblasti i koncepte objašnjava na jasan i razumljiv način, pomažući učenicima da steknu sigurnost u svoje znanje i uspešno savladaju gradivo. Otvorena i neposredna komunikacija omogućava učenicima da tokom čitave pripreme dobiju podršku, postave pitanja i razjasne sve nedoumice.",
         "photoAlt": "Daliborka Vujić, profesorka matematike"
       },
       "founder": {
         "name": "Bojan Martinović",
         "role": "Osnivač",
-        "description": "Bojan je završio Računarsku gimnaziju u Beogradu, a potom diplomirao na Fakultetu organizacionih nauka 2017. godine kao student generacije, sa prosečnom ocenom 10,00. Još tokom studija prepoznao je svoju strast prema prenošenju znanja, koju je kroz privatne časove kolegama uspešno povezivao sa ljubavlju prema informacionim tehnologijama.\n\nNakon završetka osnovnih studija, usavršavanje nastavlja na master programu Univerziteta Politecnico di Milano. Godine 2018. svoje iskustvo u podučavanju prenosi u digitalni format i osniva Binary Bioskop, platformu koja kroz video-materijale omogućava pristupačnije učenje.\n\nOd 2022. godine aktivno radi na razvoju sistema koji pružaju podršku osobama sa invaliditetom, spajajući svoje tehničko znanje sa željom da tehnologiju učini korisnom i dostupnom svima.",
+        "description": "Bojan je završio Računarsku gimnaziju u Beogradu, a potom diplomirao na Fakultetu organizacionih nauka 2017. godine kao student generacije, sa prosečnom ocenom 10,00. Još tokom studija prepoznao je svoju strast prema prenošenju znanja, koju je kroz privatne časove kolegama uspešno povezivao sa ljubavlju prema informacionim tehnologijama.\n\nGodine 2018. svoje iskustvo u podučavanju prenosi u digitalni format i osniva Binary Bioskop, platformu koja kroz video-materijale omogućava pristupačnije učenje.",
         "photoAlt": "Bojan Martinović, osnivač Binary Bioskopa"
       }
     },
@@ -261,39 +225,38 @@
   },
   "pricing": {
     "title": "Izaberi svoj put do FON-a.",
-    "description": "Pošalji zahtev sam ili sa društvom – u grupi je cena po osobi niža.",
+    "description": "Pošalji zahtev sam ili sa društvom – u grupi je cena po polazniku niža.",
     "currency": "RSD",
     "tiersLabel": "Način učešća za {{product}}",
     "tiers": {
       "individual": "Individualno",
-      "group3": "3+ osobe",
-      "group5": "5+ osoba"
+      "group3": "3+ polaznika",
+      "group5": "5+ polaznika"
     },
     "tierHints": {
       "individual": "za jednog polaznika",
-      "group3": "po osobi, za grupu od 3 do 5 osoba",
-      "group5": "po osobi, za grupu od 5 i više osoba"
+      "group3": "po polazniku, za grupu od 3 do 5 polaznika",
+      "group5": "po polazniku, za grupu od 5 i više polaznika"
     },
-    "saving": "Ušteda {{amount}} RSD po osobi",
+    "saving": "Ušteda {{amount}} RSD po polazniku",
     "individualOnly": "Samo individualna prijava",
-    "recommended": "Preporučujemo",
+    "recommended": "Naša preporuka",
     "included": "Uključeno:",
     "notIncluded": "Nije uključeno:",
     "products": {
       "mockExams": {
         "name": "Paket probnih prijemnih",
         "description": "Proveri koliko si spreman u uslovima pravog prijemnog ispita.",
-        "action": "Pošalji zahtev"
+        "action": "Prijavi se za probne prijemne"
       },
       "summerSchool": {
         "name": "Summer School",
-        "description": "Započni studije samouvereno i dočekaj prvi mesec na FON-u spreman.",
-        "action": "Pošalji zahtev"
+        "description": "Započni studije samouvereno i dočekaj prvi mesec na FON-u spreman."
       },
       "fullPrep": {
-        "name": "Celokupna priprema",
+        "name": "Kompletna priprema",
         "description": "Sve što ti treba, od prve lekcije do prijemnog – i posle njega.",
-        "action": "Pošalji zahtev"
+        "action": "Upiši pripremu"
       }
     },
     "features": {
@@ -303,55 +266,42 @@
       "mockExams": "Paket probnih prijemnih ispita",
       "summerSchool": "Summer School"
     },
-    "summerSchool": {
-      "1": {
-        "title": "Startuj sa predznanjem",
-        "description": "Gradivo prvog meseca, kako funkcioniše koji predmet i saveti starijih studenata."
-      },
-      "2": {
-        "title": "Studiraj sa ciljem",
-        "description": "Sve o studiranju, šta možeš posle FON-a i lični plan aktivnosti."
-      },
-      "3": {
-        "title": "Poveži se sa drugima",
-        "description": "Meet-up sa brucošima, mentorstvo starijih studenata i razgovor sa alumnistima."
-      }
-    },
     "summerStrip": {
       "title": "Već si upisao FON?",
-      "description": "Summer School je priprema za prvu godinu studija, između upisa i početka godine. Cena: {{price}} RSD.",
+      "description": "Summer School je priprema za prvu godinu studija, zahvaljujući kojoj ćeš dočekati početak studija potpuno spreman.",
       "action": "Saznaj više"
     },
     "standalonePrice": "(samostalno {{amount}} RSD)"
   },
   "faq": {
     "title": "Često postavljana pitanja",
-    "items": {
-      "1": {
+    "note": "Niste pronašli odgovor na svoje pitanje? Proverite među najčešće postavljenim pitanjima.",
+    "items": [
+      {
         "question": "Kada mogu da počnem sa pripremom?",
         "answer": "Pripremu možeš da započneš odmah nakon prijave. Pristup platformi dobijaš čim se prijava potvrdi."
       },
-      "2": {
+      {
         "question": "Koliko dugo imam pristup materijalima?",
         "answer": "Pristup materijalima traje do završetka prijemnog ispita, pa možeš da se vraćaš lekcijama i zadacima koliko god ti je potrebno."
       },
-      "3": {
+      {
         "question": "Da li je priprema potpuno online?",
         "answer": "Da. Lekcije, zadaci i probni prijemni ispiti dostupni su online, a mentorsku podršku dobijaš preko platforme."
       },
-      "4": {
+      {
         "question": "Kako funkcioniše mentorska podrška?",
         "answer": "Kada zapneš na zadatku ili lekciji, postaviš pitanje mentoru, koji ti objašnjava rešenje i usmerava te šta da radiš dalje."
       },
-      "5": {
+      {
         "question": "Da li postoje probni prijemni ispiti?",
-        "answer": "Da. Paket probnih prijemnih možeš kupiti zasebno, a uključen je i u celokupnu pripremu. Probni ispiti se rade u uslovima koji liče na pravi prijemni."
+        "answer": "Da. Paket probnih prijemnih možeš kupiti zasebno, a uključen je i u kompletnu pripremu. Probni ispiti se rade u uslovima koji liče na pravi prijemni."
       }
-    }
+    ]
   },
-  "purchase": {
+  "order": {
     "tierLabel": "Način prijave",
-    "pricePerPerson": "Cena po osobi",
+    "pricePerStudent": "Cena po polazniku",
     "studentsCount": "Broj polaznika",
     "total": "Ukupno",
     "individualHeading": "Tvoji podaci",
@@ -360,13 +310,7 @@
       "name": "Ime i prezime",
       "phone": "Broj telefona",
       "email": "Email adresa",
-      "promo": "Promo kod"
-    },
-    "placeholders": {
-      "name": "npr. Ana Petrović",
-      "phone": "npr. 064 123 4567",
-      "email": "npr. ana@email.com",
-      "promo": "Unesi kod ako ga imaš"
+      "promo": "Promo kod (opciono)"
     },
     "errors": {
       "name": "Unesi ime i prezime.",
@@ -379,113 +323,62 @@
     "removeStudent": "Ukloni polaznika {{number}}",
     "maxStudents": "Grupa 3+ može imati najviše 5 polaznika.",
     "switchToGroup5": "Pređi na 5+ paket",
-    "promoHint": "Opciono",
     "paymentNote": "Plaćanje se ne vrši na sajtu. Posle prijave neko iz našeg tima će te kontaktirati sa svim detaljima.",
     "submit": "Pošalji prijavu",
     "success": {
-      "title": "Prijava je poslata!",
-      "description": "Hvala ti! Neko iz našeg tima će te kontaktirati u najkraćem roku.",
-      "action": "Nazad na početnu"
-    },
-    "page": {
-      "eyebrow": "Prijava",
-      "title": "Prijavi se i kreni ka FON-u.",
-      "description": "Popuni podatke za sebe ili za svoju grupu. Neko iz našeg tima će te kontaktirati sa svim detaljima.",
-      "back": "Nazad na cenovnik",
-      "homeLink": "UpišiFON – početna strana"
+      "title": "Prijava je uspešno podneta",
+      "description": "Hvala ti! Neko iz našeg tima će te kontaktirati u najkraćem mogućem roku.",
+      "close": "Razumem"
     },
     "formTitle": "Podaci za prijavu",
-    "summaryTitle": "Tvoja prijava",
-    "programLabel": "Program",
-    "includes": "Šta dobijaš",
-    "from": "od {{price}} RSD"
-  },
-  "contact": {
-    "title": "Spreman da kreneš?",
-    "description": "Pošalji zahtev za pripremu i javićemo ti se. Ako prvo imaš pitanje, napiši nam u formi.",
-    "action": "Pošalji zahtev",
-    "formTitle": "Imaš pitanje?",
-    "formLabel": "Kontakt forma",
-    "contactHint": "Ostavi email ili broj telefona, dovoljno je jedno od ta dva.",
-    "fields": {
-      "name": "Ime",
-      "email": "Email adresa",
-      "phone": "Broj telefona",
-      "message": "Poruka"
-    },
-    "placeholders": {
-      "name": "npr. Ana",
-      "email": "npr. ana@email.com",
-      "phone": "npr. 064 123 4567",
-      "message": "Napiši nam šta te zanima…"
-    },
-    "consent": "Slažem se da se moji podaci koriste isključivo da bi mi UpišiFON odgovorio.",
-    "errors": {
-      "name": "Unesi svoje ime.",
-      "contact": "Unesi email ili broj telefona.",
-      "email": "Unesi ispravnu email adresu.",
-      "phone": "Unesi ispravan broj telefona.",
-      "message": "Napiši poruku (najmanje {{min}} karaktera).",
-      "consent": "Potrebna je saglasnost da bismo ti odgovorili.",
-      "submit": "Slanje nije uspelo. Pokušaj ponovo za nekoliko trenutaka."
-    },
-    "submit": "Pošalji poruku",
-    "success": {
-      "title": "Poruka je poslata!",
-      "description": "Hvala ti! Javićemo ti se u najkraćem roku.",
-      "action": "Pošalji novu poruku"
-    }
+    "close": "Zatvori prijavu"
   },
   "lessonsPage": {
     "back": "Nazad na početnu",
     "title": "Besplatne lekcije",
-    "description": "Svih 11 lekcija je javno dostupno, bez prijave. Ovo je samo uvod u pripremu.",
+    "description": "Svih {{count}} lekcija je javno dostupno, bez prijave.",
     "ctaTitle": "Sviđa ti se kako izgleda?",
     "ctaDescription": "Ovo je samo uvod, čeka te još mnogo toga. Kompletna priprema obuhvata sve oblasti prijemnog ispita, zadatke sa rešenjima, probne prijemne ispite i mentora koji prati tvoj napredak.",
-    "ctaAction": "Pošalji zahtev"
+    "ctaAction": "Upiši pripremu"
   },
   "summerSchoolPage": {
     "back": "Nazad na cenovnik",
     "title": "Summer School",
-    "subtitle": "Započni studije samouvereno!",
-    "description": "Priprema za brucoše između upisa i početka akademske godine.",
     "aboutTitle": "Šta je Summer School?",
-    "about": {
-      "1": "Razlike u predznanju između učenika iz različitih srednjih škola su često velike, pa će mnogima prva godina studija predstavljati veliki problem.",
-      "2": "Summer School brucoše priprema za uspešan početak studija i pomaže im da steknu neophodno predznanje, kako bi studije na FON-u bile logičan nastavak njihovog obrazovanja."
-    },
+    "about": [
+      "Razlike u predznanju između učenika iz različitih srednjih škola su često velike, pa će mnogima prva godina studija predstavljati veliki problem.",
+      "Summer School brucoše priprema za uspešan početak studija i pomaže im da steknu neophodno predznanje, kako bi studije na FON-u bile logičan nastavak njihovog obrazovanja."
+    ],
     "offerTitle": "Šta nudimo?",
-    "groups": {
-      "1": {
+    "groups": [
+      {
         "title": "Startuj sa predznanjem",
-        "items": {
-          "1": "Savladavanje gradiva koje te čeka u prvom mesecu fakulteta",
-          "2": "Detaljan uvid u to kako koji predmet funkcioniše",
-          "3": "„Tips and tricks“ starijih studenata"
-        }
+        "items": [
+          "Savladavanje gradiva koje te čeka u prvom mesecu fakulteta",
+          "Detaljan uvid u to kako koji predmet funkcioniše",
+          "„Tips and tricks“ starijih studenata"
+        ]
       },
-      "2": {
+      {
         "title": "Studiraj sa ciljem",
-        "items": {
-          "1": "Sve o studiranju (domovi, menze, studentske organizacije…)",
-          "2": "Informacije o tome šta sve možeš posle FON-a",
-          "3": "Pomoć pri pravljenju personalizovanog plana vannastavnih i nastavnih aktivnosti"
-        }
+        "items": [
+          "Sve o studiranju (domovi, menze, studentske organizacije…)",
+          "Informacije o tome šta sve možeš posle FON-a",
+          "Pomoć pri pravljenju personalizovanog plana vannastavnih i nastavnih aktivnosti"
+        ]
       },
-      "3": {
+      {
         "title": "Poveži se sa ostalim studentima",
-        "items": {
-          "1": "Šansa da pre fakulteta napraviš kontakte sa drugim brucošima",
-          "2": "Meet-up sa svim polaznicima",
-          "3": "Mentorstvo starijih studenata prilikom donošenja odluka",
-          "4": "Razgovor sa alumnistima FON-a o budućim karijerama i putevima"
-        }
+        "items": [
+          "Šansa da pre fakulteta napraviš kontakte sa drugim brucošima",
+          "Meet-up sa svim polaznicima",
+          "Mentorstvo starijih studenata prilikom donošenja odluka",
+          "Razgovor sa alumnistima FON-a o budućim karijerama i putevima"
+        ]
       }
-    },
+    ],
     "priceLabel": "Cena paketa",
-    "priceNote": "Summer School je uključen u celokupnu pripremu.",
-    "action": "Pošalji zahtev",
-    "questionsTitle": "Imaš dodatna pitanja?",
-    "questionsAction": "Kontaktiraj nas"
+    "priceNote": "Summer School je uključen u kompletnu pripremu.",
+    "action": "Prijavi se za Summer School"
   }
 }

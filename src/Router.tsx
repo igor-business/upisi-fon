@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
-import { RouteConstants } from '@constants';
 import { Layout } from '@components';
-import { AppPage, LandingPage, LessonsPage, PurchasePage, SummerSchoolPage } from '@pages';
-import { ScrollToSectionState } from '@/types/common';
+import { ROUTES } from '@constants';
+import { AppPage, LandingPage, LessonsPage, SummerSchoolPage } from '@pages';
+import type { ScrollToSectionState } from '@/types';
 
 /** Starts every new page at the top, unless the navigation asks to scroll to a section. */
 function ScrollToTopOnNavigate() {
@@ -24,15 +24,12 @@ export function Router() {
       <ScrollToTopOnNavigate />
       <Routes>
         <Route element={<Layout />}>
-          <Route path={RouteConstants.ROUTES.HOME} element={<LandingPage />} />
-          <Route path={RouteConstants.ROUTES.LESSONS} element={<LessonsPage />} />
-          <Route path={RouteConstants.ROUTES.SUMMER_SCHOOL} element={<SummerSchoolPage />} />
+          <Route path={ROUTES.HOME} element={<LandingPage />} />
+          <Route path={ROUTES.LESSONS} element={<LessonsPage />} />
+          <Route path={ROUTES.SUMMER_SCHOOL} element={<SummerSchoolPage />} />
         </Route>
-        <Route path={RouteConstants.ROUTES.PURCHASE} element={<PurchasePage />} />
-        <Route path={RouteConstants.ROUTES.APP} element={<AppPage />} />
+        <Route path={ROUTES.APP} element={<AppPage />} />
       </Routes>
     </BrowserRouter>
   );
 }
-
-export default Router;

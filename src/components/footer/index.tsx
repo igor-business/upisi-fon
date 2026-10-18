@@ -1,58 +1,86 @@
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import type { MouseEvent } from 'react';
+import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { AppConstants, RouteConstants } from '@constants';
-import { useGoToSection } from '@/hooks/use-go-to-section';
+import { CONTACT, FOOTER_COLUMNS, FOOTER_CONTACT_ID, IMAGES, ROUTES, SOCIAL_LINKS } from '@constants';
+import { useGoHome, useGoToSection } from '@/hooks';
+import type { FooterLink } from '@/types';
+import { InstagramIcon } from '../icons';
+import { useOrderDialog } from '../order-dialog';
 import styles from './index.module.css';
 
 const SOCIAL_ICONS = {
-  instagram: (
-    <svg
-      viewBox="0 0 24 24"
-      width="20"
-      height="20"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.8"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      <rect x="3" y="3" width="18" height="18" rx="5" />
-      <circle cx="12" cy="12" r="4" />
-      <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" />
-    </svg>
-  ),
+  instagram: <InstagramIcon size={20} />,
 } as const;
+
+/** A single footer link, rendered according to where it leads. */
+function FooterLinkItem({ link }: { link: FooterLink }) {
+  const { t } = useTranslation();
+  const goToSection = useGoToSection();
+  const { openOrder } = useOrderDialog();
+  const label = t(link.label);
+
+  switch (link.kind) {
+    case 'route':
+      return (
+        <Link to={link.to} className={styles.link}>
+          {label}
+        </Link>
+      );
+    case 'external':
+      return (
+        <a href={link.href} className={styles.link} target="_blank" rel="noopener noreferrer">
+          {label}
+        </a>
+      );
+    case 'order':
+      return (
+        <a
+          href="#"
+          className={styles.link}
+          onClick={(event) => {
+            event.preventDefault();
+            openOrder(link.product);
+          }}
+        >
+          {label}
+        </a>
+      );
+    case 'section':
+      return (
+        <a
+          href={`/#${link.target}`}
+          className={styles.link}
+          onClick={(event) => {
+            event.preventDefault();
+            goToSection(link.target);
+          }}
+        >
+          {label}
+        </a>
+      );
+  }
+}
 
 export function Footer() {
   const { t } = useTranslation();
-  const navigate = useNavigate();
-  const goToSection = useGoToSection();
-  const isHome = useLocation().pathname === RouteConstants.ROUTES.HOME;
+  const goHome = useGoHome();
+
+  const handleLogoClick = (event: MouseEvent) => {
+    event.preventDefault();
+    goHome();
+  };
 
   return (
     <footer className={styles.footer}>
       <div className={styles.inner}>
         <div className={styles.top}>
           <div className={styles.brand}>
-            <a
-              href={RouteConstants.ROUTES.HOME}
-              className={styles.logoLink}
-              aria-label={t('a11y.home')}
-              onClick={(event) => {
-                event.preventDefault();
-                if (isHome) {
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                } else {
-                  navigate(RouteConstants.ROUTES.HOME);
-                }
-              }}
-            >
-              <img src={AppConstants.IMAGES.logo} alt={t('appName')} className={styles.logo} />
+            <a href={ROUTES.HOME} className={styles.logoLink} aria-label={t('a11y.home')} onClick={handleLogoClick}>
+              <img src={IMAGES.logo} alt={t('appName')} className={styles.logo} />
             </a>
             <p className={styles.description}>{t('footer.description')}</p>
             <ul className={styles.socials} aria-label={t('a11y.socials')}>
-              {AppConstants.SOCIAL_LINKS.map((social) => (
+              {SOCIAL_LINKS.map((social) => (
                 <li key={social.key}>
                   <a
                     href={social.href}
@@ -69,59 +97,30 @@ export function Footer() {
           </div>
 
           <nav className={styles.columns} aria-label={t('a11y.footerNavigation')}>
-            {AppConstants.FOOTER_COLUMNS.map((column) => (
+            {FOOTER_COLUMNS.map((column) => (
               <div key={column.key} className={styles.column}>
                 <h2 className={styles.columnTitle}>{t(`footer.columns.${column.key}.title`)}</h2>
                 <ul className={styles.list}>
-                  {column.links.map((link) => {
-                    const label = t(`footer.columns.${column.key}.items.${link.key}`);
-                    return (
-                      <li key={link.key}>
-                        {link.kind === 'route' && (
-                          <Link to={link.to} className={styles.link}>
-                            {label}
-                          </Link>
-                        )}
-                        {link.kind === 'external' && (
-                          <a
-                            href={link.href}
-                            className={styles.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            {label}
-                          </a>
-                        )}
-                        {link.kind === 'section' && (
-                          <a
-                            href={`/#${link.target}`}
-                            className={styles.link}
-                            onClick={(event) => {
-                              event.preventDefault();
-                              goToSection(link.target);
-                            }}
-                          >
-                            {label}
-                          </a>
-                        )}
-                      </li>
-                    );
-                  })}
+                  {column.links.map((link) => (
+                    <li key={link.label}>
+                      <FooterLinkItem link={link} />
+                    </li>
+                  ))}
                 </ul>
               </div>
             ))}
 
-            <div className={styles.column}>
+            <div className={styles.column} id={FOOTER_CONTACT_ID}>
               <h2 className={styles.columnTitle}>{t('footer.columns.contact.title')}</h2>
               <ul className={styles.list}>
                 <li>
-                  <a href={AppConstants.CONTACT.phoneHref} className={styles.link}>
-                    {AppConstants.CONTACT.phone}
+                  <a href={CONTACT.phoneHref} className={styles.link}>
+                    {CONTACT.phone}
                   </a>
                 </li>
                 <li>
-                  <a href={AppConstants.CONTACT.emailHref} className={styles.link}>
-                    {AppConstants.CONTACT.email}
+                  <a href={CONTACT.emailHref} className={styles.link}>
+                    {CONTACT.email}
                   </a>
                 </li>
               </ul>
@@ -130,13 +129,9 @@ export function Footer() {
         </div>
 
         <div className={styles.bottom}>
-          <p className={styles.copyright}>
-            {t('footer.copyright', { year: new Date().getFullYear() })}
-          </p>
+          <p className={styles.copyright}>{t('footer.copyright', { year: new Date().getFullYear() })}</p>
         </div>
       </div>
     </footer>
   );
 }
-
-export default Footer;

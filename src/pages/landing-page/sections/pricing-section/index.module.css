@@ -1,0 +1,331 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-2xl);
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  max-width: var(--measure);
+}
+
+.description {
+  font-size: var(--font-size-md);
+  color: var(--color-text-muted);
+}
+
+/* ---------- Cards ---------- */
+.cards {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: var(--spacing-lg);
+  align-items: stretch;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-xl);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.cardHeader {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.name {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+}
+
+.cardDescription {
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+  color: var(--color-text-muted);
+}
+
+/* Tier switch / individual-only label share the same height so prices line up. */
+.tierControl {
+  min-height: 2.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.segmentLabel {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+}
+
+.individualOnly {
+  width: 100%;
+  padding: 0.5rem var(--spacing-md);
+  border-radius: var(--radius-md);
+  background-color: var(--color-primary-subtle);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  text-align: center;
+}
+
+.priceBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  min-height: 5.75rem;
+}
+
+.price {
+  display: flex;
+  align-items: baseline;
+  gap: var(--spacing-sm);
+  color: var(--color-primary);
+}
+
+.amount {
+  font-size: 2.25rem;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.currency {
+  font-size: var(--font-size-md);
+  font-weight: 700;
+}
+
+.tierHint {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.saving {
+  align-self: flex-start;
+  margin-top: var(--spacing-xs);
+  padding: 0.125rem var(--spacing-sm);
+  border-radius: var(--radius-full);
+  background-color: var(--color-primary-subtle);
+  color: var(--color-primary);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+}
+
+/* ---------- Feature list ---------- */
+.features {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.feature {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+  font-size: var(--font-size-sm);
+  line-height: 1.4;
+}
+
+.check,
+.cross {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+}
+
+.check {
+  color: var(--color-primary);
+  background-color: var(--color-primary-subtle);
+}
+
+.cross {
+  color: var(--color-text-muted);
+  background-color: var(--color-neutral-soft);
+}
+
+.excluded {
+  color: var(--color-text-muted);
+  text-decoration: line-through;
+  text-decoration-color: color-mix(in srgb, var(--color-text-muted) 50%, transparent);
+}
+
+.standalonePrice {
+  color: var(--color-text-muted);
+}
+
+.recommended .standalonePrice {
+  color: var(--color-text-on-dark-muted);
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------- Recommended card (Kompletna priprema) ---------- */
+.recommended {
+  background-color: var(--color-dark);
+  border-color: var(--color-dark);
+  color: var(--color-white);
+}
+
+.recommended .name {
+  color: var(--color-white);
+}
+
+.recommended .cardDescription,
+.recommended .tierHint {
+  color: var(--color-text-on-dark-muted);
+}
+
+.recommended .price {
+  color: var(--color-white);
+}
+
+.recommended .saving {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.recommended .segmentRoot {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.recommended .segmentLabel {
+  color: var(--color-text-on-dark);
+}
+
+.recommended .segmentLabel[data-active] {
+  color: var(--color-white);
+}
+
+.recommended .segmentLabel:hover:not([data-active]),
+.recommended .segmentLabel:focus-visible:not([data-active]) {
+  color: var(--color-white);
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.recommended .check {
+  color: var(--color-white);
+  background-color: var(--color-primary);
+}
+
+.recommended .action {
+  background-color: var(--color-white);
+  color: var(--color-dark);
+  font-weight: 700;
+}
+
+.recommended .action:hover {
+  background-color: var(--color-primary-subtle);
+}
+
+.badge {
+  /* Sits on the top edge of the card, so it does not push the title down. */
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0.25rem var(--spacing-md);
+  border-radius: var(--mantine-radius-default);
+  background-color: var(--color-accent-yellow);
+  color: var(--color-dark);
+  font-size: var(--font-size-xs);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.summer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-lg) var(--spacing-xl);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-white);
+}
+
+.summerText {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.summerTitle {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+}
+
+.summerDescription {
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+  color: var(--color-text-muted);
+}
+
+.summer .summerAction {
+  flex-shrink: 0;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+/* ---------- Tablet / mobile: one column, recommended first ---------- */
+@mixin smaller-than $mantine-breakpoint-md {
+  .cards {
+    grid-template-columns: 1fr;
+    max-width: 30rem;
+    gap: var(--spacing-2xl);
+  }
+
+  .recommended {
+    order: -1;
+  }
+
+  .priceBlock {
+    min-height: 0;
+  }
+
+  .summer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@mixin smaller-than $mantine-breakpoint-sm {
+  .card {
+    padding: var(--spacing-lg);
+  }
+
+  .amount {
+    font-size: 2rem;
+  }
+}

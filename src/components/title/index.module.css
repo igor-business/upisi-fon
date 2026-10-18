@@ -1,8 +1,21 @@
 .title {
-  color: var(--color-text);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 1.15;
-  margin: 0;
   font-size: var(--font-size-3xl);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  text-wrap: wrap;
+}
+
+.accent {
+  color: var(--color-primary);
+}
+
+.title[data-order='1'] {
+  font-size: var(--font-size-4xl);
+}
+
+@mixin smaller-than $mantine-breakpoint-sm {
+  .title.title {
+    font-size: var(--font-size-2xl);
+  }
 }

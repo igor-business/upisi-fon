@@ -25,24 +25,30 @@ npm run lint     # oxlint
 ## Struktura
 
 ```text
-design/            # Referentni dizajn (nije deo builda)
-public/            # Statički fajlovi (logo, favicon, images/*.webp)
+design/                 # Referentni dizajn (nije deo builda)
+public/                 # Statički fajlovi (logo, favicon, images/*.webp)
 src/
-├── assets/fonts/  # Outfit variable font
-├── components/    # Layout (header + meni), Footer, Hero i sekcije landing stranice
-├── config/localization/  # i18n podešavanje i prevodi (language/sr/common.json)
-├── constants/     # Rute, slike, sekcije landing stranice, footer linkovi
-├── pages/         # LandingPage, AppPage
-├── styles/        # Globalni stilovi i dizajn tokeni
-├── types/         # Zajednički TypeScript tipovi
-└── utils/         # Pomoćne funkcije (npr. scrollToSection)
+├── assets/fonts/       # Outfit variable font
+├── components/         # Deljene komponente: Layout, Header, Footer, Section, Title, Description,
+│                       # PageHeader, LessonList, OrderDialog (prijava), ScrollToTop, icons
+├── config/localization/# i18n podešavanje, tipovi ključeva i prevodi (language/sr/common.json)
+├── constants/          # Rute, sekcije, proizvodi i cene, lekcije, slike, kontakt, footer linkovi
+├── hooks/              # useGoToSection, useGoHome, useActiveSection, ...
+├── pages/              # Stranice; sekcije landing stranice su u pages/landing-page/sections
+├── services/           # Slanje prijave (za sada simulirano)
+├── styles/             # theme.ts (Mantine tema i paleta), global.css (dizajn tokeni), layers.css
+├── types/              # Zajednički domenski tipovi (proizvodi, prijava, navigacija, lekcije)
+└── utils/              # Pomoćne funkcije (cene, skrolovanje, validacija, YouTube)
 ```
 
-Path aliasi: `@`, `@components`, `@config`, `@constants`, `@pages`, `@styles`, `@types`, `@assets`.
+Path aliasi: `@/*`, `@components`, `@config/*`, `@constants`, `@pages`, `@styles/*`, `@assets/*`.
 
 ## Konvencije
 
-- Svi tekstovi dolaze iz `src/config/localization/language/sr/common.json` preko `t()` / `<Trans>`; u komponentama nema hardkodovanih tekstova.
-- Slike se koriste u WebP formatu i uvek imaju `alt` iz prevoda.
-- Sekcije landing stranice su zasebne komponente u `components/` i sklapaju se u `pages/landing-page`. Stavke navigacije su u `constants/app.ts` (`NAV_ITEMS`), a nazivi pod ključevima `landing.nav.N`.
-- Originalne (PNG) slike čuvaj u `assets-src/` (ignorisano u Git-u).
+- **Tekstovi**: svi su u `src/config/localization/language/sr/common.json` i koriste se preko `t()` / `<Trans>`. Ključevi su tipizirani (`i18next.d.ts`), pa pogrešan ključ prijavljuje TypeScript. Liste (FAQ, utisci, stavke kartica) su nizovi u JSON-u – za novo pitanje dovoljno je dodati stavku u JSON.
+- **Boje i razmaci**: koriste se isključivo dizajn tokeni iz `src/styles/global.css` (`--color-*`, `--spacing-*`, `--radius-*`, `--shadow-*`). Roze nijanse dolaze iz palete u `src/styles/theme.ts` (jedan izvor za Mantine i CSS).
+- **Mantine i CSS**: Mantine stilovi su u CSS sloju (`@layer mantine`), pa stilovi iz CSS modula uvek imaju prednost bez `!important`. Dugmad dobijaju boju iz teme – ne postavljati im `background-color` ručno.
+- **Breakpointi**: u CSS-u se koriste Mantine mixini (`@mixin smaller-than $mantine-breakpoint-sm { ... }`), u TS-u `theme.breakpoints`.
+- **Sekcije**: svaka sekcija koristi `<Section tone="light | tinted | dark">`, koji daje pozadinu, širinu sadržaja i vertikalni razmak. Sekcija sama čita svoje tekstove i konstante; landing stranica ih samo ređa.
+- **Komponente**: jedna komponenta po folderu (`index.tsx` + `index.module.css`), imenovani exporti, props tipovi su uz komponentu. Ikonice su u `components/icons`.
+- **Slike** su u WebP formatu, uvek imaju `width`/`height` i `alt` iz prevoda. Originalne (PNG) slike čuvaj u `assets-src/` (ignorisano u Git-u).

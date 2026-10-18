@@ -1,14 +1,13 @@
-import { Text } from '@mantine/core';
-import { DescriptionProps } from '@/types/common';
+import type { ReactNode } from 'react';
 import clsx from 'clsx';
 import styles from './index.module.css';
 
-export function Description({ children, className }: DescriptionProps) {
-  return (
-    <Text component="p" className={clsx(styles.description, className)}>
-      {children}
-    </Text>
-  );
+export interface DescriptionProps {
+  children: ReactNode;
+  className?: string;
 }
 
-export default Description;
+/** Muted introductory text under a title. */
+export function Description({ children, className }: DescriptionProps) {
+  return <p className={clsx(styles.description, className)}>{children}</p>;
+}

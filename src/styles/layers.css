@@ -1,0 +1,5 @@
+/*
+ * Cascade layer order (lowest priority first). Element defaults sit below Mantine, so Mantine
+ * components keep their own look; CSS modules are unlayered and always win over both.
+ */
+@layer base, mantine;

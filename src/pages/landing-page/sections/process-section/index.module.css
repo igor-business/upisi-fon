@@ -1,0 +1,219 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-2xl);
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
+  text-align: center;
+}
+
+.title {
+  max-width: 36rem;
+  text-align: center;
+}
+
+.description {
+  max-width: 38rem;
+}
+
+/* ---------- Timeline: spine in the middle, cards alternate left and right ---------- */
+.steps {
+  --circle-size: 3.25rem;
+  position: relative;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 62rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.steps::before {
+  content: '';
+  position: absolute;
+  top: calc(var(--circle-size) / 2);
+  bottom: calc(var(--circle-size) / 2);
+  left: 50%;
+  width: 4px;
+  border-radius: 2px;
+  background-color: var(--color-primary-border);
+  transform: translateX(-50%);
+}
+
+.step {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 8rem minmax(0, 1fr);
+  align-items: center;
+}
+
+/* Cards on opposite sides can overlap a little, which keeps the circles close together. */
+.step + .step {
+  margin-top: calc(-1 * var(--spacing-sm));
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-primary-border);
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-card);
+}
+
+.left .card {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.right .card {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.number {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: center;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--circle-size);
+  height: var(--circle-size);
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-size: var(--font-size-md);
+  font-weight: 800;
+  box-shadow: 0 0 0 6px color-mix(in srgb, var(--color-primary) 12%, transparent);
+}
+
+/* Short line with a dot that joins the card to its circle. */
+.connector {
+  position: relative;
+  grid-column: 2;
+  grid-row: 1;
+  align-self: center;
+  width: calc((100% - var(--circle-size)) / 2);
+  height: 2px;
+  background-color: var(--color-primary-muted);
+}
+
+.connector::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: var(--color-primary-light);
+  transform: translateY(-50%);
+}
+
+.left .connector {
+  justify-self: start;
+}
+
+.left .connector::before {
+  left: 0;
+  transform: translate(-50%, -50%);
+}
+
+.right .connector {
+  justify-self: end;
+}
+
+.right .connector::before {
+  right: 0;
+  transform: translate(50%, -50%);
+}
+
+.icon {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  background-color: var(--color-primary-soft);
+  color: var(--color-primary);
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.stepTitle {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.stepDescription {
+  font-size: var(--font-size-sm);
+  line-height: 1.55;
+  color: var(--color-text-muted);
+}
+
+/* ---------- Tablet / mobile: spine on the left, all cards on the right ---------- */
+@mixin smaller-than $mantine-breakpoint-md {
+  .steps {
+    max-width: 40rem;
+  }
+
+  .steps::before {
+    left: calc(var(--circle-size) / 2);
+  }
+
+  .step {
+    grid-template-columns: var(--circle-size) minmax(0, 1fr);
+    column-gap: var(--spacing-lg);
+  }
+
+  .step + .step {
+    margin-top: var(--spacing-md);
+  }
+
+  .left .card,
+  .right .card {
+    grid-column: 2;
+  }
+
+  .number {
+    grid-column: 1;
+    justify-self: start;
+  }
+
+  .connector {
+    display: none;
+  }
+}
+
+@mixin smaller-than $mantine-breakpoint-sm {
+  .step {
+    column-gap: var(--spacing-md);
+  }
+
+  .card {
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+  }
+
+  .icon {
+    width: 3.25rem;
+    height: 3.25rem;
+  }
+}

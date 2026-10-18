@@ -29,17 +29,27 @@
 
 /* ---------- Design tokens (:root) ---------- */
 :root {
-  /* Colors */
+  /* Brand colors: the pink shades come from the Mantine theme (styles/theme.ts). */
+  --color-primary: var(--mantine-color-pink-5);
+  --color-primary-hover: var(--mantine-color-pink-6);
+  --color-primary-light: var(--mantine-color-pink-3);
+  --color-primary-muted: var(--mantine-color-pink-2);
+  --color-primary-soft: var(--mantine-color-pink-1);
+  --color-primary-subtle: var(--mantine-color-pink-0);
+  --color-primary-border: #ffd3e8;
+  --color-accent-yellow: #ffe566;
+
+  /* Neutral colors */
   --color-white: #ffffff;
-  --color-primary: #df0275;
-  --color-primary-hover: #c40263;
-  --color-secondary: #fff4f9;
   --color-text: #1e1b2e;
   --color-text-muted: #6b6b80;
+  --color-text-on-dark: rgba(255, 255, 255, 0.85);
+  --color-text-on-dark-muted: rgba(255, 255, 255, 0.72);
   --color-border: #e2def0;
+  --color-neutral-soft: #f1eff6;
   --color-background: #ffffff;
-  --color-background-alt: #fff4f9;
   --color-dark: #2a0d35;
+  --color-error: #c92a2a;
 
   /* Typography */
   --font-family:
@@ -71,10 +81,19 @@
   /* Radii */
   --radius-md: 0.5rem;
   --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+  --radius-full: 999px;
 
   /* Shadows */
-  --shadow-md: 0 1px 2px rgba(30, 27, 46, 0.06);
-  --shadow-lg: 0 2px 8px rgba(30, 27, 46, 0.08);
+  --shadow-sm: 0 1px 2px rgba(30, 27, 46, 0.06);
+  --shadow-card: 0 12px 32px color-mix(in srgb, var(--color-primary) 8%, transparent);
+  --shadow-card-lg: 0 20px 48px color-mix(in srgb, var(--color-primary) 7%, transparent);
+  --shadow-primary: 0 12px 28px color-mix(in srgb, var(--color-primary) 25%, transparent);
+  --shadow-on-dark: 0 10px 30px rgba(0, 0, 0, 0.25);
+
+  /* Motion */
+  --transition-fast: 150ms ease;
 
   /* Layout */
   --header-height: 4.5rem;
@@ -113,37 +132,40 @@ body {
   flex-direction: column;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
-  font-family: var(--font-family);
-  font-weight: 700;
-  line-height: 1.2;
-  color: var(--color-text);
-  text-wrap: balance;
-}
+/* Element defaults (in the base layer, so Mantine components are not affected). */
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
+    font-family: var(--font-family);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-text);
+    text-wrap: balance;
+  }
 
-p {
-  margin: 0;
-  text-wrap: pretty;
-}
+  p {
+    margin: 0;
+    text-wrap: pretty;
+  }
 
-a {
-  color: var(--color-primary);
-  text-decoration: none;
-}
+  a {
+    color: var(--color-primary);
+    text-decoration: none;
+  }
 
-img {
-  max-width: 100%;
-  display: block;
-}
+  img {
+    max-width: 100%;
+    display: block;
+  }
 
-button {
-  font-family: var(--font-family);
+  button {
+    font-family: var(--font-family);
+  }
 }
 
 ::selection {

@@ -1,0 +1,273 @@
+.section {
+  background-color: var(--color-white);
+}
+
+/* ---------- Tinted top part with a wave edge ---------- */
+.top {
+  position: relative;
+  overflow: hidden;
+  /* Very light pastel mix: pink on the left, pink-lilac at the top centre, cream on the right,
+     a barely visible lilac in the bottom right corner. */
+  background:
+    radial-gradient(52% 78% at 0% 38%, rgba(255, 222, 238, 0.95), rgba(255, 222, 238, 0) 72%),
+    radial-gradient(42% 62% at 46% 0%, rgba(246, 226, 252, 0.9), rgba(246, 226, 252, 0) 74%),
+    radial-gradient(46% 72% at 100% 10%, rgba(255, 242, 212, 0.95), rgba(255, 242, 212, 0) 72%),
+    radial-gradient(38% 56% at 96% 100%, rgba(234, 228, 252, 0.85), rgba(234, 228, 252, 0) 74%),
+    #fff9fc;
+}
+
+.content {
+  width: 100%;
+  max-width: var(--content-max-width);
+  margin-inline: auto;
+  padding-inline: var(--content-padding-x);
+  padding-block: clamp(2.5rem, 1.5rem + 4vw, 5.25rem) clamp(3.5rem, 2.5rem + 5vw, 7rem);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  gap: var(--spacing-xl);
+  align-items: center;
+}
+
+.wave {
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: clamp(2.25rem, 1rem + 5vw, 5.5rem);
+  display: block;
+  fill: var(--color-white);
+  filter: drop-shadow(0 -4px 10px rgba(180, 90, 160, 0.14));
+  pointer-events: none;
+}
+
+/* Thin edge line along the curve; non-scaling so it stays crisp when the SVG stretches. */
+.waveEdge {
+  fill: none;
+  stroke: color-mix(in srgb, var(--color-primary) 16%, transparent);
+  stroke-width: 1.5px;
+  vector-effect: non-scaling-stroke;
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  max-width: 36rem;
+}
+
+.title {
+  font-size: clamp(2.125rem, 0.2rem + 3.9vw, 4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.description {
+  max-width: 34rem;
+  font-size: clamp(1.0625rem, 0.9rem + 0.35vw, 1.1875rem);
+  line-height: 1.7;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.titleHighlight {
+  display: block;
+  background: none;
+  color: var(--color-primary);
+  padding: 0;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: clamp(0.5rem, 0.2rem + 1vw, 1rem);
+  margin-top: var(--spacing-sm);
+}
+
+/* Both buttons always stay side by side: height, padding and font scale down with the viewport. */
+.action {
+  --button-height-lg: clamp(2.625rem, 1.5rem + 2.5vw, 3.125rem);
+  --button-padding-x-lg: clamp(0.875rem, 0.2rem + 2vw, 1.625rem);
+  --mantine-font-size-lg: clamp(0.9375rem, 0.7rem + 0.75vw, 1.125rem);
+  flex: 0 0 auto;
+  white-space: nowrap;
+  transition:
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* ---------- Education center under the buttons ---------- */
+.partner {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: calc(var(--spacing-xs) + 1.25rem);
+}
+
+.partnerLogo {
+  width: 2.75rem;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.partnerText {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  line-height: 1.3;
+}
+
+.partnerCaption {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+
+.partnerName {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+/* ---------- Image ---------- */
+.visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroImage {
+  width: 100%;
+  height: auto;
+}
+
+/* Wide screens: the illustration may step slightly outside the content container (never near the viewport edge). */
+@mixin larger-than $mantine-breakpoint-lg {
+  .visual {
+    margin-right: calc(-1 * clamp(0px, (100vw - 80rem) / 4, 5rem));
+  }
+}
+
+/* ---------- Statistics below the wave ---------- */
+.stats {
+  width: 100%;
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: clamp(2.5rem, 1.5rem + 3vw, 4.5rem) var(--content-padding-x) clamp(3.5rem, 2.5rem + 4vw, 6.5rem);
+  display: flex;
+  justify-content: space-between;
+  gap: var(--spacing-xl);
+}
+
+.stat {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0;
+}
+
+.statIcon {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: var(--radius-lg);
+}
+
+.statIcon svg {
+  width: 1.875rem;
+  height: 1.875rem;
+}
+
+.statIcon[data-stat='experience'] {
+  background-color: #e9e0fb;
+  color: #5b3fb0;
+}
+
+.statIcon[data-stat='students'] {
+  background-color: #fff0bd;
+  color: #a06a00;
+}
+
+.statIcon[data-stat='enrolled'] {
+  background-color: var(--color-primary-border);
+  color: var(--color-primary);
+}
+
+.statIcon[data-stat='budget'] {
+  background-color: var(--color-primary-soft);
+  color: var(--color-primary);
+}
+
+.statText {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.statValue {
+  margin: 0;
+  font-size: clamp(1.5rem, 1.2rem + 0.9vw, 1.875rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+}
+
+.statLabel {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.4;
+  color: var(--color-text-muted);
+}
+
+@mixin smaller-than $mantine-breakpoint-lg {
+  .content {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: var(--spacing-2xl);
+  }
+}
+
+@mixin smaller-than $mantine-breakpoint-md {
+  .content {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-2xl);
+  }
+
+  .title {
+    font-size: clamp(2.125rem, 0.4rem + 5vw, 2.875rem);
+  }
+}
+
+@mixin smaller-than $mantine-breakpoint-xs {
+  .stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Phones: the two buttons fill the row (still side by side), each as wide as its label needs. */
+@media (max-width: 30em) {
+  .action {
+    flex: 1 1 auto;
+    --button-padding-x-lg: 0.75rem;
+  }
+}
+
+/* Very small phones (320px): slightly smaller labels so nothing is clipped. */
+@media (max-width: 22.5em) {
+  .action {
+    --mantine-font-size-lg: 0.875rem;
+    --button-padding-x-lg: 0.5rem;
+  }
+}

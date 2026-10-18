@@ -1,0 +1,121 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.inner {
+  width: 100%;
+  max-width: var(--content-max-width);
+  margin-inline: auto;
+  padding-inline: var(--content-padding-x);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-lg);
+  height: var(--header-height);
+}
+
+.logoLink {
+  display: flex;
+  flex-shrink: 0;
+  border-radius: var(--radius-md);
+}
+
+.logo {
+  height: 2.25rem;
+  width: auto;
+  display: block;
+  flex-shrink: 0;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+/* ---------- Desktop navigation ---------- */
+.nav {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  flex: 1;
+  min-width: 0;
+}
+
+.link,
+.drawerLink {
+  color: var(--color-text);
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  transition:
+    color var(--transition-fast),
+    background-color var(--transition-fast);
+}
+
+.link {
+  font-size: var(--font-size-sm);
+  padding: var(--spacing-sm) 0.75rem;
+  white-space: nowrap;
+}
+
+.link:hover,
+.drawerLink:hover {
+  color: var(--color-primary);
+  background-color: var(--color-primary-subtle);
+}
+
+.active {
+  color: var(--color-primary);
+}
+
+/* ---------- Call to action ---------- */
+.cta {
+  font-weight: 700;
+}
+
+/* ---------- Mobile / tablet menu ---------- */
+.drawerTitle {
+  font-weight: 700;
+  font-size: var(--font-size-lg);
+}
+
+.drawerNav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.drawerLink {
+  font-size: var(--font-size-lg);
+  padding: var(--spacing-md);
+}
+
+.drawerCta {
+  margin-top: var(--spacing-xl);
+  font-weight: 700;
+}
+
+/* The header button moves into the drawer on very small screens. */
+@mixin smaller-than $mantine-breakpoint-xs {
+  .cta {
+    display: none;
+  }
+}
+
+@mixin larger-than $mantine-breakpoint-lg {
+  .nav {
+    display: flex;
+  }
+
+  .burger {
+    display: none;
+  }
+}

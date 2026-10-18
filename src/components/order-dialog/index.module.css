@@ -1,0 +1,281 @@
+/* ---------- Dialog header ---------- */
+.modalHeader {
+  align-items: flex-start;
+  padding: 3.5rem 3.75rem var(--spacing-md);
+}
+
+.modalBody {
+  padding: var(--spacing-lg) 3.75rem 4rem;
+}
+
+.modalTitle {
+  flex: 1;
+}
+
+.titleBlock {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.title {
+  font-size: var(--font-size-2xl);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: var(--font-size-sm);
+  font-weight: 400;
+  color: var(--color-text-muted);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.label {
+  margin: 0 0 var(--spacing-sm);
+  font-size: var(--font-size-md);
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.individualOnly {
+  padding: 0.5rem var(--spacing-md);
+  border-radius: var(--radius-md);
+  background-color: var(--color-primary-subtle);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  text-align: center;
+}
+
+.totals {
+  margin: 0;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-primary-subtle);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.totals > div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+}
+
+.totals dt {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.totals dd {
+  margin: 0;
+  font-weight: 700;
+}
+
+.totalRow {
+  margin-top: var(--spacing-xs);
+  padding-top: var(--spacing-sm);
+  border-top: 1px solid var(--color-border);
+}
+
+.totalRow dt {
+  color: var(--color-text);
+  font-weight: 700;
+}
+
+.totalRow dd {
+  font-size: var(--font-size-2xl);
+  color: var(--color-primary);
+}
+
+/* ---------- Form ---------- */
+.students {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.student {
+  margin: 0;
+  padding: 2.25rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-sm);
+  min-width: 0;
+}
+
+.studentHeader {
+  /* Floating the legend keeps it inside the fieldset box instead of on its border. */
+  float: left;
+  width: 100%;
+  padding: 0;
+  margin-bottom: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.studentNumber {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  background-color: var(--color-primary-subtle);
+  color: var(--color-primary);
+  font-size: var(--font-size-sm);
+  font-weight: 800;
+}
+
+.studentTitle {
+  font-size: var(--font-size-md);
+  font-weight: 700;
+}
+
+.remove {
+  margin-left: auto;
+}
+
+.fields {
+  clear: both;
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1.3fr);
+  gap: var(--spacing-xl) var(--spacing-md);
+}
+
+.addStudent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  width: 100%;
+  padding: var(--spacing-md);
+  border: 2px dashed var(--color-border);
+  border-radius: var(--radius-lg);
+  background-color: transparent;
+  color: var(--color-primary);
+  font-family: var(--font-family);
+  font-size: var(--font-size-md);
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    border-color var(--transition-fast),
+    background-color var(--transition-fast);
+}
+
+.addStudent:hover {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary-subtle);
+}
+
+.addIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.maxNote {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.linkButton {
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--color-primary);
+  font: inherit;
+  font-weight: 700;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.paymentNote {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.submitError {
+  font-size: var(--font-size-sm);
+  color: var(--color-error);
+}
+
+/* ---------- Success ---------- */
+.success {
+  padding-block: var(--spacing-2xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-lg);
+  text-align: center;
+}
+
+.successIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  box-shadow: var(--shadow-primary);
+}
+
+.successTitle {
+  font-size: var(--font-size-2xl);
+}
+
+.successText {
+  max-width: 32rem;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-md);
+}
+
+@mixin smaller-than $mantine-breakpoint-md {
+  .modalHeader {
+    padding: 2.5rem 2.5rem var(--spacing-md);
+  }
+
+  .modalBody {
+    padding: var(--spacing-md) 2.5rem 2.5rem;
+  }
+
+  .fields {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@mixin smaller-than $mantine-breakpoint-sm {
+  .modalHeader {
+    padding: var(--spacing-lg) var(--spacing-lg) var(--spacing-sm);
+  }
+
+  .modalBody {
+    padding: var(--spacing-md) var(--spacing-lg) var(--spacing-xl);
+  }
+
+  .student {
+    padding: var(--spacing-lg);
+  }
+
+  .fields {
+    grid-template-columns: 1fr;
+  }
+}
