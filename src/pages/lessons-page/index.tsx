@@ -15,7 +15,8 @@ export function LessonsPage() {
         backLabel={t('lessonsPage.back')}
         backTo={SECTION_IDS.lessons}
         title={t('lessonsPage.title')}
-        description={t('lessonsPage.description', { count: LESSONS.length })}
+        // Same text as under the lessons section on the landing page.
+        description={t('lessons.description')}
       />
 
       {LESSON_GROUPS.map((group, index) => (

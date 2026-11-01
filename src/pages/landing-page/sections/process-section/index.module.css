@@ -23,28 +23,29 @@
 }
 
 /* ---------- Timeline: spine in the middle, cards alternate left and right ---------- */
-.steps {
+.timeline {
   --circle-size: 3.25rem;
-  position: relative;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  --spine-x: 50%;
+  --spine-width: 4px;
+  --spine: var(--color-primary-border);
+  /* Dashed spine of the steps after enrolling. */
+  --spine-after: repeating-linear-gradient(
+    to bottom,
+    var(--color-primary-light) 0 8px,
+    transparent 8px 16px
+  );
   width: 100%;
   max-width: 62rem;
   display: flex;
   flex-direction: column;
 }
 
-.steps::before {
-  content: '';
-  position: absolute;
-  top: calc(var(--circle-size) / 2);
-  bottom: calc(var(--circle-size) / 2);
-  left: 50%;
-  width: 4px;
-  border-radius: 2px;
-  background-color: var(--color-primary-border);
-  transform: translateX(-50%);
+.steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .step {
@@ -52,6 +53,68 @@
   display: grid;
   grid-template-columns: minmax(0, 1fr) 8rem minmax(0, 1fr);
   align-items: center;
+}
+
+/* Every step draws its own piece of the spine, so phases can style their part differently. */
+.step::before,
+.phase::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--spine-x);
+  width: var(--spine-width);
+  background: var(--spine);
+  transform: translateX(-50%);
+}
+
+/* The spine starts at the first circle and ends at the last one. */
+.timeline > .steps:first-child > .step:first-child::before {
+  top: 50%;
+}
+
+.timeline > .steps:last-child > .step:last-child::before {
+  bottom: 50%;
+}
+
+.steps[data-phase='after'] .step::before,
+.phase[data-phase='after']::before {
+  background: var(--spine-after);
+}
+
+/* ---------- "After enrolling" label on the spine ---------- */
+.phase {
+  position: relative;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  padding-block: var(--spacing-xl);
+}
+
+.phaseLabel {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: 0.375rem var(--spacing-md);
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-primary-border);
+  background-color: var(--color-white);
+  color: var(--color-primary);
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.phase[data-phase='after'] .phaseLabel {
+  border-color: var(--color-dark);
+  background-color: var(--color-dark);
+  color: var(--color-white);
+}
+
+.phase[data-phase='after'] .phaseLabel svg {
+  color: var(--color-accent-yellow);
 }
 
 /* Cards on opposite sides can overlap a little, which keeps the circles close together. */
@@ -168,14 +231,66 @@
   color: var(--color-text-muted);
 }
 
+/* ---------- Step after enrolling (Summer School): dark card, yellow number ---------- */
+.steps[data-phase='after'] .card {
+  border-color: var(--color-dark);
+  background-color: var(--color-dark);
+  box-shadow: var(--shadow-card-lg);
+}
+
+.steps[data-phase='after'] .icon {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--color-accent-yellow);
+}
+
+.steps[data-phase='after'] .stepTitle {
+  color: var(--color-white);
+}
+
+.steps[data-phase='after'] .stepDescription {
+  color: var(--color-text-on-dark-muted);
+}
+
+.steps[data-phase='after'] .number {
+  background-color: var(--color-accent-yellow);
+  color: var(--color-dark);
+  box-shadow: 0 0 0 6px color-mix(in srgb, var(--color-accent-yellow) 30%, transparent);
+}
+
+.more {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  margin-top: var(--spacing-xs);
+  border-radius: var(--radius-md);
+  color: var(--color-white);
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+}
+
+.more:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.more svg {
+  transition: transform var(--transition-fast);
+}
+
+.more:hover svg {
+  transform: translateX(2px);
+}
+
 /* ---------- Tablet / mobile: spine on the left, all cards on the right ---------- */
 @mixin smaller-than $mantine-breakpoint-md {
-  .steps {
+  .timeline {
+    --spine-x: calc(var(--circle-size) / 2);
     max-width: 40rem;
   }
 
-  .steps::before {
-    left: calc(var(--circle-size) / 2);
+  .phase {
+    justify-content: flex-start;
   }
 
   .step {
@@ -183,8 +298,10 @@
     column-gap: var(--spacing-lg);
   }
 
+  /* Padding instead of margin, so the spine drawn by each step has no gaps. */
   .step + .step {
-    margin-top: var(--spacing-md);
+    margin-top: 0;
+    padding-top: var(--spacing-md);
   }
 
   .left .card,

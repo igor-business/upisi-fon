@@ -28,7 +28,7 @@
     "description": "Kompletna online priprema za prijemni iz matematike, od prve lekcije do probnog ispita, uz mentora koji te prati korak po korak.",
     "primaryAction": "Upiši pripremu",
     "secondaryAction": "Isprobaj besplatno",
-    "imageAlt": "Studentkinja uči za prijemni ispit uz video lekciju na laptopu, okružena beleškama i matematičkim skicama",
+    "imageAlt": "Maskota UpišiFON-a, sova sa naočarima u roze duksu, uči matematiku za laptopom okružena knjigama i matematičkim skicama",
     "stats": {
       "experience": {
         "value_one": "{{count}} godina",
@@ -41,11 +41,11 @@
         "label": "polaznika priprema i kurseva"
       },
       "enrolled": {
-        "value": "94%",
+        "value": "90%+",
         "label": "polaznika upiše FON"
       },
       "budget": {
-        "value": "83%",
+        "value": "80%+",
         "label": "polaznika ostvari budžet"
       }
     },
@@ -122,8 +122,7 @@
         "title": "Jasan program",
         "items": [
           "Video lekcije dostupne 24/7",
-          "Zadaci sa rešenjima",
-          "Materijali za preuzimanje"
+          "Zadaci sa rešenjima"
         ]
       },
       "exams": {
@@ -147,18 +146,24 @@
   "process": {
     "title": "Od prvog koraka do prijemnog ispita<1>.</1>",
     "description": "Jasno definisani koraci su sve što ti je potrebno za uspešnu pripremu.",
+    "afterEnrolling": "Posle upisa na FON",
+    "summerSchoolLink": "Saznaj više o Summer School-u",
     "steps": {
       "apply": {
-        "title": "Odaberi paket",
-        "description": "Izaberi pripreme koje odgovaraju tvojim potrebama i ostavi kontakt podatke."
+        "title": "Upiši pripremu",
+        "description": "Klikni na „Upiši pripremu“ i ostavi svoje podatke."
       },
       "agree": {
-        "title": "Dogovaramo detalje",
-        "description": "Član našeg tima kontaktira te kako biste dogovorili detalje pripreme i način plaćanja."
+        "title": "Javljamo ti se u roku od 24h",
+        "description": "Član našeg tima te kontaktira i odgovara na sva tvoja pitanja."
+      },
+      "payment": {
+        "title": "Kompletiraj kupovinu",
+        "description": "Uplatu vršiš na račun naše firme, a sve podatke za uplatu dobijaš od našeg tima."
       },
       "access": {
-        "title": "Dobijaš pristup materijalima",
-        "description": "Pristupi video-lekcijama, zadacima i dodatnim materijalima za učenje."
+        "title": "Pristup dobijaš u roku od 48h",
+        "description": "Kada uplata bude evidentirana, otvaramo ti pristup kompletnom sadržaju pripreme."
       },
       "learn": {
         "title": "Učiš svojim tempom",
@@ -171,13 +176,17 @@
       "ready": {
         "title": "Spreman dočekuješ prijemni",
         "description": "Uz sistematičnu pripremu i podršku mentora približavaš se uspešnom upisu na FON-u."
+      },
+      "summerSchool": {
+        "title": "Summer School za brucoše",
+        "description": "Učenje se ne završava upisom. Upoznaj buduće kolege i saznaj od starijih studenata FON-a kako da uspešno započneš studije."
       }
     }
   },
   "lessons": {
     "title": "Pogledaj kako izgleda naša priprema.",
-    "description": "{{count}} lekcija, potpuno besplatno i bez prijave.",
-    "action": "Pogledaj svih {{count}} lekcija",
+    "description": "Prve dve oblasti su potpuno besplatne i dostupne bez prijave.",
+    "action": "Pristupi besplatnim oblastima",
     "play": "Pusti video: {{title}}",
     "close": "Zatvori video",
     "groups": {
@@ -201,12 +210,12 @@
   },
   "about": {
     "title": "Ko stoji iza pripreme<1>.</1>",
-    "description": "Pripremu vodi profesorka sa iskustvom u radu sa srednjoškolcima, a pokreće je Binary Bioskop.",
+    "description": "Pripremu je kreirala profesorka sa iskustvom u radu sa srednjoškolcima, a iza nje stoji edukativni centar Binary Bioskop.",
     "members": {
       "teacher": {
         "name": "Daliborka Vujić",
         "role": "Predavač i mentor",
-        "description": "Predavač na pripremama i profesorka matematike u Četrnaestoj beogradskoj gimnaziji, sa višegodišnjim iskustvom u radu sa srednjoškolcima i pripremi učenika za prijemni ispit iz matematike.\n\nKroz pristupačan i postepen pristup, profesorka složene matematičke oblasti i koncepte objašnjava na jasan i razumljiv način, pomažući učenicima da steknu sigurnost u svoje znanje i uspešno savladaju gradivo. Otvorena i neposredna komunikacija omogućava učenicima da tokom čitave pripreme dobiju podršku, postave pitanja i razjasne sve nedoumice.",
+        "description": "Predavač na pripremama i profesorka matematike u Četrnaestoj beogradskoj gimnaziji, sa višegodišnjim iskustvom u radu sa srednjoškolcima i pripremi učenika za prijemni ispit iz matematike.\n\nKroz pristupačan i postepen pristup, profesorka složene matematičke oblasti i koncepte objašnjava na jasan i razumljiv način, pomažući učenicima da steknu sigurnost u svoje znanje i uspešno savladaju gradivo.",
         "photoAlt": "Daliborka Vujić, profesorka matematike"
       },
       "founder": {
@@ -336,7 +345,6 @@
   "lessonsPage": {
     "back": "Nazad na početnu",
     "title": "Besplatne lekcije",
-    "description": "Svih {{count}} lekcija je javno dostupno, bez prijave.",
     "ctaTitle": "Sviđa ti se kako izgleda?",
     "ctaDescription": "Ovo je samo uvod, čeka te još mnogo toga. Kompletna priprema obuhvata sve oblasti prijemnog ispita, zadatke sa rešenjima, probne prijemne ispite i mentora koji prati tvoj napredak.",
     "ctaAction": "Upiši pripremu"

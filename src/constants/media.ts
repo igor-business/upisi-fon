@@ -1,7 +1,8 @@
 /** Paths to static images (served from the public folder). */
 export const IMAGES = {
   logo: '/logo.svg',
-  hero: '/images/hero-illustration-v3.webp',
+  /** The UpišiFON mascot (an owl), used as the brand's trademark. */
+  hero: '/images/maskota-1.webp',
   binaryBioskop: '/images/binary-bioskop.webp',
   teacher: '/images/daliborka-vujic.webp',
   founder: '/images/bojan-martinovic.webp',
@@ -12,7 +13,7 @@ export const IMAGES = {
 
 /** Intrinsic image sizes (prevent layout shift while the images load). */
 export const IMAGE_SIZES = {
-  hero: { width: 1670, height: 941 },
+  hero: { width: 1262, height: 833 },
   binaryBioskop: { width: 250, height: 288 },
   programCard: { width: 512, height: 512 },
   member: { width: 480, height: 480 },
