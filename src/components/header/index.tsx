@@ -1,9 +1,11 @@
-import { useEffect, type MouseEvent } from 'react';
+import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Burger, Button, Drawer, useMantineTheme } from '@mantine/core';
 import { useDisclosure, useMediaQuery } from '@mantine/hooks';
 import { IMAGES, NAV_SECTIONS, SECTION_IDS } from '@constants';
-import { useActiveSection, useGoHome, useGoToSection, useIsHomePage } from '@/hooks';
+import { useActiveSection, useIsHomePage } from '@/hooks';
+import { getSectionPath } from '@/utils/scroll';
 import { useOrderDialog } from '../order-dialog';
 import clsx from 'clsx';
 import styles from './index.module.css';
@@ -19,8 +21,6 @@ export function Header() {
   const isDesktop = useMediaQuery(`(width >= ${theme.breakpoints.lg})`);
   const isHomePage = useIsHomePage();
   const activeSectionId = useActiveSection(NAV_SECTION_IDS, isHomePage);
-  const goHome = useGoHome();
-  const goToSection = useGoToSection();
   const { openOrder } = useOrderDialog();
 
   // The drawer is only for small screens.
@@ -29,12 +29,6 @@ export function Header() {
       closeMenu();
     }
   }, [isDesktop, closeMenu]);
-
-  const handleLogoClick = (event: MouseEvent) => {
-    event.preventDefault();
-    closeMenu();
-    goHome();
-  };
 
   const handleApply = () => {
     closeMenu();
@@ -46,19 +40,18 @@ export function Header() {
       const id = SECTION_IDS[key];
       const isActive = activeSectionId === id;
       return (
-        <a
+        // A real link: Ctrl/Cmd+click opens the section in a new tab. On the landing page the history
+        // entry is replaced, so Back leaves the page instead of stepping through sections.
+        <Link
           key={key}
-          href={`/#${id}`}
+          to={getSectionPath(id)}
+          replace={isHomePage}
           className={clsx(linkClassName, isActive && styles.active)}
           aria-current={isActive ? 'true' : undefined}
-          onClick={(event) => {
-            event.preventDefault();
-            closeMenu();
-            goToSection(id);
-          }}
+          onClick={closeMenu}
         >
           {t(`nav.${key}`)}
-        </a>
+        </Link>
       );
     });
 
@@ -66,9 +59,15 @@ export function Header() {
     <>
       <header className={styles.header}>
         <div className={styles.inner}>
-          <a href="/" className={styles.logoLink} aria-label={t('a11y.home')} onClick={handleLogoClick}>
+          <Link
+            to={getSectionPath()}
+            replace={isHomePage}
+            className={styles.logoLink}
+            aria-label={t('a11y.home')}
+            onClick={closeMenu}
+          >
             <img src={IMAGES.logo} alt="" className={styles.logo} />
-          </a>
+          </Link>
           <nav className={styles.nav} aria-label={t('a11y.mainNavigation')}>
             {renderLinks(styles.link)}
           </nav>

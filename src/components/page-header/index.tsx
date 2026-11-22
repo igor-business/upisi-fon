@@ -1,7 +1,6 @@
 import type { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
-import { ROUTES } from '@constants';
-import type { ScrollToSectionState } from '@/types';
+import { getSectionPath } from '@/utils/scroll';
 import { Description } from '../description';
 import { ArrowLeftIcon } from '../icons';
 import { Section } from '../section';
@@ -24,11 +23,7 @@ export interface PageHeaderProps {
 export function PageHeader({ backLabel, backTo, title, description, className }: PageHeaderProps) {
   return (
     <Section contentClassName={clsx(styles.content, className)}>
-      <Link
-        to={ROUTES.HOME}
-        state={{ scrollTo: backTo } satisfies ScrollToSectionState}
-        className={styles.back}
-      >
+      <Link to={getSectionPath(backTo)} className={styles.back}>
         <ArrowLeftIcon size={16} />
         {backLabel}
       </Link>

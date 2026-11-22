@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { ActionIcon, Affix } from '@mantine/core';
 import { useWindowScroll } from '@mantine/hooks';
-import { scrollToTop } from '@/utils/scroll';
+import { useGoToSection } from '@/hooks';
 import { ArrowUpIcon } from '../icons';
 import styles from './index.module.css';
 
@@ -12,6 +12,7 @@ const VISIBILITY_THRESHOLD = 400;
 export function ScrollToTop() {
   const { t } = useTranslation();
   const [scroll] = useWindowScroll();
+  const goToSection = useGoToSection();
 
   if (scroll.y <= VISIBILITY_THRESHOLD) {
     return null;
@@ -24,7 +25,8 @@ export function ScrollToTop() {
         radius="xl"
         aria-label={t('a11y.scrollToTop')}
         className={styles.button}
-        onClick={scrollToTop}
+        // Also clears the section from the address.
+        onClick={() => goToSection()}
       >
         <ArrowUpIcon />
       </ActionIcon>

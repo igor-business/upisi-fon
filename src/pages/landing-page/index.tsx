@@ -1,5 +1,5 @@
 import { ScrollToTop } from '@components';
-import { useScrollToRequestedSection } from '@/hooks';
+import { SHOW_FAQ } from '@constants';
 import {
   AboutSection,
   FaqSection,
@@ -13,8 +13,6 @@ import {
 import styles from './index.module.css';
 
 export function LandingPage() {
-  useScrollToRequestedSection();
-
   return (
     <div className={styles.page}>
       <HeroSection />
@@ -24,7 +22,7 @@ export function LandingPage() {
       <AboutSection />
       <TestimonialsSection />
       <PricingSection />
-      <FaqSection />
+      {SHOW_FAQ && <FaqSection />}
       <ScrollToTop />
     </div>
   );

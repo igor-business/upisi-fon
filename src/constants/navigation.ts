@@ -1,7 +1,7 @@
 import type { FooterColumn } from '@/types';
 import { BINARY_BIOSKOP_URL } from './company';
 import { ROUTES } from './routes';
-import { SECTION_IDS } from './sections';
+import { SECTION_IDS, SHOW_FAQ } from './sections';
 
 /** Footer navigation columns (titles: footer.columns.<key>.title). */
 export const FOOTER_COLUMNS: readonly FooterColumn[] = [
@@ -26,7 +26,9 @@ export const FOOTER_COLUMNS: readonly FooterColumn[] = [
   {
     key: 'support',
     links: [
-      { kind: 'section', label: 'footer.links.faq', target: SECTION_IDS.faq },
+      ...(SHOW_FAQ
+        ? [{ kind: 'section', label: 'footer.links.faq', target: SECTION_IDS.faq } as const]
+        : []),
       { kind: 'order', label: 'footer.links.apply', product: 'fullPrep' },
     ],
   },

@@ -22,9 +22,25 @@ npm run preview  # pregled produkcionog builda
 npm run lint     # oxlint
 ```
 
+## Slanje prijava (Mailgun)
+
+Forma za prijavu šalje podatke funkciji `api/order.ts` (Vercel Function), koja ih ponovo proverava, sama računa cenu iz `src/constants/products.ts` i šalje mejl timu preko Mailgun HTTP API-ja. Odgovor na mejl (Reply-To) ide prvom polazniku.
+
+Promenljive su opisane u `.env.example`:
+
+- **Vercel**: Project → Settings → Environment Variables (`MAILGUN_API_KEY`, `MAILGUN_DOMAIN`, `MAILGUN_REGION`, `ORDER_EMAIL_TO`, opciono `ORDER_EMAIL_FROM`).
+- **Lokalno**: kopiraj `.env.example` u `.env.local`. `npm run dev` pokreće i funkcije iz `api/` (plugin u `vite.config.ts`); bez `MAILGUN_API_KEY` mejl se samo ispiše u terminalu.
+
+Mailgun sandbox domen šalje samo na unapred odobrene adrese – za produkciju treba verifikovati pravi domen (npr. `mg.upisifon.rs`).
+
+Zaštita od spama: skriveno polje koje popunjavaju samo botovi i najviše 5 prijava sa jedne IP adrese u 10 minuta.
+
+`vercel.json` preusmerava sve adrese osim `/api/*` na `index.html`, pa direktno otvaranje ili osvežavanje podstranica radi.
+
 ## Struktura
 
 ```text
+api/                    # Vercel Functions (order.ts – slanje prijava preko Mailgun-a)
 design/                 # Referentni dizajn (nije deo builda)
 public/                 # Statički fajlovi (logo, favicon, images/*.webp)
 src/
@@ -33,9 +49,9 @@ src/
 │                       # PageHeader, LessonList, OrderDialog (prijava), ScrollToTop, icons
 ├── config/localization/# i18n podešavanje, tipovi ključeva i prevodi (language/sr/common.json)
 ├── constants/          # Rute, sekcije, proizvodi i cene, lekcije, slike, kontakt, footer linkovi
-├── hooks/              # useGoToSection, useGoHome, useActiveSection, ...
+├── hooks/              # useGoToSection, useActiveSection, useIsHomePage
 ├── pages/              # Stranice; sekcije landing stranice su u pages/landing-page/sections
-├── services/           # Slanje prijave (za sada simulirano)
+├── services/           # Slanje prijave na /api/order
 ├── styles/             # theme.ts (Mantine tema i paleta), global.css (dizajn tokeni), layers.css
 ├── types/              # Zajednički domenski tipovi (proizvodi, prijava, navigacija, lekcije)
 └── utils/              # Pomoćne funkcije (cene, skrolovanje, validacija, YouTube)

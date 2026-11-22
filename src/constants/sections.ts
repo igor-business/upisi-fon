@@ -11,6 +11,12 @@ export const SECTION_IDS = {
   faq: 'faq',
 } as const satisfies Record<SectionKey, string>;
 
+/**
+ * Whether the FAQ section (and its header and footer links) is shown.
+ * Temporarily hidden until the client delivers the FAQ content — set to `true` to bring it back.
+ */
+export const SHOW_FAQ = false;
+
 /** Sections linked from the header navigation, in page order (labels: nav.<key>). */
 export const NAV_SECTIONS: readonly SectionKey[] = [
   'program',
@@ -19,7 +25,7 @@ export const NAV_SECTIONS: readonly SectionKey[] = [
   'about',
   'results',
   'pricing',
-  'faq',
+  ...(SHOW_FAQ ? (['faq'] as const) : []),
 ];
 
 /** Element id of the contact column in the footer. */

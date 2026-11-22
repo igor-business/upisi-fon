@@ -2,7 +2,7 @@ import { Trans, useTranslation } from 'react-i18next';
 import { Button } from '@mantine/core';
 import { ArrowDownIcon, CheckIcon, Section, Title } from '@components';
 import { IMAGES, IMAGE_SIZES, SECTION_IDS } from '@constants';
-import { scrollToSection } from '@/utils/scroll';
+import { useGoToSection } from '@/hooks';
 import clsx from 'clsx';
 import styles from './index.module.css';
 
@@ -26,6 +26,7 @@ const DECORATION = (
 /** "What you get": the three parts of the preparation. */
 export function ProgramSection() {
   const { t } = useTranslation();
+  const goToSection = useGoToSection();
 
   return (
     <Section
@@ -45,7 +46,7 @@ export function ProgramSection() {
           variant="default"
           className={styles.action}
           rightSection={<ArrowDownIcon size={18} />}
-          onClick={() => scrollToSection(SECTION_IDS.process)}
+          onClick={() => goToSection(SECTION_IDS.process)}
         >
           {t('program.action')}
         </Button>

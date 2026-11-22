@@ -1,8 +1,8 @@
-import { useRef, useState, type FormEvent } from 'react';
+import { useEffect, useRef, useState, type FormEvent } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ActionIcon, Button, SegmentedControl, TextInput } from '@mantine/core';
 import { TIER_STUDENT_LIMITS } from '@constants';
-import { submitOrder } from '@/services/order';
+import { OrderSubmitError, submitOrder, type OrderErrorReason } from '@/services/order';
 import type { OrderStudent, PricingTier } from '@/types';
 import { formatPrice, getAvailableTiers, getPrice } from '@/utils/pricing';
 import { CheckIcon, CloseIcon, PlusIcon } from '../icons';
@@ -28,12 +28,16 @@ const getInputId = (studentKey: number, field: StudentField) => `student-${stude
 
 interface OrderFormProps {
   selection: OrderSelection;
+  /** Reports whether the form holds unsent data. */
+  onDirtyChange: (dirty: boolean) => void;
+  /** Called once the application has been sent. */
+  onSent: () => void;
   /** Called when the user closes the confirmation after sending. */
   onDone: () => void;
 }
 
 /** Application form: tier switch, contact details of every student, promo code and the total. */
-export function OrderForm({ selection, onDone }: OrderFormProps) {
+export function OrderForm({ selection, onDirtyChange, onSent, onDone }: OrderFormProps) {
   const { t } = useTranslation();
   const { product } = selection;
   const availableTiers = getAvailableTiers(product);
@@ -48,8 +52,19 @@ export function OrderForm({ selection, onDone }: OrderFormProps) {
 
   const [students, setStudents] = useState<StudentForm[]>(() => Array.from({ length: limits.min }, createStudent));
   const [promoCode, setPromoCode] = useState('');
+  // Honeypot for bots: the field is hidden from people (see the input at the end of the form).
+  const [website, setWebsite] = useState('');
   const [errors, setErrors] = useState<Record<number, StudentErrors>>({});
   const [status, setStatus] = useState<Status>('idle');
+  const [errorReason, setErrorReason] = useState<OrderErrorReason>('failed');
+
+  const hasInput =
+    promoCode.trim() !== '' || students.some((student) => STUDENT_FIELDS.some((field) => student[field].trim()));
+  const dirty = hasInput && status !== 'success';
+
+  useEffect(() => {
+    onDirtyChange(dirty);
+  }, [dirty, onDirtyChange]);
 
   const pricePerStudent = getPrice(product, tier);
   const total = pricePerStudent * students.length;
@@ -103,17 +118,18 @@ export function OrderForm({ selection, onDone }: OrderFormProps) {
       await submitOrder({
         product,
         tier,
-        pricePerStudent,
-        total,
         students: students.map(({ name, phone, email }) => ({
           name: name.trim(),
           phone: phone.trim(),
           email: email.trim(),
         })),
         promoCode: promoCode.trim() || undefined,
+        website,
       });
       setStatus('success');
-    } catch {
+      onSent();
+    } catch (error) {
+      setErrorReason(error instanceof OrderSubmitError ? error.reason : 'failed');
       setStatus('error');
     }
   };
@@ -146,6 +162,7 @@ export function OrderForm({ selection, onDone }: OrderFormProps) {
             radius="md"
             size="md"
             color="pink"
+            classNames={{ label: styles.tierLabel }}
             aria-labelledby="order-tier-label"
             value={tier}
             onChange={(value) => changeTier(value as PricingTier)}
@@ -226,6 +243,7 @@ export function OrderForm({ selection, onDone }: OrderFormProps) {
 
       <TextInput
         label={t('order.fields.promo')}
+        description={t('order.promoNote')}
         autoComplete="off"
         value={promoCode}
         onChange={(event) => setPromoCode(event.currentTarget.value)}
@@ -254,9 +272,23 @@ export function OrderForm({ selection, onDone }: OrderFormProps) {
 
       {status === 'error' && (
         <p className={styles.submitError} role="alert">
-          {t('order.errors.submit')}
+          {t(errorReason === 'tooMany' ? 'order.errors.tooMany' : 'order.errors.submit')}
         </p>
       )}
+
+      {/* Honeypot: invisible and unreachable for people, but bots fill it in (the server then ignores the application). */}
+      <div className={styles.honeypot} aria-hidden="true">
+        <label htmlFor="order-website">Website</label>
+        <input
+          id="order-website"
+          name="website"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          value={website}
+          onChange={(event) => setWebsite(event.currentTarget.value)}
+        />
+      </div>
 
       <Button type="submit" size="lg" fullWidth loading={status === 'submitting'}>
         {t('order.submit')}

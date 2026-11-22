@@ -3,7 +3,7 @@ import { Trans, useTranslation } from 'react-i18next';
 import { Button } from '@mantine/core';
 import { OutlineIcon, useOrderDialog } from '@components';
 import { FOUNDING_YEAR, IMAGES, IMAGE_SIZES, SECTION_IDS } from '@constants';
-import { scrollToSection } from '@/utils/scroll';
+import { useGoToSection } from '@/hooks';
 import styles from './index.module.css';
 
 /** Statistics under the hero, in display order (texts: hero.stats.<key>). */
@@ -49,6 +49,7 @@ const STAT_ICONS: Record<Stat, ReactNode> = {
 /** Top of the landing page: headline, calls to action, illustration and key statistics. */
 export function HeroSection() {
   const { t } = useTranslation();
+  const goToSection = useGoToSection();
   const { openOrder } = useOrderDialog();
   // Computed on every render, so the number never goes stale.
   const yearsOfExperience = new Date().getFullYear() - FOUNDING_YEAR;
@@ -70,7 +71,7 @@ export function HeroSection() {
                 size="lg"
                 variant="default"
                 className={styles.action}
-                onClick={() => scrollToSection(SECTION_IDS.lessons)}
+                onClick={() => goToSection(SECTION_IDS.lessons)}
               >
                 {t('hero.secondaryAction')}
               </Button>

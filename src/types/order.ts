@@ -10,15 +10,16 @@ export interface OrderStudent {
   email: string;
 }
 
-/** An application sent from the order dialog. */
+/**
+ * An application sent from the order dialog to /api/order. Prices are not sent: the server takes
+ * them from the product configuration, so they cannot be changed in the browser.
+ */
 export interface OrderRequest {
   product: ProductId;
   tier: PricingTier;
-  /** Price per student in RSD at the time of the application. */
-  pricePerStudent: number;
-  /** Total price in RSD (price per student x number of students). */
-  total: number;
   students: OrderStudent[];
   /** Optional promo code entered by the user. */
   promoCode?: string;
+  /** Honeypot field that people never see; a filled-in value marks a bot. */
+  website?: string;
 }

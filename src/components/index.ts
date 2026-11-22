@@ -6,6 +6,7 @@ export { Layout } from './layout';
 export { LessonList } from './lesson-list';
 export { OrderDialogProvider, useOrderDialog } from './order-dialog';
 export { PageHeader } from './page-header';
+export { ScrollManager } from './scroll-manager';
 export { ScrollToTop } from './scroll-to-top';
 export { Section } from './section';
 export { Title, TitleAccent } from './title';

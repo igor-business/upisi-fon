@@ -111,6 +111,17 @@
   color: var(--color-primary);
 }
 
+/* Resets the button look, so the "apply" button matches the other footer links. */
+.linkButton {
+  padding: 0;
+  border: 0;
+  background: none;
+  font-family: inherit;
+  line-height: inherit;
+  text-align: start;
+  cursor: pointer;
+}
+
 .bottom {
   display: flex;
   align-items: center;

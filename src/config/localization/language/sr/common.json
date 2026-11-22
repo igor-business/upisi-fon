@@ -1,6 +1,5 @@
 {
   "appName": "UpišiFON",
-  "tagline": "Dobrodošli na naš sajt.",
   "a11y": {
     "scrollToTop": "Vrati se na vrh",
     "openMenu": "Otvori meni",
@@ -53,12 +52,6 @@
       "caption": "Priprema edukativnog centra",
       "name": "Binary Bioskop"
     }
-  },
-  "auth": {
-    "logout": "Odjava"
-  },
-  "app": {
-    "title": "Aplikativni deo"
   },
   "footer": {
     "description": "Kompletna online priprema: video lekcije 24/7, zadaci sa rešenjima, probni prijemni ispiti i mentor koji prati tvoj napredak.",
@@ -175,7 +168,7 @@
       },
       "ready": {
         "title": "Spreman dočekuješ prijemni",
-        "description": "Uz sistematičnu pripremu i podršku mentora približavaš se uspešnom upisu na FON-u."
+        "description": "Uz sistematičnu pripremu i podršku mentora približavaš se uspešnom upisu na FON."
       },
       "summerSchool": {
         "title": "Summer School za brucoše",
@@ -215,7 +208,7 @@
       "teacher": {
         "name": "Daliborka Vujić",
         "role": "Predavač i mentor",
-        "description": "Predavač na pripremama i profesorka matematike u Četrnaestoj beogradskoj gimnaziji, sa višegodišnjim iskustvom u radu sa srednjoškolcima i pripremi učenika za prijemni ispit iz matematike.\n\nKroz pristupačan i postepen pristup, profesorka složene matematičke oblasti i koncepte objašnjava na jasan i razumljiv način, pomažući učenicima da steknu sigurnost u svoje znanje i uspešno savladaju gradivo.",
+        "description": "Predavač na pripremama i profesorka matematike u Devetoj beogradskoj gimnaziji, sa višegodišnjim iskustvom u radu sa srednjoškolcima i pripremi učenika za prijemni ispit iz matematike.\n\nKroz pristupačan i postepen pristup, profesorka složene matematičke oblasti i koncepte objašnjava na jasan i razumljiv način, pomažući učenicima da steknu sigurnost u svoje znanje i uspešno savladaju gradivo.",
         "photoAlt": "Daliborka Vujić, profesorka matematike"
       },
       "founder": {
@@ -239,12 +232,12 @@
     "tiersLabel": "Način učešća za {{product}}",
     "tiers": {
       "individual": "Individualno",
-      "group3": "3+ polaznika",
-      "group5": "5+ polaznika"
+      "group3": "Grupa 3–4",
+      "group5": "Grupa 5+"
     },
     "tierHints": {
       "individual": "za jednog polaznika",
-      "group3": "po polazniku, za grupu od 3 do 5 polaznika",
+      "group3": "po polazniku, za grupu od 3 do 4 polaznika",
       "group5": "po polazniku, za grupu od 5 i više polaznika"
     },
     "saving": "Ušteda {{amount}} RSD po polazniku",
@@ -326,12 +319,14 @@
       "phone": "Unesi ispravan broj telefona.",
       "email": "Unesi ispravnu email adresu.",
       "emailDuplicate": "Ova email adresa je već uneta za drugog polaznika.",
-      "submit": "Slanje nije uspelo. Pokušaj ponovo za nekoliko trenutaka."
+      "submit": "Slanje nije uspelo. Pokušaj ponovo za nekoliko trenutaka ili nas pozovi telefonom.",
+      "tooMany": "Sa ovog uređaja je poslato više prijava u kratkom roku. Pokušaj ponovo za desetak minuta ili nas pozovi telefonom."
     },
     "addStudent": "Dodaj polaznika",
     "removeStudent": "Ukloni polaznika {{number}}",
-    "maxStudents": "Grupa 3+ može imati najviše 5 polaznika.",
-    "switchToGroup5": "Pređi na 5+ paket",
+    "maxStudents": "Grupa 3–4 može imati najviše 4 polaznika. Za 5 i više polaznika cena je niža.",
+    "switchToGroup5": "Pređi na grupu 5+",
+    "promoNote": "Popust po promo kodu obračunavamo kada te kontaktiramo, pa se ne vidi u ukupnoj ceni ispod.",
     "paymentNote": "Plaćanje se ne vrši na sajtu. Posle prijave neko iz našeg tima će te kontaktirati sa svim detaljima.",
     "submit": "Pošalji prijavu",
     "success": {
@@ -388,5 +383,12 @@
     "priceLabel": "Cena paketa",
     "priceNote": "Summer School je uključen u kompletnu pripremu.",
     "action": "Prijavi se za Summer School"
+  },
+  "notFound": {
+    "code": "404",
+    "title": "Ova stranica ne postoji.",
+    "description": "Link je možda pogrešno unet ili je stranica premeštena. Vrati se na početnu ili pogledaj besplatne lekcije.",
+    "home": "Nazad na početnu",
+    "lessons": "Pogledaj besplatne lekcije"
   }
 }

@@ -35,7 +35,7 @@ export const TIER_ORDER: readonly PricingTier[] = ['individual', 'group3', 'grou
 /** Allowed number of students per tier. */
 export const TIER_STUDENT_LIMITS: Readonly<Record<PricingTier, { min: number; max: number }>> = {
   individual: { min: 1, max: 1 },
-  group3: { min: 3, max: 5 },
+  group3: { min: 3, max: 4 },
   group5: { min: 5, max: 30 },
 };
 

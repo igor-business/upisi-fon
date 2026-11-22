@@ -1,7 +1,7 @@
 /** Products that can be applied for on the site. */
 export type ProductId = 'mockExams' | 'summerSchool' | 'fullPrep';
 
-/** Pricing tiers: one student, a group of 3 to 5, or a group of 5 or more. */
+/** Pricing tiers: one student, a group of 3 to 4, or a group of 5 or more. */
 export type PricingTier = 'individual' | 'group3' | 'group5';
 
 /** Features a product can include. */

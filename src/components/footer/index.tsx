@@ -1,11 +1,12 @@
-import type { MouseEvent } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { CONTACT, FOOTER_COLUMNS, FOOTER_CONTACT_ID, IMAGES, ROUTES, SOCIAL_LINKS } from '@constants';
-import { useGoHome, useGoToSection } from '@/hooks';
+import { CONTACT, FOOTER_COLUMNS, FOOTER_CONTACT_ID, IMAGES, SOCIAL_LINKS } from '@constants';
+import { useIsHomePage } from '@/hooks';
 import type { FooterLink } from '@/types';
+import { getSectionPath } from '@/utils/scroll';
 import { InstagramIcon } from '../icons';
 import { useOrderDialog } from '../order-dialog';
+import clsx from 'clsx';
 import styles from './index.module.css';
 
 const SOCIAL_ICONS = {
@@ -15,7 +16,7 @@ const SOCIAL_ICONS = {
 /** A single footer link, rendered according to where it leads. */
 function FooterLinkItem({ link }: { link: FooterLink }) {
   const { t } = useTranslation();
-  const goToSection = useGoToSection();
+  const isHomePage = useIsHomePage();
   const { openOrder } = useOrderDialog();
   const label = t(link.label);
 
@@ -34,50 +35,32 @@ function FooterLinkItem({ link }: { link: FooterLink }) {
       );
     case 'order':
       return (
-        <a
-          href="#"
-          className={styles.link}
-          onClick={(event) => {
-            event.preventDefault();
-            openOrder(link.product);
-          }}
-        >
+        // Opens a dialog, not a page, so it is a button styled as a link.
+        <button type="button" className={clsx(styles.link, styles.linkButton)} onClick={() => openOrder(link.product)}>
           {label}
-        </a>
+        </button>
       );
     case 'section':
       return (
-        <a
-          href={`/#${link.target}`}
-          className={styles.link}
-          onClick={(event) => {
-            event.preventDefault();
-            goToSection(link.target);
-          }}
-        >
+        <Link to={getSectionPath(link.target)} replace={isHomePage} className={styles.link}>
           {label}
-        </a>
+        </Link>
       );
   }
 }
 
 export function Footer() {
   const { t } = useTranslation();
-  const goHome = useGoHome();
-
-  const handleLogoClick = (event: MouseEvent) => {
-    event.preventDefault();
-    goHome();
-  };
+  const isHomePage = useIsHomePage();
 
   return (
     <footer className={styles.footer}>
       <div className={styles.inner}>
         <div className={styles.top}>
           <div className={styles.brand}>
-            <a href={ROUTES.HOME} className={styles.logoLink} aria-label={t('a11y.home')} onClick={handleLogoClick}>
+            <Link to={getSectionPath()} replace={isHomePage} className={styles.logoLink} aria-label={t('a11y.home')}>
               <img src={IMAGES.logo} alt={t('appName')} className={styles.logo} />
-            </a>
+            </Link>
             <p className={styles.description}>{t('footer.description')}</p>
             <ul className={styles.socials} aria-label={t('a11y.socials')}>
               {SOCIAL_LINKS.map((social) => (
