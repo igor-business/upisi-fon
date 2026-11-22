@@ -1,3 +1,6 @@
+/** Address of the live site (canonical links, sitemap, link previews). */
+export const SITE_URL = 'https://upisifon.rs';
+
 /** Year Binary Bioskop started with education (the "years of experience" stat is computed from it). */
 export const FOUNDING_YEAR = 2014;
 

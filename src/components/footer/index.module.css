@@ -67,10 +67,12 @@
     border-color var(--transition-fast);
 }
 
-.socialLink:hover {
-  color: var(--color-primary);
-  background-color: var(--color-primary-subtle);
-  border-color: var(--color-primary);
+@media (hover: hover) {
+  .socialLink:hover {
+    color: var(--color-primary);
+    background-color: var(--color-primary-subtle);
+    border-color: var(--color-primary);
+  }
 }
 
 .columns {
@@ -106,9 +108,10 @@
   transition: color var(--transition-fast);
 }
 
-
-.link:hover {
-  color: var(--color-primary);
+@media (hover: hover) {
+  .link:hover {
+    color: var(--color-primary);
+  }
 }
 
 /* Resets the button look, so the "apply" button matches the other footer links. */
@@ -120,6 +123,18 @@
   line-height: inherit;
   text-align: start;
   cursor: pointer;
+}
+
+/* Touch screens: a taller tap area for every link (about 34px instead of 18px), same spacing look. */
+@media (pointer: coarse) {
+  .list {
+    gap: 0;
+  }
+
+  .link {
+    display: inline-block;
+    padding-block: var(--spacing-sm);
+  }
 }
 
 .bottom {
@@ -155,6 +170,11 @@
 
 /* ---------- Mobile ---------- */
 @mixin smaller-than $mantine-breakpoint-xs {
+  /* Full width, so the email address fits on one line. */
+  .contactColumn {
+    grid-column: 1 / -1;
+  }
+
   .inner {
     padding-block: var(--spacing-2xl) var(--spacing-lg);
   }

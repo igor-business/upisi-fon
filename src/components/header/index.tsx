@@ -18,7 +18,7 @@ export function Header() {
   const { t } = useTranslation();
   const theme = useMantineTheme();
   const [menuOpened, { toggle: toggleMenu, close: closeMenu }] = useDisclosure(false);
-  const isDesktop = useMediaQuery(`(width >= ${theme.breakpoints.lg})`);
+  const isDesktop = useMediaQuery(`(width >= ${theme.breakpoints.md})`);
   const isHomePage = useIsHomePage();
   const activeSectionId = useActiveSection(NAV_SECTION_IDS, isHomePage);
   const { openOrder } = useOrderDialog();

@@ -47,8 +47,10 @@
   font-weight: 700;
 }
 
-.ctaAction:hover {
-  background-color: var(--color-primary-subtle);
+@media (hover: hover) {
+  .ctaAction:hover {
+    background-color: var(--color-primary-subtle);
+  }
 }
 
 @mixin smaller-than $mantine-breakpoint-sm {

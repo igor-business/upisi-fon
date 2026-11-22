@@ -2,12 +2,14 @@ import { useTranslation } from 'react-i18next';
 import { Button } from '@mantine/core';
 import { LessonList, PageHeader, Section, useOrderDialog } from '@components';
 import { LESSONS, LESSON_GROUPS, SECTION_IDS } from '@constants';
+import { usePageMeta } from '@/hooks';
 import styles from './index.module.css';
 
 /** All free lessons, grouped by topic. */
 export function LessonsPage() {
   const { t } = useTranslation();
   const { openOrder } = useOrderDialog();
+  usePageMeta({ title: t('meta.lessons.title'), description: t('meta.lessons.description') });
 
   return (
     <div className={styles.page}>

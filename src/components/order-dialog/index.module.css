@@ -173,9 +173,11 @@
     background-color var(--transition-fast);
 }
 
-.addStudent:hover {
-  border-color: var(--color-primary);
-  background-color: var(--color-primary-subtle);
+@media (hover: hover) {
+  .addStudent:hover {
+    border-color: var(--color-primary);
+    background-color: var(--color-primary-subtle);
+  }
 }
 
 .addIcon {

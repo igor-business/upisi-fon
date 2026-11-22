@@ -3,11 +3,13 @@ import { Link } from 'react-router-dom';
 import { Button } from '@mantine/core';
 import { Description, Section, Title } from '@components';
 import { IMAGES, IMAGE_SIZES, ROUTES } from '@constants';
+import { usePageMeta } from '@/hooks';
 import styles from './index.module.css';
 
 /** Shown for every address that does not match a page, inside the usual header and footer. */
 export function NotFoundPage() {
   const { t } = useTranslation();
+  usePageMeta({ title: t('meta.notFound.title'), description: t('notFound.description'), noindex: true });
 
   return (
     <Section className={styles.section} contentClassName={styles.content}>

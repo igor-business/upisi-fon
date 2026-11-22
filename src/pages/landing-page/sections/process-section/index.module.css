@@ -269,17 +269,21 @@
   font-weight: 700;
 }
 
-.more:hover {
-  text-decoration: underline;
-  text-underline-offset: 3px;
+@media (hover: hover) {
+  .more:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
 }
 
 .more svg {
   transition: transform var(--transition-fast);
 }
 
-.more:hover svg {
-  transform: translateX(2px);
+@media (hover: hover) {
+  .more:hover svg {
+    transform: translateX(2px);
+  }
 }
 
 /* ---------- Tablet / mobile: spine on the left, all cards on the right ---------- */

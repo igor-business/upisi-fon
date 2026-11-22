@@ -1,5 +1,6 @@
-import { ScrollToTop } from '@components';
+import { useTranslation } from 'react-i18next';
 import { SHOW_FAQ } from '@constants';
+import { usePageMeta } from '@/hooks';
 import {
   AboutSection,
   FaqSection,
@@ -13,6 +14,9 @@ import {
 import styles from './index.module.css';
 
 export function LandingPage() {
+  const { t } = useTranslation();
+  usePageMeta({ title: t('meta.home.title'), description: t('meta.home.description') });
+
   return (
     <div className={styles.page}>
       <HeroSection />
@@ -23,7 +27,6 @@ export function LandingPage() {
       <TestimonialsSection />
       <PricingSection />
       {SHOW_FAQ && <FaqSection />}
-      <ScrollToTop />
     </div>
   );
 }

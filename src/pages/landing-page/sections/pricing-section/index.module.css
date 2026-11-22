@@ -227,7 +227,13 @@
   color: var(--color-white);
 }
 
-.recommended .segmentLabel:hover:not([data-active]),
+@media (hover: hover) {
+  .recommended .segmentLabel:hover:not([data-active]) {
+    color: var(--color-white);
+    background-color: rgba(255, 255, 255, 0.12);
+  }
+}
+
 .recommended .segmentLabel:focus-visible:not([data-active]) {
   color: var(--color-white);
   background-color: rgba(255, 255, 255, 0.12);
@@ -244,8 +250,10 @@
   font-weight: 700;
 }
 
-.recommended .action:hover {
-  background-color: var(--color-primary-subtle);
+@media (hover: hover) {
+  .recommended .action:hover {
+    background-color: var(--color-primary-subtle);
+  }
 }
 
 .badge {

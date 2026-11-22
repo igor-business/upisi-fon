@@ -390,5 +390,22 @@
     "description": "Link je možda pogrešno unet ili je stranica premeštena. Vrati se na početnu ili pogledaj besplatne lekcije.",
     "home": "Nazad na početnu",
     "lessons": "Pogledaj besplatne lekcije"
+  },
+  "meta": {
+    "home": {
+      "title": "UpišiFON – online priprema za prijemni iz matematike na FON-u",
+      "description": "Online priprema za prijemni iz matematike na FON-u: video lekcije, zadaci sa rešenjima, probni prijemni ispiti i mentor. Priprema edukativnog centra Binary Bioskop."
+    },
+    "lessons": {
+      "title": "Besplatne lekcije | UpišiFON",
+      "description": "Besplatne video lekcije iz matematike za prijemni na FON-u: uvod, brojevi i polinomi, sa teorijom, primerima i rešenim zadacima."
+    },
+    "summerSchool": {
+      "title": "Summer School | UpišiFON",
+      "description": "Summer School priprema brucoše FON-a za prvu godinu: gradivo prvog meseca, saveti starijih studenata i upoznavanje sa budućim kolegama."
+    },
+    "notFound": {
+      "title": "Stranica nije pronađena | UpišiFON"
+    }
   }
 }

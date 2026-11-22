@@ -16,8 +16,10 @@
   transition: color var(--transition-fast);
 }
 
-.back:hover {
-  color: var(--color-primary-hover);
+@media (hover: hover) {
+  .back:hover {
+    color: var(--color-primary-hover);
+  }
 }
 
 .description {

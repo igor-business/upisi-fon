@@ -93,7 +93,7 @@ export function Footer() {
               </div>
             ))}
 
-            <div className={styles.column} id={FOOTER_CONTACT_ID}>
+            <div className={clsx(styles.column, styles.contactColumn)} id={FOOTER_CONTACT_ID}>
               <h2 className={styles.columnTitle}>{t('footer.columns.contact.title')}</h2>
               <ul className={styles.list}>
                 <li>

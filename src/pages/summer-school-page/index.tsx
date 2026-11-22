@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { Button } from '@mantine/core';
 import { CheckIcon, PageHeader, Section, useOrderDialog } from '@components';
 import { PRODUCTS, SECTION_IDS } from '@constants';
+import { usePageMeta } from '@/hooks';
 import { formatPrice } from '@/utils/pricing';
 import styles from './index.module.css';
 
@@ -9,6 +10,7 @@ import styles from './index.module.css';
 export function SummerSchoolPage() {
   const { t } = useTranslation();
   const { openOrder } = useOrderDialog();
+  usePageMeta({ title: t('meta.summerSchool.title'), description: t('meta.summerSchool.description') });
 
   return (
     <div className={styles.page}>

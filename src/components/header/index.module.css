@@ -66,10 +66,12 @@
   white-space: nowrap;
 }
 
-.link:hover,
-.drawerLink:hover {
-  color: var(--color-primary);
-  background-color: var(--color-primary-subtle);
+@media (hover: hover) {
+  .link:hover,
+  .drawerLink:hover {
+    color: var(--color-primary);
+    background-color: var(--color-primary-subtle);
+  }
 }
 
 .active {
@@ -110,7 +112,8 @@
   }
 }
 
-@mixin larger-than $mantine-breakpoint-lg {
+/* Six links fit from 992px (about 530px of links in 610px of space). */
+@mixin larger-than $mantine-breakpoint-md {
   .nav {
     display: flex;
   }
